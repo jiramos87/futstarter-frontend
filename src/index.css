@@ -1,0 +1,42 @@
+body {
+  box-sizing: border-box;
+}
+
+#content {
+  height: 100%;
+}
+
+main {
+  position: relative !important;
+  height: 100vh;
+  width: auto !important;
+  overflow-y: scroll;
+}
+
+
+#sidebar {
+  height: 100vh !important;
+  position: static !important;
+  top: 0;
+  bottom: 10px;
+  width: 100px;
+  margin: 10px;
+  overflow-y: scroll;
+}
+
+
+.navbar {
+  position: fixed !important;
+}
+
+input {
+  background-color: rgb(85, 85, 85) !important;
+  color: grey !important;
+  border: none !important;
+
+}
+
+#filters {
+  background-color: rgb(85, 85, 85) !important;
+}
+

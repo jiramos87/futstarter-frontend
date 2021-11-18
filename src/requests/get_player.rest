@@ -1,0 +1,1 @@
+GET https://futdb.app/api/players/1337
