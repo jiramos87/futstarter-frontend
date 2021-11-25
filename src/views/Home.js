@@ -1,7 +1,18 @@
 import React from "react"
-import Popular from "./Popular"
+// import Popular from "./Popular"
 
-const Home = () => {
+function Home() {
+    return (
+        <div className='home'>
+            <h1>Home</h1>
+        </div>
+    )
+}
+
+export default Home
+
+
+/* const Home = () => {
     return (
         <div className="text-white mx-3 overflow-scroll">
             <div id="home">
@@ -18,4 +29,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Home */
