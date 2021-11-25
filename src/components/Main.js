@@ -16,7 +16,7 @@ const Main = () => {
     const { store, actions } = useContext(Context)
     return (
         <main className="col ps-md-2 pt-2 mt-0 pt-0">
-              <nav className="navbar navbar-light bg-black mt-0 top-0">
+              <nav className="navbar navbar-light bg-black mt-0 top-0 position-relative">
                 <div className="container-fluid d-flex flex-column mb-2">
                   <div className="d-flex flex-row w-100 justify-content-between">
                     
@@ -28,7 +28,7 @@ const Main = () => {
                 </div>
                 <input className="form-control align-self-center me-2" type="search" placeholder="Search" aria-label="Search" />
               </nav>
-              <div className="mt-3">
+              <div className="mt-3 position-relative">
                 <Switch>
                   <Route exact path="/">
                     <Home />

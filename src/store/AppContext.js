@@ -21,11 +21,11 @@ const injectContext = PassedComponent => {
 			})
 		);
 
-		useEffect(() => {
+		// useEffect(() => {
 			
-			state.actions.searchPLPlayers()
+		// 	state.actions.searchPLPlayers()
 
-		}, []);
+		// }, []);
 
 
 
