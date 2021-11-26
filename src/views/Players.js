@@ -1,10 +1,21 @@
 import React, { useContext } from 'react'
-import { Context } from '../store/AppContext'
+// import { Context } from '../store/AppContext'
 
-const Players = () => {
+
+function Players() {
+    return (
+        <div className='players'>
+            <h1>Meta Players</h1>
+        </div>
+    )
+}
+
+export default Players
+
+/* const Players = () => {
     
     const { store, actions } = useContext(Context)
-    console.log('players: ', console.log(store.pl_players))
+    console.log('players: ', console.log(store.pl_players)) */
 
     /* const players = store.pl_players.map( (player) => {
         
@@ -15,13 +26,13 @@ const Players = () => {
         )
     }) */
 
-    return (
+/*     return (
         <div>
             <ul className="text-white">
-                {/* {players} */}
+                { {players} }
             </ul>
         </div>
     )
 }
 
-export default Players;
+export default Players; */
