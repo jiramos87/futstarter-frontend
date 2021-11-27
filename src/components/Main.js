@@ -1,15 +1,4 @@
 import React, { useContext } from 'react'
-import {
-    BrowserRouter as Router,
-    Switch, Link,
-    Route
-} from "react-router-dom";
-import Home from '../views/Home' //views
-import PlayerDetails from '../views/PlayerDetails'
-import Players from '../views/Players'
-import Squads from '../views/Squads'
-import UserConfig from '../views/UserConfig'
-import Popular from '../views/Popular'
 import { Context } from '../store/AppContext'
 
 const Main = () => {
@@ -28,25 +17,6 @@ const Main = () => {
                 </div>
                 <input className="form-control align-self-center me-2" type="search" placeholder="Search" aria-label="Search" />
               </nav>
-              <div className="mt-3 position-relative">
-                <Switch>
-                  <Route exact path="/">
-                    <Home />
-                  </Route>
-                  <Route exact path="/popular">
-                    <Popular />
-                  </Route>
-                  <Route exact path="/players">
-                    <Players />
-                  </Route>
-                  <Route exact path="/squads">
-                    <Squads />
-                  </Route>
-                  <Route exact path="/userconfig">
-                    <UserConfig />
-                  </Route>
-                </Switch>
-              </div>
             </main>
     )
 }

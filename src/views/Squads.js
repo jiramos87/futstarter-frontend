@@ -1,12 +1,21 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { Context } from '../store/AppContext'
 
 const Squads =() => {
     const { store, actions } = useContext(Context)
-    console.log(actions.getSquad().CAM.acceleration)
+    const [ squad, setSquad] = useState([])
+    useEffect( ()=>{
+        setSquad(actions.getSquad())
+    }, [])
+
+    
+    console.log(squad?.CAM?.acceleration)
     return (
-        <div className="text-white mt-5 pt-5"> 
-            {actions.getSquad().CAM.acceleration}
+        <div className="text-black mt-5 pt-5"> 
+            {squad?.CAM?.acceleration}
+            <br/>
+            {squad?.CAM?.acceleration}
+            <br/>
         </div>
     )
 }

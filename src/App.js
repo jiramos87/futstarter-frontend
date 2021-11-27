@@ -7,11 +7,12 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css"
 import '@popperjs/core'
 import 'bootstrap/dist/js/bootstrap.bundle.min'
-//components
-import ScrollToTop from './components/ScrollToTop'
-import Main from './components/Main'
-import Search from './components/Search'
 import injectContext from './store/AppContext';  //store
+import Home from './views/Home' //views
+import Players from './views/Players'
+import Squads from './views/Squads'
+import UserConfig from './views/UserConfig'
+import Popular from './views/Popular'
 
 
 const App = () => {
@@ -20,7 +21,21 @@ const App = () => {
     <Router basename={basename}>
       <Sidebar />
       <Switch>
-
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/popular">
+          <Popular />
+        </Route>
+        <Route exact path="/players">
+          <Players />
+        </Route>
+        <Route exact path="/squads">
+          <Squads />
+        </Route>
+        <Route exact path="/userconfig">
+          <UserConfig />
+        </Route>
       </Switch>
     </Router >
   );
