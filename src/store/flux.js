@@ -1,3 +1,5 @@
+import registerUserAPI from "../services/registerUserAPI";
+
 const getState = ({ getStore, getActions, setStore }) => {
     const backendUrl = 'http://192.168.1.11:5000'
     const apiKey = '97c4dd2b-fe2e-4407-8ea3-f26435d6ce9b'
@@ -29,7 +31,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             raritiesCount: [],   
             raritiesCountTotal: [],
             totalRaritiesPages: [],
-            users: [],
+            user: {},
             formData: {
                 userName: '',
                 email: '',
@@ -83,6 +85,10 @@ const getState = ({ getStore, getActions, setStore }) => {
             //         console.log(error)
             //     }
             // },
+            registerUser: async (user) => {
+                const us = await registerUserAPI(user)
+                setStore({...store, user: us})
+            },
             getSquad: () => {
                 return ({
                     CAM: {
