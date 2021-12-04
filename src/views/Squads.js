@@ -18,7 +18,7 @@ const Squads =() => {
                     <div className="col">row 1</div>
                     <div className="col">col 2</div>
                     <div className="col">col 3</div>
-                    <div className="col">Left Striker {store.Squads?.LST && <Card/>}</div>
+                    {/* <div className="col">Left Striker {store.Squads?.LST && <Card/>}</div> */}
                     <div className="col"></div>
                     <div className="col RST">Right Striker</div>
                     <div className="col">col 7</div>
