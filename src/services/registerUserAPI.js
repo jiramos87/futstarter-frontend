@@ -3,7 +3,7 @@ const env = process.env.NODE_ENV || 'development'
 const baseUrl = env === 'development' ? 'http://localhost:5000/' : 'http://herokuasdf.com/'
 
 const registerUserAPI = async (user) => {
-
+    const body = JSON.stringify(user) 
     try{
         console.log(user)
         let call = await fetch(`${baseUrl}/api/v1/auth/register`, {
@@ -12,10 +12,9 @@ const registerUserAPI = async (user) => {
               'Accept': 'application/json',
               'Content-Type': 'application/json'
             },
-            body: user,
-            dataType: 'json',
-            data: user
+            body
           })
+          
           return call.json()
     } catch (error){
         console.error(error)    

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { Context } from '../store/AppContext'
 
 
@@ -7,13 +7,13 @@ const Register = () => {
     const [ formData, setFormData] = useState({
         username: '',
         email: '',
-        password: '',
+        password: ''
     })
 
     const onChange = (e) => {
         setFormData({
             ...formData,
-            [e.target.username]: e.target.value
+            [e.target.name]: e.target.value
         })
     }
 

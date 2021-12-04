@@ -36,4 +36,10 @@ export const SidebarData = [
         icon: <FaIcons.FaEnvelopeOpenText />,
         cName: 'nav-text'
     },
+    {
+        title: 'Register',
+        path: '/register',
+        icon: <AiIcons.AiFillHome />,
+        cName: 'nav-text'
+    }
 ]

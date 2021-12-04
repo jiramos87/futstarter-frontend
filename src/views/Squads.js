@@ -4,7 +4,7 @@ import { Context } from '../store/AppContext'
 const Squads =() => {
     const { store, actions } = useContext(Context)
     const [ squad, setSquad] = useState([])
-    useEffect( ()=>{
+    useEffect( () =>{
         setSquad(actions.getSquad())
     }, [])
 

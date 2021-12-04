@@ -13,6 +13,7 @@ import Players from './views/Players'
 import Squads from './views/Squads'
 import UserConfig from './views/UserConfig'
 import Popular from './views/Popular'
+import Register from './views/Register';
 
 
 const App = () => {
@@ -35,6 +36,9 @@ const App = () => {
         </Route>
         <Route exact path="/userconfig">
           <UserConfig />
+        </Route>
+        <Route exact path="/register">
+          <Register />
         </Route>
       </Switch>
     </Router >
