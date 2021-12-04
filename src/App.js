@@ -13,8 +13,12 @@ import Players from './views/Players'
 import Squads from './views/Squads'
 import UserConfig from './views/UserConfig'
 import Popular from './views/Popular'
+<<<<<<< HEAD
+import Register from './views/Register';
+=======
 import SignIn from './views/SignIn'
 import Form from './components/Form';
+>>>>>>> 1653ec7ab6889c8afa63ba18839e7205879b3d5b
 
 
 const App = () => {
@@ -43,6 +47,9 @@ const App = () => {
         </Route>
         <Route exact path="/userconfig">
           <UserConfig />
+        </Route>
+        <Route exact path="/register">
+          <Register />
         </Route>
       </Switch>
     </Router >

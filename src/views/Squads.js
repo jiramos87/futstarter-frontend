@@ -5,7 +5,7 @@ import './Squads.css';
 const Squads =() => {
     const { store, actions } = useContext(Context)
     const [ squad, setSquad] = useState([])
-    useEffect( ()=>{
+    useEffect( () =>{
         setSquad(actions.getSquad())
     }, [])
 

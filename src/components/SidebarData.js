@@ -43,6 +43,13 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {
+<<<<<<< HEAD
+        title: 'Register',
+        path: '/register',
+        icon: <AiIcons.AiFillHome />,
+        cName: 'nav-text'
+    }
+=======
         title: 'Sign In',
         path: '/signin',
         icon: <FaIcons.FaEnvelopeOpenText />,
@@ -54,4 +61,5 @@ export const SidebarData = [
         icon: <FaIcons.FaEnvelopeOpenText />,
         cName: 'nav-text'
     },
+>>>>>>> 1653ec7ab6889c8afa63ba18839e7205879b3d5b
 ]
