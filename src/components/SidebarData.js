@@ -5,7 +5,13 @@ import * as IoIcons from "react-icons/io";
 
 
 export const SidebarData = [
-    
+
+    {
+        title: 'Home',
+        path: '/',
+        icon: <AiIcons.AiFillHome />,
+        cName: 'nav-text'
+    },
     {
         title: 'Meta Squads',
         path: '/squads',
@@ -33,6 +39,18 @@ export const SidebarData = [
     {
         title: 'Tips & Tricks',
         path: '/tips',
+        icon: <FaIcons.FaEnvelopeOpenText />,
+        cName: 'nav-text'
+    },
+    {
+        title: 'Sign In',
+        path: '/signin',
+        icon: <FaIcons.FaEnvelopeOpenText />,
+        cName: 'nav-text'
+    },
+        {
+        title: 'Register',
+        path: '/form',
         icon: <FaIcons.FaEnvelopeOpenText />,
         cName: 'nav-text'
     },

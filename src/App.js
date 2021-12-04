@@ -13,6 +13,8 @@ import Players from './views/Players'
 import Squads from './views/Squads'
 import UserConfig from './views/UserConfig'
 import Popular from './views/Popular'
+import SignIn from './views/SignIn'
+import Form from './components/Form';
 
 
 const App = () => {
@@ -24,14 +26,20 @@ const App = () => {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/popular">
-          <Popular />
+        <Route exact path="/squads">
+          <Squads />
         </Route>
         <Route exact path="/players">
           <Players />
         </Route>
-        <Route exact path="/squads">
-          <Squads />
+        <Route exact path="/signin">
+          <SignIn />
+        </Route>
+        <Route exact path="/form">
+          <Form />
+        </Route>
+        <Route exact path="/popular">
+          <Popular />
         </Route>
         <Route exact path="/userconfig">
           <UserConfig />
