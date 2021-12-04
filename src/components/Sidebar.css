@@ -1,13 +1,13 @@
-Body {
-    background-color: #2B3648;
-}
 
 .sidebar {
     background-color: #212936;
-    height: 80px;
+    height: 5em;
     display: flex;
     justify-content: start;
     align-items: center;
+    overflow: auto;
+    position: fixed;
+    width: 100%;
 }
 
 .menu-bars {
@@ -66,7 +66,7 @@ Body {
     padding-left: 0;
 }
 
-.navbar-toggle {
+.sidebar-toggle {
     background-color: #C2ED63;
     width: 100%;
     height: 80px;
