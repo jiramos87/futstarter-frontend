@@ -40,3 +40,87 @@ input {
   background-color: rgb(85, 85, 85) !important;
 }
 
+.card-1 {
+  background-image: url(./images/goldcard3.png);
+  background-repeat:no-repeat;
+  z-index: -1;
+  width: 210px;
+  height: 230px;
+}
+.CARA-JUGADOR{
+  width: 130px;
+  height: 135px;
+  margin-top: -126px;
+  margin-left: 45px;
+  background-image: url(./images/Carajugador.png);
+  background-size: 130px 135px;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y:center;
+}
+.NOMBRE-JUGADOR{
+  margin-top: 3px;
+  margin-left: 50px;
+  color: rgb(58, 44, 44);
+}
+.NUMERO-JUGADOR{
+  margin-top: 40px;
+  margin-left: 15px;
+  width: 30px;
+  height: 30px;
+  color: rgb(58, 44, 44);
+}
+.PAIS-JUGADOR{
+  margin-top: auto;
+  margin-left: 15px;
+  width: 30px;
+  height: 30px;
+  background-image: url(./images/argentina.png);
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y:center;
+}
+.COPA-JUGADOR{
+  margin-top: 15px;
+  margin-left: 15px;
+  width: 30px;
+  height:25px;
+  background-image: url(./images/barcelona.png);
+  border-radius: 1px;
+  background-size: 30px 25px;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y:center;
+
+}
+.face-details{
+  background-image: url();
+  background-size: 150px 150px;
+  height: 150px;
+  width: 150px;
+  background-repeat: no-repeat;
+}
+.details-bod{
+  padding: 15px;
+}
+.card-details{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid rgba(0,0,0,.125);
+
+}
+.card-body-details{
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1rem;
+}
+.stat-details{
+  margin-right: -8px;
+  margin-left: -8px;
+}

@@ -4,10 +4,8 @@ import React, { useContext } from 'react'
 
 function Players() {
     return (
-        <div className='players'>
-            <h1>Meta Players</h1>
-        </div>
-    )
+        <><h2>Meta Players</h2></>
+    );
 }
 
 export default Players

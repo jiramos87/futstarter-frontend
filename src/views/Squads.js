@@ -1,5 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Context } from '../store/AppContext'
+import {getSquad} from '../store/flux'
+
 
 const Squads =() => {
     const { store, actions } = useContext(Context)
@@ -11,13 +13,8 @@ const Squads =() => {
     
     console.log(squad?.CAM?.acceleration)
     return (
-        <div className="text-black mt-5 pt-5"> 
-            {squad?.CAM?.acceleration}
-            <br/>
-            {squad?.CAM?.acceleration}
-            <br/>
-        </div>
-    )
+        <h2>Meta Squads</h2>
+        )
 }
 
 export default Squads

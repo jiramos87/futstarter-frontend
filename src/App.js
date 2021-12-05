@@ -13,7 +13,8 @@ import Players from './views/Players'
 import Squads from './views/Squads'
 import UserConfig from './views/UserConfig'
 import Popular from './views/Popular'
-
+import PlayerCard from './components/PlayerCard'
+import PlayerDetails from './views/PlayerDetails';
 
 const App = () => {
   const basename = process.env.BASENAME || "";
@@ -26,6 +27,12 @@ const App = () => {
         </Route>
         <Route exact path="/popular">
           <Popular />
+        </Route>
+        <Route exact path="/playercard">
+          <PlayerCard />
+        </Route>
+        <Route exact path="/playerdetails">
+          <PlayerDetails />
         </Route>
         <Route exact path="/players">
           <Players />
