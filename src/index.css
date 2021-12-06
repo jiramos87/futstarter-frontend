@@ -41,7 +41,7 @@ input {
 }
 
 .card-1 {
-    
+  background-image: url(./images/goldcard3.png);
   background-repeat:no-repeat;
   z-index: -1;
   width: 210px;

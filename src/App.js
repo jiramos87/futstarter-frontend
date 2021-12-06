@@ -13,11 +13,11 @@ import Players from './views/Players'
 import Squads from './views/Squads'
 import UserConfig from './views/UserConfig'
 import Popular from './views/Popular'
-import PlayerCard from './components/PlayerCard'
-import PlayerDetails from './views/PlayerDetails';
-import SignIn from './views/SignIn'
 import Register from './views/Register'
 import Form from './components/Form';
+import Login from './views/Login'
+import PlayerCard from './components/PlayerCard'
+import PlayerDetails from './views/PlayerDetails'
 
 
 const App = () => {
@@ -41,8 +41,8 @@ const App = () => {
         <Route exact path="/players">
           <Players />
         </Route>
-        <Route exact path="/signin">
-          <SignIn />
+        <Route exact path="/login">
+          <Login />
         </Route>
         <Route exact path="/form">
           <Form />
