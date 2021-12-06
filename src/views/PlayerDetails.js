@@ -11,54 +11,31 @@ const PlayerDetails = () => {
                     <div className="card h-100">
                     <div className="card-body">
                         <h6 className="d-flex align-items-center mb-3"><i className="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                        <small>Web Design</small>
+                        <small>acceleration</small>
                         <div className="progress mb-3">
                         <div className="progress-bar bg-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                        <small>Website Markup</small>
+                        <small>Sprint Speed</small>
                         <div className="progress mb-3">
                         <div className="progress-bar bg-primary" role="progressbar"  aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                        <small>One Page</small>
+                        <small>Frinishing</small>
                         <div className="progress mb-3">
                         <div className="progress-bar bg-primary" role="progressbar"  aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                        <small>Mobile Template</small>
+                        <small>Short Passing</small>
                         <div className="progress mb-3">
                         <div className="progress-bar bg-primary" role="progressbar"  aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                        <small>Backend API</small>
+                        <small>Dribbling</small>
                         <div className="progress mb-3">
                         <div className="progress-bar bg-primary" role="progressbar" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                    </div>
-                    </div>
-                </div>
-                <div className="col-sm-6 mb-3">
-                    <div className="card h-100">
-                    <div className="card-body">
-                        <h6 className="d-flex align-items-center mb-3"><i className="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                        <small>Web Design</small>
+                        </div>
+                        <small>Composure</small>
                         <div className="progress mb-3">
                         <div className="progress-bar bg-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
-                        <small>Website Markup</small>
-                        <div className="progress mb-3">
-                        <div className="progress-bar bg-primary" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <small>One Page</small>
-                        <div className="progress mb-3">
-                        <div className="progress-bar bg-primary" role="progressbar" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <small>Mobile Template</small>
-                        <div className="progress mb-3">
-                        <div className="progress-bar bg-primary" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <small>Backend API</small>
-                        <div className="progress mb-3">
-                        <div className="progress-bar bg-primary" role="progressbar" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
                     </div>
                 </div>
                 </div>

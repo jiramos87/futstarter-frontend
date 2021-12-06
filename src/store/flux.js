@@ -1,3 +1,5 @@
+import registerUserAPI from "../services/registerUserAPI";
+
 const getState = ({ getStore, getActions, setStore }) => {
     const backendUrl = 'http://192.168.1.11:5000'
     const apiKey = '97c4dd2b-fe2e-4407-8ea3-f26435d6ce9b'
@@ -29,7 +31,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             raritiesCount: [],   
             raritiesCountTotal: [],
             totalRaritiesPages: [],
-            users: [],
+            user: {},
             formData: {
                 userName: '',
                 email: '',
@@ -38,51 +40,16 @@ const getState = ({ getStore, getActions, setStore }) => {
             error: false,
             plSquad: {}
 
+
         },
         actions: {
-            
-            // searchPLPlayers: () => {
-                
-            //     fetch(`${backendUrl}/players`)
-            //     .then(data => data.json())
-            //     .then(res => setStore({ 
-            //         pl_players: getStore().pl_players.concat(res.items)}))
-                
-            // },
-            // setError: (bool) => {
-            //     setStore({
-            //         error: bool
-            //     })
-            // },
-            // validatePassword: (password) => {
-            //     if (password.length < 6) {
-            //         getActions.setError(true)
-            //     } else {
-            //         getActions.setError(false)
-            //     }
-            // },
-            // onSubmit: () => {
-            //     e.preventDefault()
-            //     console.log(getStore.formData)
-
-            // },
-            // onChange: (e) => {
-            //     setStore({
-            //         [e.target.name]: e.target.value
-            //     })
-            // },
-            // getPlSquad: async () => {
-            //     try {
-            //         await fetch(`${backendUrl}/squads/leagues/pl`)
-            //         .then(data =>  data.json)
-            //         .then(res => setStore({
-            //             plSquad: res
-            //         }))
-            //     }
-            //     catch (error) {
-            //         console.log(error)
-            //     }
-            // },
+            registerUser: async (user) => {
+                const us = await registerUserAPI(user).then((data) => {
+                    console.log(data)
+                    setStore({...getStore, user: data})
+                 })
+                setStore({...getStore, user: us})
+            },
             getSquad: () => {
                 return ({
                     CAM: {

@@ -41,13 +41,13 @@ input {
 }
 
 .card-1 {
-  background-image: url(./images/goldcard3.png);
+    
   background-repeat:no-repeat;
   z-index: -1;
   width: 210px;
   height: 230px;
 }
-.CARA-JUGADOR{
+.FACE-PLAYERS{
   width: 130px;
   height: 135px;
   margin-top: -126px;
@@ -58,19 +58,19 @@ input {
   background-position-x: center;
   background-position-y:center;
 }
-.NOMBRE-JUGADOR{
+.NAME-PLAYERS{
   margin-top: 3px;
   margin-left: 50px;
   color: rgb(58, 44, 44);
 }
-.NUMERO-JUGADOR{
+.NUMBER-PLAYERS{
   margin-top: 40px;
   margin-left: 15px;
   width: 30px;
   height: 30px;
   color: rgb(58, 44, 44);
 }
-.PAIS-JUGADOR{
+.PAIS-PLAYERS{
   margin-top: auto;
   margin-left: 15px;
   width: 30px;
@@ -81,7 +81,7 @@ input {
   background-position-x: center;
   background-position-y:center;
 }
-.COPA-JUGADOR{
+.CUP-PLAYERS{
   margin-top: 15px;
   margin-left: 15px;
   width: 30px;

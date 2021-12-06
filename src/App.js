@@ -15,6 +15,10 @@ import UserConfig from './views/UserConfig'
 import Popular from './views/Popular'
 import PlayerCard from './components/PlayerCard'
 import PlayerDetails from './views/PlayerDetails';
+import SignIn from './views/SignIn'
+import Register from './views/Register'
+import Form from './components/Form';
+
 
 const App = () => {
   const basename = process.env.BASENAME || "";
@@ -25,8 +29,8 @@ const App = () => {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/popular">
-          <Popular />
+        <Route exact path="/squads">
+          <Squads />
         </Route>
         <Route exact path="/playercard">
           <PlayerCard />
@@ -37,11 +41,20 @@ const App = () => {
         <Route exact path="/players">
           <Players />
         </Route>
-        <Route exact path="/squads">
-          <Squads />
+        <Route exact path="/signin">
+          <SignIn />
+        </Route>
+        <Route exact path="/form">
+          <Form />
+        </Route>
+        <Route exact path="/popular">
+          <Popular />
         </Route>
         <Route exact path="/userconfig">
           <UserConfig />
+        </Route>
+        <Route exact path="/register">
+          <Register />
         </Route>
       </Switch>
     </Router >

@@ -7,16 +7,16 @@ function PlayerCard() {
         <div className="card-1">
             <div className="card-body">
             <div className="informacion">
-                <h3 className="NUMERO-JUGADOR">94</h3>
-                <div className="PAIS-JUGADOR" alt="" />
+                <h3 className="NUMBER-PLAYERS">94</h3>
+                <div className="PAIS-PLAYERS" alt="" />
                 </div>
                 <div className="copa">
-                <div className="COPA-JUGADOR" alt="" />
+                <div className="CUP-PLAYERS" alt="" />
                 </div>
                 <div className="cara">  
-                <div className="CARA-JUGADOR" alt="" />
+                <div className="FACE-PLAYERS" alt="" />
                 </div>
-                <h3 className="NOMBRE-JUGADOR">Messi</h3>
+                <h3 className="NAME-PLAYERS">Messi</h3>
             </div>
         </div>
     );
