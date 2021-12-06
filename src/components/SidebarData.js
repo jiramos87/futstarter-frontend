@@ -43,14 +43,14 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {
-        title: 'Sign In',
-        path: '/signin',
+        title: 'Login',
+        path: '/login',
         icon: <FaIcons.FaEnvelopeOpenText />,
         cName: 'nav-text'
     },
         {
         title: 'Register',
-        path: '/form',
+        path: '/register',
         icon: <FaIcons.FaEnvelopeOpenText />,
         cName: 'nav-text'
     },

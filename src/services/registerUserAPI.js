@@ -1,4 +1,3 @@
-
 const env = process.env.NODE_ENV || 'development'
 const baseUrl = env === 'development' ? 'http://localhost:5000/' : 'http://herokuasdf.com/'
 
