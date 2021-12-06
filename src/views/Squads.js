@@ -1,5 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Context } from '../store/AppContext'
+import {getSquad} from '../store/flux'
+
 import './Squads.css';
 
 const Squads =() => {

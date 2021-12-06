@@ -16,6 +16,8 @@ import Popular from './views/Popular'
 import Register from './views/Register'
 import Form from './components/Form';
 import Login from './views/Login'
+import PlayerCard from './components/PlayerCard'
+import PlayerDetails from './views/PlayerDetails'
 
 
 const App = () => {
@@ -29,6 +31,12 @@ const App = () => {
         </Route>
         <Route exact path="/squads">
           <Squads />
+        </Route>
+        <Route exact path="/playercard">
+          <PlayerCard />
+        </Route>
+        <Route exact path="/playerdetails">
+          <PlayerDetails />
         </Route>
         <Route exact path="/players">
           <Players />
