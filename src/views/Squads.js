@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Context } from '../store/AppContext'
 import {getSquad} from '../store/flux'
-
+import PlayerCard from '../components/PlayerCard';
 import './Squads.css';
 
 const Squads =() => {
@@ -23,7 +23,7 @@ const Squads =() => {
                             <div className="col"></div>
                             <div className="col"></div>
                             <div className="col"></div>
-                            <div className="col playercard LST">{/* {store.Squads?.LST && <Card/>} */}</div> 
+                            <div className="col playercard LST"><PlayerCard/></div> 
                             <div className="col CST"></div>
                             <div className="col playercard RST"></div>
                             <div className="col"></div>

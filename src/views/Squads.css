@@ -1,13 +1,16 @@
 
+body {
+    background-color: #2B3648;
+}
+
 .field {
     background-image: url('http://localhost:3000/field_grey_background.jpg');
     background-repeat: no-repeat;
-    background-position: center 4em;
+    background-position: center 5em;
     background-attachment: fixed;
     background-size: 80vh 80vh; 
     min-height: 100vh;
-    background-color: #2B3648;
-
+    width: 80vh;
 }
 
 .container {
