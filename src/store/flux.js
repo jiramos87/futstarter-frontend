@@ -1,4 +1,5 @@
 import registerUserAPI from "../services/registerUserAPI";
+import loginUserAPI from "../services/loginUserAPI";
 
 const getState = ({ getStore, getActions, setStore }) => {
     const backendUrl = 'http://192.168.1.11:5000'
@@ -32,9 +33,14 @@ const getState = ({ getStore, getActions, setStore }) => {
             raritiesCountTotal: [],
             totalRaritiesPages: [],
             user: {},
-            formData: {
-                userName: '',
+            token: '',
+            registerFormData: {
+                username: '',
                 email: '',
+                password: ''
+            },
+            loginFormData: {
+                username: '',
                 password: ''
             },
             error: false,
@@ -46,9 +52,15 @@ const getState = ({ getStore, getActions, setStore }) => {
             registerUser: async (user) => {
                 const us = await registerUserAPI(user).then((data) => {
                     console.log(data)
-                    setStore({...getStore, user: data})
+                    setStore({...getStore, user: us})  
+                })
+            },
+            loginUser: async (user) => {
+                const us = await loginUserAPI(user).then((data) => {
+                    console.log(data)
+                    setStore({...getStore, token: data.token})
+                    //localStorage.setItem("jwt-token", data.token);
                  })
-                setStore({...getStore, user: us})
             },
             getSquad: () => {
                 return ({

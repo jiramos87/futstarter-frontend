@@ -13,9 +13,9 @@ import Players from './views/Players'
 import Squads from './views/Squads'
 import UserConfig from './views/UserConfig'
 import Popular from './views/Popular'
-import SignIn from './views/SignIn'
 import Register from './views/Register'
 import Form from './components/Form';
+import Login from './views/Login'
 
 
 const App = () => {
@@ -33,8 +33,8 @@ const App = () => {
         <Route exact path="/players">
           <Players />
         </Route>
-        <Route exact path="/signin">
-          <SignIn />
+        <Route exact path="/login">
+          <Login />
         </Route>
         <Route exact path="/form">
           <Form />
