@@ -41,54 +41,84 @@ input {
 }
 
 .card-1 {
-  background-image: url(./images/goldcard3.png);
+  padding: 1.4rem;
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+  display: flex;
+  flex-direction: column;
+  background-image: url(./images/goldcard2.png);
   background-repeat:no-repeat;
+  background-size: 9rem 13rem;
   z-index: -1;
-  width: 210px;
-  height: 230px;
+  width: 9rem;
+  height: 13rem;
 }
+
+.card-top {
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+}
+
+.card-bottom {
+  margin-top: 0.5rem;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.basic-ratings {
+  padding-left: 1rem;
+  margin-top: -0.5rem;
+  font-size: 0.6rem;
+  color: black;
+}
+
+.informacion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  width: 20%;
+  height: 100%;
+}
+
 .FACE-PLAYERS{
-  width: 130px;
-  height: 135px;
-  margin-top: -126px;
-  margin-left: 45px;
-  background-image: url(./images/Carajugador.png);
+  width: 100%;
+  height: 100%;
+  
+  /* background-image: url(./images/Carajugador.png);
   background-size: 130px 135px;
   background-repeat: no-repeat;
   background-position-x: center;
-  background-position-y:center;
+  background-position-y:center; */
 }
 .NAME-PLAYERS{
-  margin-top: 3px;
-  margin-left: 50px;
+  font-size: 1rem;
   color: rgb(58, 44, 44);
 }
 .NUMBER-PLAYERS{
-  margin-top: 40px;
-  margin-left: 15px;
-  width: 30px;
-  height: 30px;
+  width: 1rem;
+  height: 1rem;
+  font-size: 1.2rem;
   color: rgb(58, 44, 44);
 }
 .PAIS-PLAYERS{
-  margin-top: auto;
-  margin-left: 15px;
-  width: 30px;
-  height: 30px;
+  width: 1.2rem;
+  height: 1.2rem;
   background-image: url(./images/argentina.png);
-  background-size: 30px 30px;
+  background-size: 1.2rem 1.2rem;
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y:center;
 }
 .CUP-PLAYERS{
-  margin-top: 15px;
-  margin-left: 15px;
-  width: 30px;
-  height:25px;
+  width: 1.2rem;
+  height: 1.2rem;
   background-image: url(./images/barcelona.png);
   border-radius: 1px;
-  background-size: 30px 25px;
+  background-size: 1.2rem 1.2rem;
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y:center;
