@@ -15,10 +15,10 @@ const Squads =() => {
     console.log(squad?.CAM?.acceleration)
     return (
         <div className="row">
-            <div className="col-2"></div>
-            <div className="col-8">
-                <div className="field">
-                    <div className="container mt-0">
+            {/* <div className="col-2"></div>
+            <div className="col-8"> */}
+               <div className="field">
+                    <div className="container">
                         <div className="row">
                             <div className="col"></div>
                             <div className="col"></div>
@@ -131,9 +131,8 @@ const Squads =() => {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="col-2"></div>
-
+            {/* </div> */}
+            {/* <div className="col-2"></div> */}
         </div>
     )
 }
