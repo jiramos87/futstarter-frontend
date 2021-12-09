@@ -21,12 +21,12 @@ export const SidebarData = [
         icon: <RiIcons.RiTeamFill />,
         cName: 'nav-text'
     },
-    // {
-    //     title: 'Meta Players',
-    //     path: '/players',
-    //     icon: <IoIcons.IoMdPeople />,
-    //     cName: 'nav-text'
-    // },
+    {
+        title: 'Meta Players',
+        path: '/players',
+        icon: <IoIcons.IoMdPeople />,
+        cName: 'nav-text'
+    },
     // {
     //     title: 'Starting Guide',
     //     path: '/guide',
