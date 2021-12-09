@@ -21,11 +21,13 @@ const injectContext = PassedComponent => {
 			})
 		);
 
-		// useEffect(() => {
+		useEffect(() => {
 			
-		// 	state.actions.searchPLPlayers()
+			// state.actions.getSquads()  this is the real deal
+			state.actions.getHardCodedSquad()  //only for developing without backend
+			state.actions.getHardCodedPlayerList() //only for developing without backend
 
-		// }, []);
+		}, []);
 
 
 

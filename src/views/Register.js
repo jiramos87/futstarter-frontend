@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { Context } from '../store/AppContext'
 
 
@@ -28,7 +29,7 @@ const Register = () => {
     }
     
     return (
-        <div className="container">
+        <div className="container text-white">
             <div className="row">
                 <div className="col-md-6 mt-5 mx-auto">
                     <form noValidate onSubmit={onSubmit}>
@@ -47,6 +48,9 @@ const Register = () => {
                         </div>
                         <button type="submit" className="btn btn-lg btn-primary btn-block"> Register</button>
                     </form>
+                    <Link to='/'>
+                        <a href="#">Already have an account?</a>
+                    </Link>
                 </div>
             </div>
         </div>
