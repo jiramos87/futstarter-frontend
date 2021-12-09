@@ -40,12 +40,12 @@ input {
   background-color: rgb(85, 85, 85) !important;
 }
 
-.card-1 {
+.card-1body {
   background-image: url(./images/goldcard3.png);
   background-repeat:no-repeat;
-  z-index: -1;
   width: 210px;
   height: 230px;
+  
 }
 .FACE-PLAYERS{
   width: 130px;
@@ -123,4 +123,71 @@ input {
 .stat-details{
   margin-right: -8px;
   margin-left: -8px;
+}
+.card-body-details{
+  width: 300px;
+  height: 200px;
+}
+.container-meta-player{
+  margin-top: 50px;
+  margin-left: 10px;
+  width: 1000px;
+  height: 100px;
+  border-color: black;
+  border:1px solid;
+}
+.Face-Player{
+  background-image: url(./images/Carajugador.png);
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  width: 99px;
+  height: 99px;
+  margin: -2px;
+  margin-left: 15px;
+}
+.Player-country{
+  background-image: url(./images/argentina.png);
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  margin-left: 20px;
+}
+.Leage-Img{
+  background-image: url(./images/barcelona.png);
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  margin-left: 35px;
+}
+.Valoracion{
+  justify-content: end;
+  background-color: black;
+  width: 70px;
+  height: 70px;
+  margin-left: 50px;
+  margin-top: 15px;
+}
+.Segunda-lista{
+  margin: 10px 10px 10px 10px;
+}
+.Tercera-lista{
+  margin: 10px 10px 10px 10px;
+}
+.container-meta-player2{
+  margin-top: 7px;
+  margin-left: -1px;
+  width: 1000px;
+  height: 100px;
+  border-color: black;
+  border:1px solid;
+}
+.container-meta-player3{
+  margin-top: 7px;
+  margin-left: -1px;
+  width: 1000px;
+  height: 100px;
+  border-color: black;
+  border:1px solid;
 }

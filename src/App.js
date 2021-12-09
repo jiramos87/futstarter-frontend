@@ -20,6 +20,7 @@ import PlayerCard from './components/PlayerCard'
 import PlayerDetails from './views/PlayerDetails'
 
 
+
 const App = () => {
   const basename = process.env.BASENAME || "";
   return (
