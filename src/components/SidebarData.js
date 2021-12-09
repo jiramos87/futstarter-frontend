@@ -63,7 +63,7 @@ export const SidebarData = [
         icon: <GoIcons.GoSignIn />,
         cName: 'nav-text'
     },
-        {
+    {
         title: 'Register',
         path: '/register',
         icon: <MdIcons.MdAccountBox />,

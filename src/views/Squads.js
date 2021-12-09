@@ -24,9 +24,9 @@ const Squads = () => {
                                 <div className="col"></div>
                                 <div className="col"></div>
                                 <div className="col"></div>
-                                <div className="col playercard LST"><PlayerCard player={squad.lst}/></div> 
+                                <div className="col playercard LST"><PlayerCard player={squad.lst}/><span>LST</span></div> 
                                 <div className="col CST"></div>
-                                <div className="col playercard RST"><PlayerCard player={squad.rst}/></div>
+                                <div className="col playercard RST"><PlayerCard player={squad.rst}/><span>RST</span></div>
                                 <div className="col"></div>
                                 <div className="col"></div>
                                 <div className="col"></div>
@@ -151,7 +151,6 @@ const Squads = () => {
                         <button className="btn btn-primary border border-warning" onClick={() => setSquad(actions.getHardCodedSquad())}>LaLiga</button>
                     </div> 
                 </div>
-
             </div>
         
     )
