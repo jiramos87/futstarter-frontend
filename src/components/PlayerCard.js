@@ -1,27 +1,20 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { Context } from '../store/AppContext'
 // import './index.css';
+const PlayerCard = (props) => {
 
-function PlayerCard(props) {
+    console.log('playercard props: ', props.player)
     
-    const { store, actions } = useContext(Context)
-    // const [ player, setPlayer] = useState([])
-    // useEffect( () =>{
-    //     setPlayer(props.player)
-    // }, [])
-    console.log(props.player.resource_id)
     
     return (
         <div className="card-1">
             <div className="card-top">
                 <div className="informacion">
                     <h3 className="NUMBER-PLAYERS">{props.player.rating}</h3>
-                    <div className="PAIS-PLAYERS" alt="" ></div>
-                    <div className="CUP-PLAYERS" alt="">
-                            
-                    </div>  
+                    <img className="nation" src={`http://localhost:5000/api/v1/static/images/nations/${props.player.nation}.png`}/>
+                    <img className="club" src={`http://localhost:5000/api/v1/static/images/clubs/${props.player.club}.png`}/>
                 </div>
-                <div className="FACE-PLAYERS" alt="" >{/* { } <img src={props.player.face_image}/> */}</div>
+                <img className="face" src={`http://localhost:5000/api/v1/static/images/faces/${props.player.global_id}.png`}/>
                 
             </div>
             <div className="card-bottom">

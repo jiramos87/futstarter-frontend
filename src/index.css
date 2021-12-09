@@ -84,9 +84,11 @@ input {
   height: 100%;
 }
 
-.FACE-PLAYERS{
-  width: 100%;
+.face{
+  position: relative;
+  width: 85%;
   height: 100%;
+  top: 0.2rem;
   
   /* background-image: url(./images/Carajugador.png);
   background-size: 130px 135px;
@@ -94,36 +96,31 @@ input {
   background-position-x: center;
   background-position-y:center; */
 }
+
 .NAME-PLAYERS{
   font-size: 1rem;
   color: rgb(58, 44, 44);
 }
+
 .NUMBER-PLAYERS{
   width: 1rem;
   height: 1rem;
   font-size: 1.2rem;
   color: rgb(58, 44, 44);
 }
-.PAIS-PLAYERS{
-  width: 1.2rem;
-  height: 1.2rem;
-  background-image: url(./images/argentina.png);
-  background-size: 1.2rem 1.2rem;
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y:center;
-}
-.CUP-PLAYERS{
-  width: 1.2rem;
-  height: 1.2rem;
-  background-image: url(./images/barcelona.png);
-  border-radius: 1px;
-  background-size: 1.2rem 1.2rem;
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y:center;
 
+.nation{
+  width: 1.2rem;
+  height: 0.9rem;
+  margin-bottom: 0.1rem;
 }
+
+.club{
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+
 .face-details{
   background-image: url();
   background-size: 150px 150px;

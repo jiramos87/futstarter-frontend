@@ -33,6 +33,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             raritiesCount: [],   
             raritiesCountTotal: [],
             totalRaritiesPages: [],
+            currentUser: null,
             user: {},
             token: '',
             registerFormData: {
@@ -46,7 +47,10 @@ const getState = ({ getStore, getActions, setStore }) => {
             },
             error: false,
             plSquad: {},
-            squad: {},
+            l1Squad: {},
+            blSquad: {},
+            saSquad: {},
+            llSquad: {},
             face: ''
 
 
@@ -61,17 +65,43 @@ const getState = ({ getStore, getActions, setStore }) => {
             loginUser: async (user) => {
                 const us = await loginUserAPI(user).then((data) => {
                     console.log(data)
-                    setStore({...getStore, token: data.token})
+                    setStore({...getStore, currentUser: data})
+                    //await getActions.getUser(data.token)
                     //localStorage.setItem("jwt-token", data.token);
                  })
+                
+            },
+            // getUser: async (token) => {
+
+            // },
+            getSquads: async () => {
+                const pl = await getSquadByLeagueAPI(13).then((data) => {
+                    console.log(data)
+                    setStore({...getStore, plSquad: data})
+                })
+                const l1 = await getSquadByLeagueAPI(16).then((data) => {
+                    console.log(data)
+                    setStore({...getStore, l1Squad: data})
+                })
+                const bl = await getSquadByLeagueAPI(19).then((data) => {
+                    console.log(data)
+                    setStore({...getStore, blSquad: data})
+                })
+                const sa = await getSquadByLeagueAPI(31).then((data) => {
+                    console.log(data)
+                    setStore({...getStore, saSquad: data})
+                })
+                const ll = await getSquadByLeagueAPI(53).then((data) => {
+                    console.log(data)
+                    setStore({...getStore, llSquad: data})
+                })
             },
             getSquadByLeague: async (league) => {
                 const squad = await getSquadByLeagueAPI(league).then((data) => {
-                    console.log(data)
-                    setStore({...getStore, squad: squad})
-                })
+                    setStore({...getStore, plSquad: data})
+                })   
             },
-            getSquad: () => {
+            getHardCodedSquad: () => {
                 return ({
                     lst: {
                     id: 99,
