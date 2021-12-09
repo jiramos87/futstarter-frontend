@@ -4,31 +4,36 @@ body {
 }
 
 .field {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* align-content: stretch; */
+    flex-wrap: nowrap;
+    min-height: 95vh;
+    padding-top: 5.5em;
     background-image: url('http://localhost:3000/fieldgreybackground.jpg');
     background-repeat: no-repeat;
     background-position: center 4.1em;
     background-attachment: fixed;
-    background-size: 96vw 80vh; 
-    /* min-height: 100vh; */
+    background-size: 80vh 80vh; 
+    
+    width: 85vh;
 }
-
+/* 
 .container {
     color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    /* align-content: center; */
-    /* align-items: center; */
+    justify-content: space-around;
+    align-items: center; 
     flex-wrap: nowrap;
-    padding: 0;
-    padding-top: 5em;
-    /* size: 1vh 11vh; 
-    background-size: 10vh 10vh; 
-    min-height: 95vh; */
+    min-height: 95vh;
+    padding-top: 4em;
 }
-
-/* .container:nth-child {
+ */
+.container:nth-child {
     display: inline-block;
 } */
 
@@ -37,11 +42,10 @@ body {
 }
 
 .playercard {
-    /* float: left; */
-    /* overflow: visible; */
-    background-image: url('http://localhost:3000/playercard.png');
-    background-repeat: no-repeat;
-    background-size: contain;
+    float: left;
+    overflow: visible;
+    /* background-image: url('http://localhost:3000/playercard.png');
+    background-repeat: no-repeat; */
     margin: 0;
     padding: 0;
     width: 30vw;
