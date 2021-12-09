@@ -1,10 +1,30 @@
-import React from "react"
+import React, { useContext } from "react"
+import Login from "./Login"
+import { Context } from "../store/AppContext"
+import { Link } from "react-router-dom"
 // import Popular from "./Popular"
 
-function Home() {
+const Home = () => {
+    const { store, actions } = useContext(Context)
     return (
-        <div className='home'>
-            <h1>Home</h1>
+        <div className='row mt-5 pt-5 text-white'>
+            
+            {store.currentUser  === null ? 
+                <div className="d-flex flex-column align-items-center">
+                    <div className="display-3">
+                        Welcome back to Futstarter
+                    </div>
+                    <Login />
+                    
+                    <Link to='register'>
+                        <a href="#">Don't have an account?</a>
+                    </Link>
+                </div>
+                :
+                <div> Welcome</div>
+            }
+
+
         </div>
     )
 }
@@ -12,21 +32,3 @@ function Home() {
 export default Home
 
 
-/* const Home = () => {
-    return (
-        <div className="text-white mx-3 overflow-scroll">
-            <div id="home">
-                <div className="display-3 my-4 py-5">FUTBIN</div>
-            </div>
-
-            
-            <div className="display-5 text-start py-2 mt-5 ms-4 mb-3">Popular</div>
-            <Popular />
-            
-            
-
-        </div>
-    )
-}
-
-export default Home */

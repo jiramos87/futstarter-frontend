@@ -15,18 +15,25 @@ function Sidebar() {
     return (
         <>
         <IconContext.Provider value={{color: '#C2ED63'}}>
-            <div className="sidebar">
+            <div className="fixed-top sidebar">
                 <Link to="#" className='menu-bars'>
                     <FaIcons.FaBars onClick={showSidebar} />
                 </Link>
+                
             </div>
+            
+            
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+                 
                 <ul className='nav-menu-items' onClick={showSidebar}>
-                    <li className="sidebar-toogle">
+                    
+                    <li className="sidebar-toogle d-flex flex-row text-white">
                         <Link to="#" className='menu-bars'>
                             <AiIcons.AiOutlineClose />
                         </Link>
+                        <h2>Hello, User</h2>
                     </li>
+
                     {SidebarData.map((item, index) => {
                         return (
                             <li key={index} className={item.cName}>
