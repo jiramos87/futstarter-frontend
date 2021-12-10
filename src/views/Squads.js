@@ -2,13 +2,12 @@ import React, { useContext, useState, useEffect } from 'react'
 import { Context } from '../store/AppContext'
 import PlayerCard from '../components/PlayerCard';
 import './Squads.css';
-import { Link } from 'react-router-dom';
 
 const Squads = () => {
     
     const { store, actions } = useContext(Context)
-    // const [ squad, setSquad ] = useState(store.l1Squad)   //this is the real deal
-    const [ squad, setSquad ] = useState(actions.getHardCodedSquad())   // this is only for developing whithout backend
+    const [ squad, setSquad ] = useState(store.l1Squad)   //this is the real deal
+    // const [ squad, setSquad ] = useState(actions.getHardCodedSquad())   // this is only for developing whithout backend
     console.log('squad.lst :', squad.lst)
     
  
@@ -133,7 +132,7 @@ const Squads = () => {
                         
                     </div>
                 </div>
-                {/* <div className="col-2">
+                <div className="col-2">
                     <div className="mt-5 pt-5 d-flex flex-column justify-content-start">
                         <button className="btn btn-primary border border-warning" onClick={() => setSquad(store.plSquad)}>Premier league</button>
                         <button className="btn btn-primary border border-warning" onClick={() => setSquad(store.l1Squad)}>Ligue 1</button>
@@ -141,8 +140,8 @@ const Squads = () => {
                         <button className="btn btn-primary border border-warning" onClick={() => setSquad(store.saSquad)}>Serie A</button>
                         <button className="btn btn-primary border border-warning" onClick={() => setSquad(store.llSquad)}>LaLiga</button>
                     </div> 
-                </div> */}
-                <div className="col-2">
+                </div>
+                {/* <div className="col-2">
                     <div className="mt-5 pt-5 d-flex flex-column justify-content-start">
                         <button className="btn btn-primary border border-warning" onClick={() => setSquad(actions.getHardCodedSquad())}>Premier league</button>
                         <button className="btn btn-primary border border-warning" onClick={() => setSquad(actions.getHardCodedSquad())}>Ligue 1</button>
@@ -150,7 +149,7 @@ const Squads = () => {
                         <button className="btn btn-primary border border-warning" onClick={() => setSquad(actions.getHardCodedSquad())}>Serie A</button>
                         <button className="btn btn-primary border border-warning" onClick={() => setSquad(actions.getHardCodedSquad())}>LaLiga</button>
                     </div> 
-                </div>
+                </div> */}
 
             </div>
         

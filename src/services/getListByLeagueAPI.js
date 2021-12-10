@@ -1,9 +1,10 @@
 const env = process.env.NODE_ENV || 'development'
 const baseUrl = env === 'development' ? 'http://localhost:5000' : 'http://herokuasdf.com'
 
-const getSquadByLeagueAPI = async (league) => {
+const getListByLeagueAPI = async (league, position) => {
     try{
-        let call = await fetch(`${baseUrl}/api/v1/squads/leagues/${league}`, {
+        console.log(league, position)
+        let call = await fetch(`${baseUrl}/api/v1/players/leagues/${league}/${position}`, {
             method: 'GET'
           })
           
@@ -14,4 +15,4 @@ const getSquadByLeagueAPI = async (league) => {
 
 }
 
-export default getSquadByLeagueAPI
+export default getListByLeagueAPI

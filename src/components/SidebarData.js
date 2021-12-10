@@ -37,12 +37,6 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {
-        title: 'Player Card',
-        path: '/playercard',
-        icon: <FaIcons.FaCartPlus />,
-        cName: 'nav-text'
-    },
-    {
         title: 'PlayerDetails',
         path: '/PlayerDetails',
         icon: <IoIcons.IoIosPaper />,

@@ -1,11 +1,11 @@
 import PlayerCard from "../components/PlayerCard" 
 
-const PlayerDetails = () => {
+const PlayerDetails = (props) => {
     return(
         <div className="container-details">
              <div className="details-body">
                 {/* <!-- /Breadcrumb --> */}
-                <PlayerCard/>
+                <PlayerCard player={props.player}/>
                 <div className="row stat-details">
                 <div className="col-sm-6 mb-3">
                     <div className="card h-100">
@@ -13,7 +13,7 @@ const PlayerDetails = () => {
                         <h6 className="d-flex align-items-center mb-3"><i className="material-icons text-info mr-2">assignment</i>Project Status</h6>
                         <small>acceleration</small>
                         <div className="progress mb-3">
-                        <div className="progress-bar bg-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div className="progress-bar bg-primary" role="progressbar" aria-valuenow={props.player.acceleration} aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                         <small>Sprint Speed</small>
                         <div className="progress mb-3">
