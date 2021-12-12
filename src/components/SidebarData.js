@@ -2,7 +2,10 @@ import React from 'react'
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
-
+import * as GoIcons from "react-icons/go";
+import * as BsIcons from "react-icons/bs";
+import * as RiIcons from "react-icons/ri";
+import * as MdIcons from "react-icons/md";
 
 export const SidebarData = [
 
@@ -15,7 +18,7 @@ export const SidebarData = [
     {
         title: 'Meta Squads',
         path: '/squads',
-        icon: <AiIcons.AiFillHome />,
+        icon: <RiIcons.RiTeamFill />,
         cName: 'nav-text'
     },
     {
@@ -24,42 +27,40 @@ export const SidebarData = [
         icon: <IoIcons.IoMdPeople />,
         cName: 'nav-text'
     },
-    {
-        title: 'Starting Guide',
-        path: '/guide',
-        icon: <IoIcons.IoIosPaper />,
-        cName: 'nav-text'
-    },
-    {
-        title: 'Stats Guide',
-        path: '/stats',
-        icon: <FaIcons.FaCartPlus />,
-        cName: 'nav-text'
-    },
+    // {
+    //     title: 'Starting Guide',
+    //     path: '/guide',
+    //     icon: <IoIcons.IoIosPaper />,
+    //     cName: 'nav-text'
+    // },
+    // {
+    //     title: 'Stats Guide',
+    //     path: '/stats',
+    //     icon: <FaIcons.FaCartPlus />,
+    //     cName: 'nav-text'
+    // },
     {
         title: 'PlayerDetails',
         path: '/PlayerDetails',
-        icon: <IoIcons.IoIosPaper />,
+        icon: <BsIcons.BsPersonLinesFill />,
         cName: 'nav-text'
     },
-
-
-    {
-        title: 'Tips & Tricks',
-        path: '/tips',
-        icon: <FaIcons.FaEnvelopeOpenText />,
-        cName: 'nav-text'
-    },
+    // {
+    //     title: 'Tips & Tricks',
+    //     path: '/tips',
+    //     icon: <FaIcons.FaEnvelopeOpenText />,
+    //     cName: 'nav-text'
+    // },
     {
         title: 'Login',
         path: '/login',
-        icon: <FaIcons.FaEnvelopeOpenText />,
+        icon: <GoIcons.GoSignIn />,
         cName: 'nav-text'
     },
-        {
+    {
         title: 'Register',
         path: '/register',
-        icon: <FaIcons.FaEnvelopeOpenText />,
+        icon: <MdIcons.MdAccountBox />,
         cName: 'nav-text'
     },
 ]

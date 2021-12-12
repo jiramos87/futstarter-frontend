@@ -10,7 +10,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         store: {
             currentUser: null,
             user: {},
-            token: '',
             registerFormData: {
                 username: '',
                 email: '',
@@ -36,19 +35,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         },
         actions: {
-            registerUser: async (loginFormData) => {
-                const us = await registerUserAPI(loginFormData).then((data) => {
+            registerUser: async (registerFormData) => {
+                const us = await registerUserAPI(registerFormData).then((data) => {
                     console.log(data)
-                    setStore({...getStore, currentUser: data})      
+                    setStore({...getStore, currentUser: data.user[0]})   
+                    localStorage.setItem("jwt-token", data.token);   
                     //history.push('/')
                 })
             },
-            loginUser: async (registerFormData) => {
-                const us = await loginUserAPI(registerFormData).then((data) => {
-                    console.log(data)
-                    setStore({...getStore, currentUser: data})
+            loginUser: async (loginFormData) => {
+                const us = await loginUserAPI(loginFormData).then((data) => {
+                    console.log('data en login flux', data)
+                    setStore({...getStore, currentUser: data.user[0]})
                     //await getActions.getUser(data.token)
-                    //localStorage.setItem("jwt-token", data.token);
+                    localStorage.setItem("jwt-token", data.token);
                  })
             },
             // getUser: async (token) => {

@@ -1,0 +1,44 @@
+
+.background{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* align-content: stretch; */
+    flex-wrap: nowrap;
+    min-height: 95vh;
+    padding-top: 5.5em;
+    background-image: url('http://localhost:3000/ronaldino.jpg');
+    background-repeat: no-repeat;
+    background-position: center 4.1em;
+    background-attachment: fixed;
+    /* background-size: 80vh 80vh; 
+    width: 85vh */
+}
+
+.btn {
+    color: #fff;
+    background-color: #C2ED63;
+}
+
+span {
+    color: #C4C4C4;
+
+}
+
+a {
+    color: #C2ED63;
+}
+
+.nav-text a {
+    text-decoration: none;
+    color: #56657F;
+    font-size: 1em;
+    width: 85%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 1em;
+    border-radius: 5px;
+}

@@ -2,7 +2,7 @@ const env = process.env.NODE_ENV || 'development'
 const baseUrl = env === 'development' ? 'http://localhost:5000' : 'http://herokuasdf.com'
 
 const loginUserAPI = async (loginFormData) => {
-    console.log(loginFormData)
+    console.log('loginFormData', loginFormData)
     const body = JSON.stringify(loginFormData) 
     try{
         let call = await fetch(`${baseUrl}/api/v1/auth/login`, {

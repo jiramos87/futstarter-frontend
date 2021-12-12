@@ -7,24 +7,22 @@ import { Link } from "react-router-dom"
 const Home = () => {
     const { store, actions } = useContext(Context)
     return (
-        <div className='row mt-5 pt-5 text-white'>
-            
-            {store.currentUser  === null ? 
-                <div className="d-flex flex-column align-items-center">
-                    <div className="display-3">
-                        Welcome back to Futstarter
+        <div className="background">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-6 mt-5 mx-auto">
+                        {store.currentUser  === null ? 
+                            <div className="d-flex flex-column">
+                                
+                                <Login />
+                                
+                            </div>
+                            :
+                            <div className="display-2"> Welcome, {store.currentUser?.username}</div>
+                        }
                     </div>
-                    <Login />
-                    
-                    <Link to='register'>
-                        <a href="#">Don't have an account?</a>
-                    </Link>
                 </div>
-                :
-                <div> Welcome</div>
-            }
-
-
+            </div>
         </div>
     )
 }

@@ -12,7 +12,7 @@ const Squads = () => {
     
  
     return (
-        <div className="row mt-5 pt-5"> 
+        <div className="row"> 
                 <div className="col-2">
                     
                 </div>
@@ -23,9 +23,9 @@ const Squads = () => {
                                 <div className="col"></div>
                                 <div className="col"></div>
                                 <div className="col"></div>
-                                <div className="col playercard LST"><PlayerCard player={squad.lst}/></div> 
+                                <div className="col playercard LST"><PlayerCard player={squad.lst}/><span>LST</span></div> 
                                 <div className="col CST"></div>
-                                <div className="col playercard RST"><PlayerCard player={squad.rst}/></div>
+                                <div className="col playercard RST"><PlayerCard player={squad.rst}/><span>RST</span></div>
                                 <div className="col"></div>
                                 <div className="col"></div>
                                 <div className="col"></div>
@@ -152,7 +152,6 @@ const Squads = () => {
                 </div> */}
 
             </div>
-        
     )
 }
 

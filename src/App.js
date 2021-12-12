@@ -20,6 +20,7 @@ import PlayerCard from './components/PlayerCard'
 import PlayerDetails from './views/PlayerDetails'
 
 
+
 const App = () => {
   const basename = process.env.BASENAME || "";
   return (
@@ -29,8 +30,11 @@ const App = () => {
         <Route exact path="/">
           <Home />
         </Route>
+        <Route exact path="/home">
+          <Home />
+        </Route>
         <Route exact path="/squads">
-          <Squads league={13}/>
+          <Squads />
         </Route>
         <Route exact path="/playercard">
           <PlayerCard />
@@ -44,6 +48,9 @@ const App = () => {
         <Route exact path="/login">
           <Login />
         </Route>
+        <Route exact path="/register">
+          <Register />
+        </Route>
         <Route exact path="/form">
           <Form />
         </Route>
@@ -53,9 +60,7 @@ const App = () => {
         <Route exact path="/userconfig">
           <UserConfig />
         </Route>
-        <Route exact path="/register">
-          <Register />
-        </Route>
+        
       </Switch>
     </Router >
   );
