@@ -21,7 +21,6 @@ function LeaguesNavigation() {
     list.forEach((item) =>
     item.addEventListener('click', activeLink));
 
-
     return (
         <div>
             <div className="navigation">
@@ -59,18 +58,10 @@ function LeaguesNavigation() {
                     <div className="indicator"></div>
                 </ul>
             </div>
-            
-            {/* <div className="col-2">
-                <div className="mt-5 pt-5 d-flex flex-column justify-content-start">
-                    <button className="btn btn-primary border border-warning" onClick={() => setSquad(actions.getHardCodedSquad())}>Premier league</button>
-                    <button className="btn btn-primary border border-warning" onClick={() => setSquad(actions.getHardCodedSquad())}>Ligue 1</button>
-                    <button className="btn btn-primary border border-warning" onClick={() => setSquad(actions.getHardCodedSquad())}>Bundesliga</button>
-                    <button className="btn btn-primary border border-warning" onClick={() => setSquad(actions.getHardCodedSquad())}>Serie A</button>
-                    <button className="btn btn-primary border border-warning" onClick={() => setSquad(actions.getHardCodedSquad())}>LaLiga</button>
-                </div> 
-            </div> */}
         </div>
     )
 }
+
+
 
 export default LeaguesNavigation;
