@@ -4,7 +4,7 @@ import { Context } from '../store/AppContext'
 const PlayerCard = (props) => {
 
     console.log('playercard props: ', props.player)
-    
+        
     
     return (
         <div className="card-1">

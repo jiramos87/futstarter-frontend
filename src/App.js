@@ -20,6 +20,7 @@ import PlayerDetails from './views/PlayerDetails'
 import LeaguesNavigation from './components/LeaguesNavigation'
 
 
+
 const App = () => {
   const basename = process.env.BASENAME || "";
   return (
