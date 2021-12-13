@@ -39,7 +39,8 @@ const getState = ({ getStore, getActions, setStore }) => {
                 const us = await registerUserAPI(registerFormData).then((data) => {
                     console.log(data)
                     setStore({...getStore, currentUser: data.user[0]})   
-                    localStorage.setItem("jwt-token", data.token);   
+                    localStorage.setItem("jwt-token", data.token);
+                    //localStorage.setItem("currentUser", data.user[0]);   
                     //history.push('/')
                 })
             },
