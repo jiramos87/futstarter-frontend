@@ -14,12 +14,11 @@ const Squads = () => {
  
     return (
         <div className="row mt-5 pt-5"> 
-                <div className="col-2">
-                    
-                </div>
+            <div className="col-2">
+                
+            </div>
                 <div className="col-8 d-flex align-items-center justify-content-center px-0 mx-0">
-                    
-                        <div className="container field mt-0">
+                    <div className="container field mt-0">
                             <div className="row">
                                 <div className="col"></div>
                                 <div className="col"></div>
@@ -133,26 +132,25 @@ const Squads = () => {
                         
                     </div>
                 </div>
-                {/* <div className="col-2">
-                    <div className="mt-5 pt-5 d-flex flex-column justify-content-start">
-                        <button className="btn btn-primary border border-warning" onClick={() => setSquad(store.plSquad)}>Premier league</button>
-                        <button className="btn btn-primary border border-warning" onClick={() => setSquad(store.l1Squad)}>Ligue 1</button>
-                        <button className="btn btn-primary border border-warning" onClick={() => setSquad(store.blSquad)}>Bundesliga</button>
-                        <button className="btn btn-primary border border-warning" onClick={() => setSquad(store.saSquad)}>Serie A</button>
-                        <button className="btn btn-primary border border-warning" onClick={() => setSquad(store.llSquad)}>LaLiga</button>
-                    </div> 
-                </div> */}
-                <div className="col-2">
-                    <div className="mt-5 pt-5 d-flex flex-column justify-content-start">
-                        <button className="btn btn-primary border border-warning" onClick={() => setSquad(actions.getHardCodedSquad())}>Premier league</button>
-                        <button className="btn btn-primary border border-warning" onClick={() => setSquad(actions.getHardCodedSquad())}>Ligue 1</button>
-                        <button className="btn btn-primary border border-warning" onClick={() => setSquad(actions.getHardCodedSquad())}>Bundesliga</button>
-                        <button className="btn btn-primary border border-warning" onClick={() => setSquad(actions.getHardCodedSquad())}>Serie A</button>
-                        <button className="btn btn-primary border border-warning" onClick={() => setSquad(actions.getHardCodedSquad())}>LaLiga</button>
-                    </div> 
-                </div>
+            {/* <div className="col-2">
+                <div className="mt-5 pt-5 d-flex flex-column justify-content-start">
+                    <button className="btn btn-primary border border-warning" onClick={() => setSquad(store.plSquad)}>Premier league</button>
+                    <button className="btn btn-primary border border-warning" onClick={() => setSquad(store.l1Squad)}>Ligue 1</button>
+                    <button className="btn btn-primary border border-warning" onClick={() => setSquad(store.blSquad)}>Bundesliga</button>
+                    <button className="btn btn-primary border border-warning" onClick={() => setSquad(store.saSquad)}>Serie A</button>
+                    <button className="btn btn-primary border border-warning" onClick={() => setSquad(store.llSquad)}>LaLiga</button>
+                </div> 
+            </div> */}
+            <div className="col-2">
+                <div className="mt-5 pt-5 d-flex flex-column justify-content-start">
+                    <button className="btn btn-primary border border-warning" onClick={() => setSquad(actions.getHardCodedSquad())}>Premier league</button>
+                    <button className="btn btn-primary border border-warning" onClick={() => setSquad(actions.getHardCodedSquad())}>Ligue 1</button>
+                    <button className="btn btn-primary border border-warning" onClick={() => setSquad(actions.getHardCodedSquad())}>Bundesliga</button>
+                    <button className="btn btn-primary border border-warning" onClick={() => setSquad(actions.getHardCodedSquad())}>Serie A</button>
+                    <button className="btn btn-primary border border-warning" onClick={() => setSquad(actions.getHardCodedSquad())}>LaLiga</button>
+                </div> 
             </div>
-        
+        </div>
     )
 }
 
