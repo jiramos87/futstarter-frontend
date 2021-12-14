@@ -1,10 +1,10 @@
 const env = process.env.NODE_ENV || 'development'
-const baseUrl = env === 'development' ? 'http://localhost:5000/' : 'http://herokuasdf.com/'
+const baseUrl = env === 'development' ? 'http://localhost:5000' : 'http://herokuasdf.com'
 
-const registerUserAPI = async (user) => {
-    const body = JSON.stringify(user) 
+const registerUserAPI = async (registerFormData) => {
+    const body = JSON.stringify(registerFormData) 
     try{
-        console.log(user)
+        console.log(registerFormData)
         let call = await fetch(`${baseUrl}/api/v1/auth/register`, {
             method: 'POST',
             headers: {

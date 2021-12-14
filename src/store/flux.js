@@ -1,41 +1,15 @@
 import registerUserAPI from "../services/registerUserAPI";
 import loginUserAPI from "../services/loginUserAPI";
 import getSquadByLeagueAPI from "../services/getSquadByLeagueAPI";
+import getListByLeagueAPI from "../services/getListByLeagueAPI";
+import { history } from "react-router-dom"
 
 const getState = ({ getStore, getActions, setStore }) => {
-    const backendUrl = 'http://192.168.1.11:5000'
-    const apiKey = '97c4dd2b-fe2e-4407-8ea3-f26435d6ce9b'
+    const backendUrl = 'http://localhost/5000'
     return {
         store: {
-            
-            pl_players: [],
-            playersPage: 1,
-            playersCount: [],   
-            playersCountTotal: [],
-            totalPlayerPages: [],
-            leagues: [],
-            leaguesPage: 1,
-            leaguesCount: [],   
-            leaguesCountTotal: [],
-            totalLeaguesPages: [],
-            clubs: [],
-            clubsPage: 1,
-            clubsCount: [],   
-            clubsCountTotal: [],
-            totalClubsPages: [],
-            nations: [],
-            nationsPage: 1,
-            nationsCount: [],   
-            nationsCountTotal: [],
-            totalNationsPages: [],
-            rarities: [],
-            raritiesPage: 1,
-            raritiesCount: [],   
-            raritiesCountTotal: [],
-            totalRaritiesPages: [],
             currentUser: null,
             user: {},
-            token: '',
             registerFormData: {
                 username: '',
                 email: '',
@@ -51,25 +25,32 @@ const getState = ({ getStore, getActions, setStore }) => {
             blSquad: {},
             saSquad: {},
             llSquad: {},
+            plList: [],
+            l1List: [],
+            blList: [],
+            saList: [],
+            llList: [],
             face: ''
 
 
         },
         actions: {
-            registerUser: async (user) => {
-                const us = await registerUserAPI(user).then((data) => {
+            registerUser: async (registerFormData) => {
+                const us = await registerUserAPI(registerFormData).then((data) => {
                     console.log(data)
-                    setStore({...getStore, user: us})  
+                    setStore({...getStore, currentUser: data.user[0]})   
+                    localStorage.setItem("jwt-token", data.token);
+                    //localStorage.setItem("currentUser", data.user[0]);   
+                    //history.push('/')
                 })
             },
-            loginUser: async (user) => {
-                const us = await loginUserAPI(user).then((data) => {
-                    console.log(data)
-                    setStore({...getStore, currentUser: data})
+            loginUser: async (loginFormData) => {
+                const us = await loginUserAPI(loginFormData).then((data) => {
+                    console.log('data en login flux', data)
+                    setStore({...getStore, currentUser: data.user[0]})
                     //await getActions.getUser(data.token)
-                    //localStorage.setItem("jwt-token", data.token);
+                    localStorage.setItem("jwt-token", data.token);
                  })
-                
             },
             // getUser: async (token) => {
 
@@ -94,6 +75,28 @@ const getState = ({ getStore, getActions, setStore }) => {
                 const ll = await getSquadByLeagueAPI(53).then((data) => {
                     console.log(data)
                     setStore({...getStore, llSquad: data})
+                })
+            },
+            getPlayerLists: async () => {
+                const pl_list = await getListByLeagueAPI(13, 'st').then((data) => {
+                    console.log(data)
+                    setStore({...getStore, plList: data})
+                })
+                const l1_list = await getListByLeagueAPI(16, 'st').then((data) => {
+                    console.log(data)
+                    setStore({...getStore, l1List: data})
+                })  
+                const bl_list = await getListByLeagueAPI(19, 'st').then((data) => {
+                    console.log(data)
+                    setStore({...getStore, blList: data})
+                })
+                const sa_list = await getListByLeagueAPI(31, 'st').then((data) => {
+                    console.log(data)
+                    setStore({...getStore, saList: data})
+                })
+                const ll_list = await getListByLeagueAPI(53, 'st').then((data) => {
+                    console.log(data)
+                    setStore({...getStore, llList: data})
                 })
             },
             getSquadByLeague: async (league) => {
@@ -1939,15 +1942,6 @@ const getState = ({ getStore, getActions, setStore }) => {
                     reflexes: 88
                     }
                     })
-            },
-            addToFavorites: (name, url) => {
-                let newObj = { name: name, url: url}
-                setStore({favorites: getStore().favorites.concat(newObj)})
-                console.log(getStore().favorites)
-            },
-            deleteFromFavorites: (name) => {
-                let newObj = getStore().favorites.filter( (fav) => fav.name !== name)
-                setStore({favorites: newObj})
             }
 
         }

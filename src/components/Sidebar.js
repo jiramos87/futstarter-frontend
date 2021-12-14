@@ -7,31 +7,37 @@ import { SidebarData } from './SidebarData';
 import './Sidebar.css';
 import { IconContext } from 'react-icons';
 
+
+
 function Sidebar() {
     const [ sidebar, setSidebar ] = useState(false);
+    const { store, actions } = useContext(Context)
     
     const showSidebar = () => setSidebar(!sidebar);
 
     return (
         <>
         <IconContext.Provider value={{color: '#C2ED63'}}>
-            <div className="fixed-top sidebar">
+            <div className="fixed-top sidebar d-flex flex-row justify-content-between">
                 <Link to="#" className='menu-bars'>
                     <FaIcons.FaBars onClick={showSidebar} />
+                </Link>
+                <Link to="/home">
+                    <div className="display-4 text-white">FUTSTARTER</div>
                 </Link>
                 
             </div>
             
             
-            <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+            <nav className={sidebar ? 'nav-menu active mt-5' : 'nav-menu mt-5' }>
                  
                 <ul className='nav-menu-items' onClick={showSidebar}>
                     
-                    <li className="sidebar-toogle d-flex flex-row text-white">
+                    <li className="sidebar-toggle d-flex flex-row text-white">
                         <Link to="#" className='menu-bars'>
                             <AiIcons.AiOutlineClose />
                         </Link>
-                        <h2>Hello, User</h2>
+                        <h2>Hello, {store.currentUser?.username}</h2>
                     </li>
 
                     {SidebarData.map((item, index) => {
@@ -52,57 +58,3 @@ function Sidebar() {
 }
 
 export default Sidebar
-
-
-
-
-// const Sidebar = () => {
-//     const { store, actions } = useContext(Context)
-//     return (
-//         <div id="sidebar" className="col-auto px-3 overflow-scroll collapse collapse-horizontal">
-
-            
-//                 <div id="sidebar-nav" className="list-group border-0 rounded-0 text-sm-start min-vh-100">
-//                     <ul className="navbar-nav">
-
-//                         <li className="nav-item my-3">
-//                             <Link className="nav-link text-white" to="/">HOME</Link>
-//                         </li>
-//                         <li>
-//                             <Link className="nav-link text-white" to="/players">PLAYERS</Link>
-//                         </li>
-//                         <li>
-//                             <Link className="nav-link text-white" to="/squads">SQUADS</Link>
-//                         </li>
-//                         <li>
-//                             <Link className="nav-link text-white" to="/userconfig">USER CONFIG</Link>
-//                         </li>
-//                     </ul>
-//                 </div>
-            
-
-//         </div>
-
-
-
-//     )
-// }
-
-// export default Sidebar
-
-
-
-                    // <ul className="navbar-nav">
-                    //             <li classNameName="nav-item my-3">
-                    //                 <Link classNameName="nav-link text-white" to="/">HOME</Link>
-                    //             </li>
-                    //             <li>
-                    //                 <Link classNameName="nav-link text-white" to="/players">PLAYERS</Link>
-                    //             </li>
-                    //             <li>
-                    //                 <Link classNameName="nav-link text-white" to="/squads">SQUADS</Link>
-                    //             </li>
-                    //             <li>
-                    //                 <Link classNameName="nav-link text-white" to="/userconfig">USER CONFIG</Link>
-                    //             </li>
-                    //         </ul>
