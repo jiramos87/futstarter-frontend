@@ -25,14 +25,109 @@ const getState = ({ getStore, getActions, setStore }) => {
             blSquad: {},
             saSquad: {},
             llSquad: {},
-            plList: [],
-            l1List: [],
-            blList: [],
-            saList: [],
-            llList: [],
-            face: ''
-
-
+            plListAttackers: [],
+            plListMidfielders: [],
+            plListDefenders: [],
+            l1ListAttackers: [],
+            l1ListMidfielders: [],
+            l1ListDefenders: [],
+            blListAttackers: [],
+            blListMidfielders: [],
+            blListDefenders: [],
+            saListAttackers: [],
+            saListMidfielders: [],
+            saListDefenders: [],
+            llListAttackers: [],
+            llListMidfielders: [],
+            llListDefenders: [],
+            face: '',
+            PlayerDetailsPlayer: {
+                id: 99,
+                global_id: 268,
+                rarity: 1,
+                common_name: "Ronaldo",
+                name: "Cristiano Ronaldo",
+                first_name: "C. Ronaldo",
+                last_name: "Cristiano Ronaldo",
+                rating: 91,
+                lw_meta_rating: 108.05,
+                lf_meta_rating: 102.53,
+                lm_meta_rating: 110.74,
+                lst_meta_rating: 116.68,
+                cst_meta_rating: 117.73,
+                rst_meta_rating: 120.68,
+                cf_meta_rating: 123.04,
+                rw_meta_rating: 105.05,
+                rf_meta_rating: 99.53,
+                rm_meta_rating: 107.74,
+                lcam_meta_rating: 103.96,
+                ccam_meta_rating: 105.57,
+                rcam_meta_rating: 103.92,
+                lcm_meta_rating: 79.89,
+                ccm_meta_rating: 81.76,
+                rcm_meta_rating: 79.91,
+                lcdm_meta_rating: 72.01,
+                ccdm_meta_rating: 72.01,
+                rcdm_meta_rating: 72.03,
+                lwb_meta_rating: 85.56,
+                lb_meta_rating: 70.04,
+                lcb_meta_rating: 69.29,
+                ccb_meta_rating: 69.29,
+                rcb_meta_rating: 69.33,
+                rwb_meta_rating: 85.6,
+                rb_meta_rating: 70.08,
+                gk_meta_rating: 27.75,
+                nation: 38,
+                league: 13,
+                club: 11,
+                position: "ST",
+                height: 187,
+                weight: 83,
+                attack_work_rate: "High",
+                defense_work_rate: "Low",
+                foot: "Right",
+                weak_foot: 4,
+                skill_moves: 5,
+                shooting: 93,
+                positioning: 95,
+                finishing: 95,
+                shot_power: 94,
+                long_shots: 93,
+                volleys: 86,
+                penalties: 84,
+                defending: 34,
+                heading_accuracy: 90,
+                interceptions: 29,
+                sliding_tackle: 24,
+                standing_tackle: 32,
+                dribbling_face: 88,
+                agility: 86,
+                balance: 74,
+                ball_control: 88,
+                composure: 95,
+                dribbling: 88,
+                reactions: 94,
+                pace: 87,
+                acceleration: 85,
+                sprint_speed: 88,
+                passing: 82,
+                crossing: 87,
+                curve: 81,
+                free_kick_accuracy: 84,
+                long_passing: 77,
+                short_passing: 80,
+                vision: 82,
+                physicality: 75,
+                aggression: 63,
+                stamina: 77,
+                jumping: 95,
+                strength: 77,
+                diving: 0,
+                handling: 0,
+                kicking: 0,
+                gk_positioning: 0,
+                reflexes: 0
+                }
         },
         actions: {
             registerUser: async (registerFormData) => {
@@ -78,31 +173,61 @@ const getState = ({ getStore, getActions, setStore }) => {
                 })
             },
             getPlayerLists: async () => {
-                const pl_list = await getListByLeagueAPI(13, 'st').then((data) => {
-                    console.log(data)
-                    setStore({...getStore, plList: data})
+                const pl_list_attackers = await getListByLeagueAPI(13, 'cst').then((data) => {
+                    setStore({...getStore, plListAttackers: data})
                 })
-                const l1_list = await getListByLeagueAPI(16, 'st').then((data) => {
-                    console.log(data)
-                    setStore({...getStore, l1List: data})
-                })  
-                const bl_list = await getListByLeagueAPI(19, 'st').then((data) => {
-                    console.log(data)
-                    setStore({...getStore, blList: data})
+                const pl_list_midfielders = await getListByLeagueAPI(13, 'ccm').then((data) => {
+                    setStore({...getStore, plListMidfielders: data})
                 })
-                const sa_list = await getListByLeagueAPI(31, 'st').then((data) => {
-                    console.log(data)
-                    setStore({...getStore, saList: data})
+                const pl_list_defenders = await getListByLeagueAPI(13, 'ccb').then((data) => {
+                    setStore({...getStore, plListDefenders: data})
                 })
-                const ll_list = await getListByLeagueAPI(53, 'st').then((data) => {
-                    console.log(data)
-                    setStore({...getStore, llList: data})
+                const l1_list_attackers = await getListByLeagueAPI(16, 'cst').then((data) => {
+                    setStore({...getStore, l1ListAttackers: data})
+                }) 
+                const l1_list_midfielders = await getListByLeagueAPI(16, 'ccm').then((data) => {
+                    setStore({...getStore, l1ListMidfielders: data})
+                }) 
+                const l1_list_defenders = await getListByLeagueAPI(16, 'ccb').then((data) => {
+                    setStore({...getStore, l1ListDefenders: data})
+                }) 
+                const bl_list_attackers = await getListByLeagueAPI(19, 'cst').then((data) => {
+                    setStore({...getStore, blListAttackers: data})
+                })
+                const bl_list_midfielders = await getListByLeagueAPI(19, 'ccm').then((data) => {
+                    setStore({...getStore, blListMidfielders: data})
+                })
+                const bl_list_defenders = await getListByLeagueAPI(19, 'ccb').then((data) => {
+                    setStore({...getStore, blListDefenders: data})
+                })
+                const sa_list_attackers = await getListByLeagueAPI(31, 'cst').then((data) => {
+                    setStore({...getStore, saListAttackers: data})
+                })
+                const sa_list_midfielders = await getListByLeagueAPI(31, 'ccm').then((data) => {
+                    setStore({...getStore, saListMidfielders: data})
+                })
+                const sa_list_defenders = await getListByLeagueAPI(31, 'ccb').then((data) => {
+                    setStore({...getStore, saListDefenders: data})
+                })
+                const ll_list_attackers = await getListByLeagueAPI(53, 'cst').then((data) => {
+                    setStore({...getStore, llListAttackers: data})
+                })
+                const ll_list_midfielders = await getListByLeagueAPI(53, 'ccm').then((data) => {
+                    setStore({...getStore, llListMidfielders: data})
+                })
+                const ll_list_defenders = await getListByLeagueAPI(53, 'ccb').then((data) => {
+                    setStore({...getStore, llListDefenders: data})
                 })
             },
             getSquadByLeague: async (league) => {
                 const squad = await getSquadByLeagueAPI(league).then((data) => {
                     setStore({...getStore, plSquad: data})
                 })   
+            },
+            setPlayerDetailsPlayer: (player) => { 
+                console.log('player sent to flux:', player)
+                setStore({...getStore, PlayerDetailsPlayer: player})
+                console.log(getStore.PlayerDetailsPlayer)
             },
             getHardCodedPlayerList: () => {
                 return({

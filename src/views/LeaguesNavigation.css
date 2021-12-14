@@ -16,7 +16,7 @@
     display: flex;
     justify-content: center;
     align-items: top;
-    min-height: 37vh;
+    min-height: 30vh;
     background: var(--clr);
 }
 
