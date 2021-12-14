@@ -8,8 +8,8 @@ import './LeaguesNavigation.css';
 const Squads = () => {
     
     const { store, actions } = useContext(Context)
-    const [ squad, setSquad ] = useState(store.plSquad)   //this is the real deal
-    //const [ squad, setSquad ] = useState(actions.getHardCodedSquad())   // this is only for developing whithout backend
+    //const [ squad, setSquad ] = useState(store.plSquad)   //this is the real deal
+    const [ squad, setSquad ] = useState(actions.getHardCodedSquad())   // this is only for developing whithout backend
     
     console.log('squad.lst :', squad.lst)
     
@@ -27,7 +27,7 @@ const Squads = () => {
 
 {/* AQUI EMPIEZA EL COMPONENTE LEAGUES NAVIGATION EN VERSION CON BACKEND */}
 
-                    <div className="navigationBody">
+                    {/* <div className="navigationBody">
                         <div className="navigation mb-3">
                             <ul>
                                 <li className="list active">
@@ -63,14 +63,14 @@ const Squads = () => {
                                 <div className="indicator"></div>
                             </ul>
                         </div> 
-                    </div>
+                    </div> */}
 
 {/* AQUI TERMINA EL COMPONENTE LEAGUES NAVIGATION EN VERSION CON BACKEND */}
 
 
 {/* AQUI EMPIEZA EL COMPONENTE LEAGUES NAVIGATION EN VERSION OFFLINE, SIN BACKEND */}
 
-                    {/* <div className="navigationBody">
+                    <div className="navigationBody">
                         <div className="navigation mb-3">
                             <ul>
                                 <li className="list active">
@@ -106,7 +106,8 @@ const Squads = () => {
                                 <div className="indicator"></div>
                             </ul>
                         </div> 
-                    </div> */}
+            </div>
+
 {/* AQUI TERMINA EL COMPONENTE LEAGUES NAVIGATION EN VERSION OFFLINE, SIN BACKEND */}
 
 
