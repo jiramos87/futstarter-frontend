@@ -3,6 +3,7 @@ import { Context } from '../store/AppContext'
 import PlayerCard from '../components/PlayerCard';
 import './Squads.css';
 import './LeaguesNavigation.css';
+import { Link } from 'react-router-dom'
 
 const Squads = () => {
     
@@ -71,7 +72,7 @@ const Squads = () => {
                                 <div className="col"></div>
                                 <div className="col"></div>
                                 <div className="col"></div>
-                                <div className="col playercard LST"><PlayerCard player={squad.lst}/><span>LST</span></div> 
+                                <div className="col playercard LST"><Link to="/playerdetails">{ () => actions.setPlayerDetailsPlayer(squad.lst)}<PlayerCard player={squad.lst}/></Link><span>LST</span></div> 
                                 <div className="col CST"></div>
                                 <div className="col playercard RST"><PlayerCard player={squad.rst}/><span>RST</span></div>
                                 <div className="col"></div>
