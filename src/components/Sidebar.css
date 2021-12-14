@@ -8,6 +8,7 @@
     overflow: auto;
     position: fixed;
     width: 100%;
+    z-index: -1;
 }
 
 .menu-bars {
@@ -44,7 +45,7 @@
 
 .nav-text a {
     text-decoration: none;
-    color: #56657F;
+    color: #c4c4c4;
     font-size: 1em;
     width: 85%;
     height: 100%;

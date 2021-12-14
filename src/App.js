@@ -14,7 +14,6 @@ import Squads from './views/Squads'
 import UserConfig from './views/UserConfig'
 import Popular from './views/Popular'
 import Register from './views/Register'
-import Form from './components/Form';
 import Login from './views/Login'
 import PlayerCard from './components/PlayerCard'
 import PlayerDetails from './views/PlayerDetails'
@@ -51,15 +50,10 @@ const App = () => {
         <Route exact path="/register">
           <Register />
         </Route>
-        <Route exact path="/form">
-          <Form />
-        </Route>
         <Route exact path="/popular">
           <Popular />
         </Route>
-        <Route exact path="/userconfig">
-          <UserConfig />
-        </Route>
+        
         
       </Switch>
     </Router >
