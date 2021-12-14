@@ -12,11 +12,10 @@ const Squads = () => {
     const [ squad, setSquad ] = useState(actions.getHardCodedSquad())   // this is only for developing whithout backend
     console.log('squad.lst :', squad.lst)
     
- 
+
     return (
         <div className="row mt-5 pt-5"> 
             <div className="col-2">
-                
             </div>
                 <div className="col-8 d-flex align-items-center justify-content-center px-0 mx-0">
                     <div className="container field mt-0">

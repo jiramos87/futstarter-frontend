@@ -22,7 +22,7 @@ function LeaguesNavigation() {
     item.addEventListener('click', activeLink));
 
     return (
-        <div>
+        <div className="navigationBody">
             <div className="navigation">
                 <ul>
                     <li className="list active">

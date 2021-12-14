@@ -3,7 +3,7 @@ import PlayerCard from "../components/PlayerCard"
 const PlayerDetails = () => {
     return(
         <div className="container-details">
-             <div className="details-body">
+            <div className="details-body">
                 {/* <!-- /Breadcrumb --> */}
                 <PlayerCard/>
                 <div className="row stat-details">
@@ -37,7 +37,7 @@ const PlayerDetails = () => {
                     </div>
                     </div>
                 </div>
-           </div>
+        </div>
     </div>
     );
     
