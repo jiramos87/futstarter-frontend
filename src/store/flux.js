@@ -25,14 +25,22 @@ const getState = ({ getStore, getActions, setStore }) => {
             blSquad: {},
             saSquad: {},
             llSquad: {},
-            plList: [],
-            l1List: [],
-            blList: [],
-            saList: [],
-            llList: [],
+            plListAttackers: [],
+            plListMidfielders: [],
+            plListDefenders: [],
+            l1ListAttackers: [],
+            l1ListMidfielders: [],
+            l1ListDefenders: [],
+            blListAttackers: [],
+            blListMidfielders: [],
+            blListDefenders: [],
+            saListAttackers: [],
+            saListMidfielders: [],
+            saListDefenders: [],
+            llListAttackers: [],
+            llListMidfielders: [],
+            llListDefenders: [],
             face: ''
-
-
         },
         actions: {
             registerUser: async (registerFormData) => {
@@ -78,25 +86,50 @@ const getState = ({ getStore, getActions, setStore }) => {
                 })
             },
             getPlayerLists: async () => {
-                const pl_list = await getListByLeagueAPI(13, 'st').then((data) => {
-                    console.log(data)
-                    setStore({...getStore, plList: data})
+                const pl_list_attackers = await getListByLeagueAPI(13, 'cst').then((data) => {
+                    setStore({...getStore, plListAttackers: data})
                 })
-                const l1_list = await getListByLeagueAPI(16, 'st').then((data) => {
-                    console.log(data)
-                    setStore({...getStore, l1List: data})
-                })  
-                const bl_list = await getListByLeagueAPI(19, 'st').then((data) => {
-                    console.log(data)
-                    setStore({...getStore, blList: data})
+                const pl_list_midfielders = await getListByLeagueAPI(13, 'ccm').then((data) => {
+                    setStore({...getStore, plListMidfielders: data})
                 })
-                const sa_list = await getListByLeagueAPI(31, 'st').then((data) => {
-                    console.log(data)
-                    setStore({...getStore, saList: data})
+                const pl_list_defenders = await getListByLeagueAPI(13, 'ccb').then((data) => {
+                    setStore({...getStore, plListDefenders: data})
                 })
-                const ll_list = await getListByLeagueAPI(53, 'st').then((data) => {
-                    console.log(data)
-                    setStore({...getStore, llList: data})
+                const l1_list_attackers = await getListByLeagueAPI(16, 'cst').then((data) => {
+                    setStore({...getStore, l1ListAttackers: data})
+                }) 
+                const l1_list_midfielders = await getListByLeagueAPI(16, 'ccm').then((data) => {
+                    setStore({...getStore, l1ListMidfielders: data})
+                }) 
+                const l1_list_defenders = await getListByLeagueAPI(16, 'ccb').then((data) => {
+                    setStore({...getStore, l1ListDefenders: data})
+                }) 
+                const bl_list_attackers = await getListByLeagueAPI(19, 'cst').then((data) => {
+                    setStore({...getStore, blListAttackers: data})
+                })
+                const bl_list_midfielders = await getListByLeagueAPI(19, 'ccm').then((data) => {
+                    setStore({...getStore, blListMidfielders: data})
+                })
+                const bl_list_defenders = await getListByLeagueAPI(19, 'ccb').then((data) => {
+                    setStore({...getStore, blListDefenders: data})
+                })
+                const sa_list_attackers = await getListByLeagueAPI(31, 'cst').then((data) => {
+                    setStore({...getStore, saListAttackers: data})
+                })
+                const sa_list_midfielders = await getListByLeagueAPI(31, 'ccm').then((data) => {
+                    setStore({...getStore, saListMidfielders: data})
+                })
+                const sa_list_defenders = await getListByLeagueAPI(31, 'ccb').then((data) => {
+                    setStore({...getStore, saListDefenders: data})
+                })
+                const ll_list_attackers = await getListByLeagueAPI(53, 'cst').then((data) => {
+                    setStore({...getStore, llListAttackers: data})
+                })
+                const ll_list_midfielders = await getListByLeagueAPI(53, 'ccm').then((data) => {
+                    setStore({...getStore, llListMidfielders: data})
+                })
+                const ll_list_defenders = await getListByLeagueAPI(53, 'ccb').then((data) => {
+                    setStore({...getStore, llListDefenders: data})
                 })
             },
             getSquadByLeague: async (league) => {

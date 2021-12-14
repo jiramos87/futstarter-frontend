@@ -23,7 +23,7 @@ function Sidebar() {
                     <FaIcons.FaBars onClick={showSidebar} />
                 </Link>
                 <Link to="/home">
-                    <div className="display-4 text-white">FUTSTARTER</div>
+                    <div className="h3 me-3 text-white">FUTSTARTER</div>
                 </Link>
                 
             </div>
