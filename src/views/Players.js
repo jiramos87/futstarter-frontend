@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Context } from '../store/AppContext'
+import { Link } from 'react-router-dom';
 import './Squads.css';
 
 const Players = () => {
@@ -16,7 +17,7 @@ const Players = () => {
             <tbody>
                 <tr className="text-center" scope="row">
                         <td>{key + 1} </td>
-                        <td className="d-flex flex-row"><img className="list-face" src={`http://localhost:5000/api/v1/static/images/faces/${player.global_id}.png`}/>{player.name}</td>
+                        <td className="d-flex flex-row"><button onClick={ () => actions.setPlayerDetailsPlayer(player)}><Link to="/playerdetails"><img className="list-face" src={`http://localhost:5000/api/v1/static/images/faces/${player.global_id}.png`}/>{player.name}</Link></button></td>
                         <td>{player.rating}</td>
                         <td>{player.cst_meta_rating}</td>
                         {
@@ -100,14 +101,9 @@ const Players = () => {
     }
     
     return (
-        <div className="container">
-          <div className="row">
-              <div className="d-flex flex-row mt-1"> 
-                <div className="col-2">
-                    
-                </div>
-                <div className="col-8 d-flex flex-column align-items-center justify-content-center px-0 mx-0">
-                    <div className="navigation mb-3">
+        <div className="row" >
+                    <div className="navigationBody">
+                      <div className="navigation mb-3">
                         <ul>
                             <li className="list active">
                                 <button onClick={() => handleLeague('Premier League', position)}>
@@ -141,6 +137,12 @@ const Players = () => {
                             </li>
                             <div className="indicator"></div>
                         </ul>
+                        </div>
+                        <div className="d-flex flex-row">
+                            <button className="btn btn-primary border border-warning" onClick={() => handlePosition('Attackers')}>Attackers</button>
+                            <button className="btn btn-primary border border-warning" onClick={() => handlePosition('Midfielders')}>Midfielders</button>
+                            <button className="btn btn-primary border border-warning" onClick={() => handlePosition('Defenders')}>Defenders</button>
+                        </div>
                             
                     </div> 
                     <h1 className="text-white">{league} {position}</h1>
@@ -167,17 +169,12 @@ const Players = () => {
                         {players}
                     </table>
 
-                </div>
                 <div className="col-2">
-                    <div className="d-flex flex-row">
-                        <button className="btn btn-primary border border-warning" onClick={() => handlePosition('Attackers')}>Attackers</button>
-                        <button className="btn btn-primary border border-warning" onClick={() => handlePosition('Midfielders')}>Midfielders</button>
-                        <button className="btn btn-primary border border-warning" onClick={() => handlePosition('Defenders')}>Defenders</button>
-                    </div>
+                    
                 </div>
             </div>
-          </div>
-        </div>
+
+        
     )
 }
 

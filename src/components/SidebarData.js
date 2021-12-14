@@ -39,12 +39,12 @@ export const SidebarData = [
     //     icon: <FaIcons.FaCartPlus />,
     //     cName: 'nav-text'
     // },
-    {
-        title: 'PlayerDetails',
-        path: '/PlayerDetails',
-        icon: <BsIcons.BsPersonLinesFill />,
-        cName: 'nav-text'
-    },
+    // {
+    //     title: 'PlayerDetails',
+    //     path: '/PlayerDetails',
+    //     icon: <BsIcons.BsPersonLinesFill />,
+    //     cName: 'nav-text'
+    // },
     // {
     //     title: 'Tips & Tricks',
     //     path: '/tips',

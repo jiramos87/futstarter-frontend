@@ -224,8 +224,10 @@ const getState = ({ getStore, getActions, setStore }) => {
                     setStore({...getStore, plSquad: data})
                 })   
             },
-            setPlayerDetailsPlayer: (player) => {
+            setPlayerDetailsPlayer: (player) => { 
+                console.log('player sent to flux:', player)
                 setStore({...getStore, PlayerDetailsPlayer: player})
+                console.log(getStore.PlayerDetailsPlayer)
             },
             getHardCodedPlayerList: () => {
                 return({

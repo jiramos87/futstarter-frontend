@@ -10,16 +10,16 @@ const PlayerDetails = () => {
     // const [ squad, setSquad ] = useState(actions.getHardCodedSquad())   // this is only for developing whithout backend
     
     console.log("playerdetails", player)
-    console.log(player.finishing)
 
     return(
+        
         <div className="row d-flex flex-row mt-5 pt-5">
             <div className="col-2 ms-2"> 
                 <PlayerCard player={player}/>
                 <div className="bg-light text-end">
                 <div className="row text-black ">
                 <div className="col-3">Name:</div>
-                <div className="col-9">{player.name}</div>
+                <div className="col-9">{player.name}</div>  
                 </div>
                 <div className="row text-black">
                 <div className="col-3">Club:</div>
