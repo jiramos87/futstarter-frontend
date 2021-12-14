@@ -171,10 +171,8 @@ const PlayerDetails = () => {
                             <div className="col-2 text-success" >{player.aggression}</div>
                         </div>             
                     </div>
-
                 </div>
             </div>
-
         </div>
     );
     

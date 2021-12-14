@@ -30,7 +30,7 @@ function Sidebar() {
             
             
             <nav className={sidebar ? 'nav-menu active mt-5' : 'nav-menu mt-5' }>
-                 
+            
                 <ul className='nav-menu-items' onClick={showSidebar}>
                     
                     <li className="sidebar-toggle d-flex flex-row text-white">
