@@ -24,7 +24,7 @@ const Squads = () => {
                                 <div className="col"></div>
                                 <div className="col"></div>
                                 <div className="col"></div>
-                                <div className="col playercard LST"><PlayerCard player={squad.lst}/><span>LST</span></div> 
+                                <div className="col playercard LST"><Link to="/playerdetails"><PlayerCard player={squad.lst}/></Link><span>LST</span></div> 
                                 <div className="col CST"></div>
                                 <div className="col playercard RST"><PlayerCard player={squad.rst}/><span>RST</span></div>
                                 <div className="col"></div>
