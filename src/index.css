@@ -1,5 +1,6 @@
 body {
   box-sizing: border-box;
+  padding-top: 4.7em;
 }
 
 #content {
@@ -40,23 +41,61 @@ input {
   background-color: rgb(85, 85, 85) !important;
 }
 
-.card-1body {
-  background-image: url(./images/goldcard3.png);
+.card-1 {
+  padding: 1.4rem;
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+  display: flex;
+  flex-direction: column;
+  background-image: url(./images/goldcard2.png);
   background-repeat:no-repeat;
-  width: 210px;
-  height: 230px;
-  
+  background-size: 9rem 13rem;
+  z-index: -1;
+  width: 9rem;
+  height: 13rem;
 }
-.FACE-PLAYERS{
-  width: 130px;
-  height: 135px;
-  margin-top: -126px;
-  margin-left: 45px;
-  background-image: url(./images/Carajugador.png);
+
+.card-top {
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+}
+
+.card-bottom {
+  margin-top: 0.5rem;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.basic-ratings {
+  padding-left: 1rem;
+  margin-top: -0.5rem;
+  font-size: 0.6rem;
+  color: black;
+}
+
+.informacion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  width: 20%;
+  height: 100%;
+}
+
+.face{
+  position: relative;
+  width: 85%;
+  height: 100%;
+  top: 0.2rem;
+  
+  /* background-image: url(./images/Carajugador.png);
   background-size: 130px 135px;
   background-repeat: no-repeat;
   background-position-x: center;
-  background-position-y:center;
+  background-position-y:center; */
 }
 
 .NAME-PLAYERS{
@@ -112,71 +151,4 @@ input {
 .stat-details{
   margin-right: -8px;
   margin-left: -8px;
-}
-.card-body-details{
-  width: 300px;
-  height: 200px;
-}
-.container-meta-player{
-  margin-top: 50px;
-  margin-left: 10px;
-  width: 1000px;
-  height: 100px;
-  border-color: black;
-  border:1px solid;
-}
-.Face-Player{
-  background-image: url(./images/Carajugador.png);
-  background-size: 100px 100px;
-  background-repeat: no-repeat;
-  width: 99px;
-  height: 99px;
-  margin: -2px;
-  margin-left: 15px;
-}
-.Player-country{
-  background-image: url(./images/argentina.png);
-  background-size: 50px 50px;
-  background-repeat: no-repeat;
-  width: 50px;
-  height: 50px;
-  margin-left: 20px;
-}
-.Leage-Img{
-  background-image: url(./images/barcelona.png);
-  background-size: 50px 50px;
-  background-repeat: no-repeat;
-  width: 50px;
-  height: 50px;
-  margin-left: 35px;
-}
-.Valoracion{
-  justify-content: end;
-  background-color: black;
-  width: 70px;
-  height: 70px;
-  margin-left: 50px;
-  margin-top: 15px;
-}
-.Segunda-lista{
-  margin: 10px 10px 10px 10px;
-}
-.Tercera-lista{
-  margin: 10px 10px 10px 10px;
-}
-.container-meta-player2{
-  margin-top: 7px;
-  margin-left: -1px;
-  width: 1000px;
-  height: 100px;
-  border-color: black;
-  border:1px solid;
-}
-.container-meta-player3{
-  margin-top: 7px;
-  margin-left: -1px;
-  width: 1000px;
-  height: 100px;
-  border-color: black;
-  border:1px solid;
 }

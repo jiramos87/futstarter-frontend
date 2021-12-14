@@ -83,7 +83,7 @@ button {
     position: absolute;
     color: #c4c4c4;
     font-weight: 400;
-    font-size: 0.5em;
+    font-size: 0.3em !important;
     letter-spacing: 0.05em;
     transition: 0.5s;
     /* opacity: 0; */
@@ -145,4 +145,15 @@ button {
 }
 .navigation ul li:nth-child(5).active ~ .indicator {
     transform: translateX(calc(70px * 4));
+}
+
+button {
+
+    background: transparent;
+    border: none !important;
+}
+
+.league-img {
+    width: 80%;
+    height: 80%;
 }

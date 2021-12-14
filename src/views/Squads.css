@@ -12,7 +12,6 @@ body {
     /* align-content: stretch; */
     flex-wrap: nowrap;
     min-height: 95vh;
-    padding-top: 5.5em;
     background-image: url('http://localhost:3000/fieldgreybackground.jpg');
     background-repeat: no-repeat;
     background-position: center 4.1em;
