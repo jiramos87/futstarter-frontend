@@ -12,18 +12,18 @@
 /* #212936 */
 
 .navigationBody {
-    padding-top: 3.3em;
+    padding-top: 3.5em;
     display: flex;
     justify-content: center;
     align-items: top;
-    min-height: 100vh;
+    min-height: 37vh;
     background: var(--clr);
 }
 
 .navigation {
     position: relative;
-    width: 25em;
-    height: 5.1em;
+    width: 27em;
+    height: 5.7em;
     background: #212936;
     display: flex;
     justify-content: center;
@@ -38,7 +38,7 @@ button {
 
 .navigation ul {
     display: flex;
-    width: 22em;
+    width: 25em;
     padding-left: 0;
 }
 
@@ -46,11 +46,11 @@ button {
     position: relative;
     list-style: none;
     width: 5em;
-    height: 3.9em;
+    height: 2.1em;
     z-index: 1;
 }
 
-.navigation ul li a {
+.navigation ul li button {
     position: relative;
     display: flex;
     justify-content: center;
@@ -61,7 +61,7 @@ button {
     font-weight: 500;
 }
 
-.navigation ul li a .icon {
+.navigation ul li button .league-img {
     position: relative;
     display: block;
     line-height: 3em;
@@ -75,29 +75,29 @@ button {
     margin-left: 0;
 }
 
-.navigation ul li.active a .icon {
-    transform: translateY(1.5em);
+.navigation ul li.active button .league-img {
+    transform: translateY(2em);
 }
 
-.navigation ul li a .text {
+.navigation ul li button .text {
     position: absolute;
     color: #c4c4c4;
     font-weight: 400;
-    font-size: 0.3em !important;
+    font-size: 0.6em !important;
     letter-spacing: 0.05em;
     transition: 0.5s;
     /* opacity: 0; */
-    transform: translateY(-2.7em);
+    transform: translateY(-4em);
 }
 
-.navigation ul li.active a .text {
+.navigation ul li.active button .text {
     opacity: 1;
     transform: translateY(-1.2em);
 }
 
 .indicator {
     position: absolute;
-    top: 52%;
+    top: 60%;
     width: 4.4em;
     height: 4.4em;
     background: #C2ED63;
@@ -147,13 +147,7 @@ button {
     transform: translateX(calc(70px * 4));
 }
 
-button {
-
-    background: transparent;
-    border: none !important;
-}
-
 .league-img {
-    width: 80%;
+    width: 70%;
     height: 80%;
 }
