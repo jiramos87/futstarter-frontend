@@ -16,14 +16,14 @@
     display: flex;
     justify-content: center;
     align-items: top;
-    min-height: 30vh;
+    min-height: 5em;
     background: var(--clr);
 }
 
 .navigation {
     position: relative;
-    width: 27em;
-    height: 5.7em;
+    width: 26em;
+    height: 5em;
     background: #212936;
     display: flex;
     justify-content: center;
@@ -38,7 +38,7 @@ button {
 
 .navigation ul {
     display: flex;
-    width: 25em;
+    width: 23em;
     padding-left: 0;
 }
 
@@ -46,7 +46,7 @@ button {
     position: relative;
     list-style: none;
     width: 5em;
-    height: 2.1em;
+    height: 0.7em;
     z-index: 1;
 }
 
@@ -76,23 +76,23 @@ button {
 }
 
 .navigation ul li.active button .league-img {
-    transform: translateY(2em);
+    transform: translateY(1.5em);
 }
 
 .navigation ul li button .text {
     position: absolute;
     color: #c4c4c4;
     font-weight: 400;
-    font-size: 0.6em !important;
+    font-size: 0.59em !important;
     letter-spacing: 0.05em;
     transition: 0.5s;
     /* opacity: 0; */
-    transform: translateY(-4em);
+    transform: translateY(-3.5em);
 }
 
 .navigation ul li.active button .text {
     opacity: 1;
-    transform: translateY(-1.2em);
+    transform: translateY(-1.5em);
 }
 
 .indicator {
@@ -116,7 +116,7 @@ button {
     height: 20px;
     background: transparent;
     border-bottom-right-radius: 150px;
-    box-shadow: 1px 10px 0 0 var(--clr);
+    box-shadow: 1px 5px 0 0 var(--clr);
 }
 
 .indicator::after {
@@ -128,26 +128,26 @@ button {
     height: 20px;
     background: transparent;
     border-bottom-left-radius: 150px;
-    box-shadow: -1px 10px 0 0 var(--clr);
+    box-shadow: -1px 5px 0 0 var(--clr);
 } 
 
 .navigation ul li:nth-child(1).active ~ .indicator {
     transform: translateX(calc(70px * 0));
 }
 .navigation ul li:nth-child(2).active ~ .indicator {
-    transform: translateX(calc(70px * 1));
+    transform: translateX(calc(75px * 1));
 }
 .navigation ul li:nth-child(3).active ~ .indicator {
-    transform: translateX(calc(70px * 2));
+    transform: translateX(calc(74px * 2));
 }
 .navigation ul li:nth-child(4).active ~ .indicator {
-    transform: translateX(calc(70px * 3));
+    transform: translateX(calc(74px * 3));
 }
 .navigation ul li:nth-child(5).active ~ .indicator {
-    transform: translateX(calc(70px * 4));
+    transform: translateX(calc(74px * 4));
 }
 
 .league-img {
-    width: 60%;
+    width: 58%;
     height: 70%;
 }
