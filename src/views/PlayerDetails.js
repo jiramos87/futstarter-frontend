@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import PlayerCard from "../components/PlayerCard" 
 import { Context } from '../store/AppContext'
 
+
 const PlayerDetails = () => {
     const { store, actions } = useContext(Context)
     const [ squad, setSquad ] = useState(actions.getHardCodedSquad())   // this is only for developing whithout backend

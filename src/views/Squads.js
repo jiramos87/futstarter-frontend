@@ -3,6 +3,7 @@ import { Context } from '../store/AppContext'
 import PlayerCard from '../components/PlayerCard';
 import './Squads.css';
 import './LeaguesNavigation.css';
+    
 
 const Squads = () => {
     
