@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react'
 import { Context } from '../store/AppContext'
 import { Link } from 'react-router-dom';
 import './Squads.css';
+import { useNavigate } from "react-router-dom"
 
 const Players = () => {
     
@@ -12,6 +13,11 @@ const Players = () => {
     // const [ list, setList ] = useState(actions.getHardCodedPlayerList().data)   // this is only for developing whithout backend
     console.log('playerlist[0] :', playerList[0])
     
+    // const handleDetailsClick = (player) => {
+    //     actions.setPlayerDetailsPlayer(player)
+    //     useNavigate()
+    // }
+ 
     const players = playerList.map( (player, key) => {
         return(
             <tbody>
@@ -19,15 +25,33 @@ const Players = () => {
                         <td>{key + 1} </td>
                         <td className="d-flex flex-row"><button onClick={ () => actions.setPlayerDetailsPlayer(player)}><Link to="/playerdetails"><img className="list-face" src={`http://localhost:5000/api/v1/static/images/faces/${player.global_id}.png`}/>{player.name}</Link></button></td>
                         <td>{player.rating}</td>
-                        <td>{player.cst_meta_rating}</td>
+                        
                         {
                             position === 'Attackers' ? 
                             <>
+                                <td>{player.cst_meta_rating}</td>
                                 <td>{player.finishing}</td>
                                 <td>{player.sprint_speed}</td>
                                 <td>{player.agility}</td>
                             </>
                         :
+                            position === 'Midfielders' ? 
+                            <>
+                                <td>{player.ccm_meta_rating}</td>
+                                <td>{player.short_passing}</td>
+                                <td>{player.acceleration}</td>
+                                <td>{player.stamina}</td>
+                            </>
+                        :
+                            position === 'Defenders' ? 
+                            <>
+                                <td>{player.ccb_meta_rating}</td>
+                                <td>{player.sprint_speed}</td>
+                                <td>{player.interceptions}</td>
+                                <td>{player.standing_tackle}</td>
+                            </>
+                    :
+                        
                             ""
                         }
                     
@@ -146,21 +170,39 @@ const Players = () => {
                             
                     </div> 
                     <h1 className="text-white">{league} {position}</h1>
-                    <table className="table table-dark table-striped table-bordered">
+                    <table className="table table-hover table-dark table-striped table-bordered">
                         <thead>
                             <tr>
                                 <th scope="col"><small>Ranking</small></th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Rating</th>
-                                <th scope="col">Meta Rating</th>
+                                
                             
                             {
                             position === 'Attackers' ? 
-                            <>
-                                <th scope="col">Finishing</th>
-                                <th scope="col">Sprint speed</th>
-                                <th scope="col">Agility</th>
-                            </>
+                                <>  
+                                    <th scope="col">ST Meta Rating</th>
+                                    <th scope="col">Finishing</th>
+                                    <th scope="col">Sprint speed</th>
+                                    <th scope="col">Agility</th>
+                                </>
+                            :
+                            position === 'Midfielders' ? 
+                                <>
+                                    <th scope="col">CM Meta Rating</th>
+                                    <th scope="col">Short Passing</th>
+                                    <th scope="col">Acceleration</th>
+                                    <th scope="col">Stamina</th>
+                                </>
+                            :
+                            position === 'Defenders' ? 
+                                <>
+                                    <th scope="col">CB Meta Rating</th>
+                                    <th scope="col">Sprint speed</th>
+                                    <th scope="col">Interceptions</th>
+                                    <th scope="col">Standing tackle</th>
+                                    
+                                </>
                             :
                             ""
                             }
