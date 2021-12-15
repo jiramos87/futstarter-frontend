@@ -11,19 +11,19 @@
 
 /* #212936 */
 
-body {
-    padding-top: 3.3em;
+.navigationBody {
+    padding-top: 3.5em;
     display: flex;
     justify-content: center;
     align-items: top;
-    min-height: 100vh;
+    min-height: 5em;
     background: var(--clr);
 }
 
 .navigation {
     position: relative;
-    width: 25em;
-    height: 5.1em;
+    width: 26em;
+    height: 5em;
     background: #212936;
     display: flex;
     justify-content: center;
@@ -31,9 +31,14 @@ body {
     border-radius: 0px 0px 10px 10px;
 }
 
+button {
+    background: transparent;
+    border: none !important;
+}
+
 .navigation ul {
     display: flex;
-    width: 22em;
+    width: 23em;
     padding-left: 0;
 }
 
@@ -41,11 +46,11 @@ body {
     position: relative;
     list-style: none;
     width: 5em;
-    height: 3.9em;
+    height: 0.7em;
     z-index: 1;
 }
 
-.navigation ul li a {
+.navigation ul li button {
     position: relative;
     display: flex;
     justify-content: center;
@@ -56,7 +61,7 @@ body {
     font-weight: 500;
 }
 
-.navigation ul li a .icon {
+.navigation ul li button .league-img {
     position: relative;
     display: block;
     line-height: 3em;
@@ -70,29 +75,29 @@ body {
     margin-left: 0;
 }
 
-.navigation ul li.active a .icon {
+.navigation ul li.active button .league-img {
     transform: translateY(1.5em);
 }
 
-.navigation ul li a .text {
+.navigation ul li button .text {
     position: absolute;
     color: #c4c4c4;
     font-weight: 400;
-    font-size: 0.3em !important;
+    font-size: 0.59em !important;
     letter-spacing: 0.05em;
     transition: 0.5s;
     /* opacity: 0; */
-    transform: translateY(-2.7em);
+    transform: translateY(-3.5em);
 }
 
-.navigation ul li.active a .text {
+.navigation ul li.active button .text {
     opacity: 1;
-    transform: translateY(-1.2em);
+    transform: translateY(-1.5em);
 }
 
 .indicator {
     position: absolute;
-    top: 52%;
+    top: 60%;
     width: 4.4em;
     height: 4.4em;
     background: #C2ED63;
@@ -111,7 +116,7 @@ body {
     height: 20px;
     background: transparent;
     border-bottom-right-radius: 150px;
-    box-shadow: 1px 10px 0 0 var(--clr);
+    box-shadow: 1px 5px 0 0 var(--clr);
 }
 
 .indicator::after {
@@ -123,32 +128,26 @@ body {
     height: 20px;
     background: transparent;
     border-bottom-left-radius: 150px;
-    box-shadow: -1px 10px 0 0 var(--clr);
+    box-shadow: -1px 5px 0 0 var(--clr);
 } 
 
 .navigation ul li:nth-child(1).active ~ .indicator {
     transform: translateX(calc(70px * 0));
 }
 .navigation ul li:nth-child(2).active ~ .indicator {
-    transform: translateX(calc(70px * 1));
+    transform: translateX(calc(75px * 1));
 }
 .navigation ul li:nth-child(3).active ~ .indicator {
-    transform: translateX(calc(70px * 2));
+    transform: translateX(calc(74px * 2));
 }
 .navigation ul li:nth-child(4).active ~ .indicator {
-    transform: translateX(calc(70px * 3));
+    transform: translateX(calc(74px * 3));
 }
 .navigation ul li:nth-child(5).active ~ .indicator {
-    transform: translateX(calc(70px * 4));
-}
-
-button {
-
-    background: transparent;
-    border: none !important;
+    transform: translateX(calc(74px * 4));
 }
 
 .league-img {
-    width: 80%;
-    height: 80%;
+    width: 58%;
+    height: 70%;
 }

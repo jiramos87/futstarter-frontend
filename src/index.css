@@ -1,6 +1,6 @@
+
 body {
-  box-sizing: border-box;
-  padding-top: 4.7em;
+  background-color: #2B3648;
 }
 
 #content {
@@ -152,3 +152,9 @@ input {
   margin-right: -8px;
   margin-left: -8px;
 }
+
+.list-face {
+  width: 3rem;
+  height: 3rem;
+}
+

@@ -19,43 +19,50 @@ import PlayerCard from './components/PlayerCard'
 import PlayerDetails from './views/PlayerDetails'
 
 
-
 const App = () => {
   const basename = process.env.BASENAME || "";
   return (
     <Router basename={basename}>
       <Sidebar />
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/squads">
-          <Squads />
-        </Route>
-        <Route exact path="/playercard">
-          <PlayerCard />
-        </Route>
-        <Route exact path="/playerdetails">
-          <PlayerDetails />
-        </Route>
-        <Route exact path="/players">
-          <Players />
-        </Route>
-        <Route exact path="/login">
-          <Login />
-        </Route>
-        <Route exact path="/register">
-          <Register />
-        </Route>
-        <Route exact path="/popular">
-          <Popular />
-        </Route>
-        
-        
-      </Switch>
+      <div className="row">
+        <div className="col-2">
+                    
+        </div>
+        <div className="col-8 d-flex flex-column align-items-center justify-content-center px-0 mx-0">
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/home">
+              <Home />
+            </Route>
+            <Route exact path="/squads">
+              <Squads />
+            </Route>
+            <Route exact path="/playercard">
+              <PlayerCard />
+            </Route>
+            <Route exact path="/playerdetails">
+              <PlayerDetails />
+            </Route>
+            <Route exact path="/players">
+              <Players />
+            </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/register">
+              <Register />
+            </Route>
+            <Route exact path="/popular">
+              <Popular />
+            </Route>
+          </Switch>
+        </div>
+        <div className="col-2">
+                    
+        </div>
+      </div>
     </Router >
   );
 }

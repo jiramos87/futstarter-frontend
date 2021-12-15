@@ -4,20 +4,23 @@ import { Context } from '../store/AppContext'
 
 
 const PlayerDetails = () => {
+    
     const { store, actions } = useContext(Context)
-    const [ squad, setSquad ] = useState(actions.getHardCodedSquad())   // this is only for developing whithout backend
-    const player = squad.lst
+    console.log(store.PlayerDetailsPlayer)
+    const [ player, setPlayer ] = useState(store.PlayerDetailsPlayer)
+    // const [ squad, setSquad ] = useState(actions.getHardCodedSquad())   // this is only for developing whithout backend
+    
     console.log("playerdetails", player)
-    console.log(player.finishing)
 
     return(
+        
         <div className="row d-flex flex-row mt-5 pt-5">
             <div className="col-2 ms-2"> 
                 <PlayerCard player={player}/>
                 <div className="bg-light text-end">
                 <div className="row text-black ">
                 <div className="col-3">Name:</div>
-                <div className="col-9">{player.name}</div>
+                <div className="col-9">{player.name}</div>  
                 </div>
                 <div className="row text-black">
                 <div className="col-3">Club:</div>
@@ -169,10 +172,8 @@ const PlayerDetails = () => {
                             <div className="col-2 text-success" >{player.aggression}</div>
                         </div>             
                     </div>
-
                 </div>
             </div>
-
         </div>
     );
     

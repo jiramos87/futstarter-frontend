@@ -23,14 +23,14 @@ function Sidebar() {
                     <FaIcons.FaBars onClick={showSidebar} />
                 </Link>
                 <Link to="/home">
-                    <div className="display-4 text-white">FUTSTARTER</div>
+                    <div className="h3 me-3 text-white">FUTSTARTER</div>
                 </Link>
                 
             </div>
             
             
             <nav className={sidebar ? 'nav-menu active mt-5' : 'nav-menu mt-5' }>
-                 
+            
                 <ul className='nav-menu-items' onClick={showSidebar}>
                     
                     <li className="sidebar-toggle d-flex flex-row text-white">

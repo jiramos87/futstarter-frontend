@@ -5,9 +5,9 @@ const getSquadByLeagueAPI = async (league) => {
     try{
         let call = await fetch(`${baseUrl}/api/v1/squads/leagues/${league}`, {
             method: 'GET'
-          })
-          
-          return call.json()
+        })
+        
+        return call.json()
     } catch (error){
         console.error(error)    
     }

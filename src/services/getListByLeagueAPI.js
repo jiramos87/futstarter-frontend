@@ -6,9 +6,9 @@ const getListByLeagueAPI = async (league, position) => {
         console.log(league, position)
         let call = await fetch(`${baseUrl}/api/v1/players/leagues/${league}/${position}`, {
             method: 'GET'
-          })
-          
-          return call.json()
+        })
+        
+        return call.json()
     } catch (error){
         console.error(error)    
     }
