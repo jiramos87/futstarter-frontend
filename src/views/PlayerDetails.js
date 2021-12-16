@@ -6,11 +6,10 @@ import { Context } from '../store/AppContext'
 const PlayerDetails = () => {
     
     const { store, actions } = useContext(Context)
-    console.log(store.PlayerDetailsPlayer)
     const [ player, setPlayer ] = useState(store.PlayerDetailsPlayer)
     // const [ squad, setSquad ] = useState(actions.getHardCodedSquad())   // this is only for developing whithout backend
     
-    console.log("playerdetails", player)
+    console.log("playerDetails", player)
 
     return(
         

@@ -29,7 +29,7 @@ const App = () => {
                     
         </div>
         <div className="col-8 d-flex flex-column align-items-center justify-content-center px-0 mx-0">
-          <Switch>
+        <Switch>
             <Route exact path="/">
               <Home />
             </Route>
