@@ -3,14 +3,18 @@ import { Context } from '../store/AppContext'
 import { Link, useHistory } from 'react-router-dom';
 import './Squads.css';
 import './Players.css'
+import './LeaguesNavigation.css';
+import './NavigationPosition.css';
+import { useNavigate } from "react-router-dom"
 
 const Players = () => {
     
     const { store, actions } = useContext(Context)
-    const [ league, setLeague ] = useState('Premier League')
+    const [league, setLeague] = useState('Premier League')
+    console.log("list in players", actions.getHardCodedPlayerList().data)
     const [ position, setPosition ] = useState('Attackers')
-    const [ playerList, setPlayerList ] = useState(store.plListAttackers.data)   //this is the real deal
-    // const [ list, setList ] = useState(actions.getHardCodedPlayerList().data)   // this is only for developing whithout backend
+    // const [ playerList, setPlayerList ] = useState(store.plListAttackers.data)   //this is the real deal
+    const [ playerList, setPlayerList ] = useState(actions.getHardCodedPlayerList().data)   // this is only for developing whithout backend
     console.log('playerlist[0] :', playerList[0])
     const history = useHistory()
     // const handleDetailsClick = (player) => {
@@ -60,6 +64,7 @@ const Players = () => {
             </tbody>
         )
     })
+
     const list = document.querySelectorAll('.list');
     function activeLink() {
         list.forEach((item) =>
@@ -78,57 +83,75 @@ const Players = () => {
         setLeague(userleague)
         console.log('league click', userleague, userposition)
         if(userleague === 'Premier League' && userposition === 'Attackers') {
-            setPlayerList(store.plListAttackers.data)
+            // setPlayerList(store.plListAttackers.data)
+            setPlayerList(actions.getHardCodedPlayerList.data)
         }
         if(userleague === 'Premier League' && userposition === 'Midfielders') {
-            setPlayerList(store.plListMidfielders.data)
+            // setPlayerList(store.plListMidfielders.data)
+            setPlayerList(actions.getHardCodedPlayerList.data)
         }
         if(userleague === 'Premier League' && userposition === 'Defenders') {
-            setPlayerList(store.plListDefenders.data)
+            // setPlayerList(store.plListDefenders.data)
+            setPlayerList(actions.getHardCodedPlayerList.data)
         }
         if(userleague === 'Ligue 1' && userposition === 'Attackers') {
-            setPlayerList(store.l1ListAttackers.data)
+            // setPlayerList(store.l1ListAttackers.data)
+            setPlayerList(actions.getHardCodedPlayerList.data)
         }
         if(userleague === 'Ligue 1' && userposition === 'Midfielders') {
-            setPlayerList(store.l1ListMidfielders.data)
+            // setPlayerList(store.l1ListMidfielders.data)
+            setPlayerList(actions.getHardCodedPlayerList.data)
         }
         if(userleague === 'Ligue 1' && userposition === 'Defenders') {
-            setPlayerList(store.l1ListDefenders.data)
+            // setPlayerList(store.l1ListDefenders.data)
+            setPlayerList(actions.getHardCodedPlayerList.data)
         }
         if(userleague === 'Bundesliga' && userposition === 'Attackers') {
-            setPlayerList(store.blListAttackers.data)
+            // setPlayerList(store.blListAttackers.data)
+            setPlayerList(actions.getHardCodedPlayerList.data)
         }
         if(userleague === 'Bundesliga' && userposition === 'Midfielders') {
-            setPlayerList(store.blListMidfielders.data)
+            // setPlayerList(store.blListMidfielders.data)
+            setPlayerList(actions.getHardCodedPlayerList.data)
         }
         if(userleague === 'Bundesliga' && userposition === 'Defenders') {
-            setPlayerList(store.blListDefenders.data)
+            // setPlayerList(store.blListDefenders.data)
+            setPlayerList(actions.getHardCodedPlayerList.data)
         }
         if(userleague === 'Serie A' && userposition === 'Attackers') {
-            setPlayerList(store.saListAttackers.data)
+            // setPlayerList(store.saListAttackers.data)
+            setPlayerList(actions.getHardCodedPlayerList.data)
         }
         if(userleague === 'Serie A' && userposition === 'Midfielders') {
-            setPlayerList(store.saListMidfielders.data)
+            // setPlayerList(store.saListMidfielders.data)
+            setPlayerList(actions.getHardCodedPlayerList.data)
         }
         if(userleague === 'Serie A' && userposition === 'Defenders') {
-            setPlayerList(store.saListDefenders.data)
+            // setPlayerList(store.saListDefenders.data)
+            setPlayerList(actions.getHardCodedPlayerList.data)
         }
         if(userleague === 'LaLiga' && userposition === 'Attackers') {
             console.log(store.llListAttackers.data)
-            setPlayerList(store.llListAttackers.data)
+            // setPlayerList(store.llListAttackers.data)
+            setPlayerList(actions.getHardCodedPlayerList.data)
         }
         if(userleague === 'LaLiga' && userposition === 'Midfielders') {
-            setPlayerList(store.llListMidfielders.data)
+            // setPlayerList(store.llListMidfielders.data)
+            setPlayerList(actions.getHardCodedPlayerList.data)
         }
         if(userleague === 'LaLiga' && userposition === 'Defenders') {
-            setPlayerList(store.llListDefenders.data)
+            // setPlayerList(store.llListDefenders.data)
+            setPlayerList(actions.getHardCodedPlayerList.data)
         }
     }
     
     return (
-        <div className="row mt-5" >
-                    <div className="navigationBody">
-                      <div className="navigation mb-5">
+        <div className="row"> 
+
+{/* AQUI EMPIEZA EL COMPONENTE LEAGUES NAVIGATION EN VERSION CON BACKEND */}
+
+            <div className="navigationBody">
+                    <div className="navigation mb-3">
                         <ul>
                             <li className="list active">
                                 <button onClick={() => handleLeague('Premier League', position)}>
@@ -162,14 +185,61 @@ const Players = () => {
                             </li>
                             <div className="indicator"></div>
                         </ul>
-                        </div>
-                        <div className="d-flex flex-row">
-                            <button className="btn btn-primary border border-warning" onClick={() => handlePosition('Attackers')}>Attackers</button>
-                            <button className="btn btn-primary border border-warning" onClick={() => handlePosition('Midfielders')}>Midfielders</button>
-                            <button className="btn btn-primary border border-warning" onClick={() => handlePosition('Defenders')}>Defenders</button>
-                        </div>
-                            
-                    </div> 
+                    </div>
+            </div>
+
+{/* AQUI TERMINA EL COMPONENTE LEAGUES NAVIGATION EN VERSION CON BACKEND */}
+
+
+{/* AQUI EMPIEZA EL COMPONENTE LEAGUES NAVIGATION EN VERSION OFFLINE, SIN BACKEND */}
+
+            <div className="navigationBody">
+                <div className="navigation mb-3">
+                    <ul>
+                        <li className="list active">
+                            <button onClick={() => handleLeague(actions.getHardCodedSquad())}>
+                                <span className="text">Premier League</span>
+                                <img className="league-img" src={`http://localhost:3000/13.png`}/>
+                            </button>
+                        </li>
+                        <li className="list">
+                            <button onClick={() => handleLeague(actions.getHardCodedSquad())}>
+                                <span className="text">Ligue 1</span>
+                                <img className="league-img" src={`http://localhost:3000/16.png`}/>
+                            </button>
+                        </li>
+                        <li className="list">
+                            <button onClick={() => handleLeague(actions.getHardCodedSquad())}>
+                                <span className="text">Bundesliga</span>
+                                <img className="league-img" src={`http://localhost:3000/19.png`}/>
+                            </button>
+                        </li>
+                        <li className="list">
+                            <button onClick={() => handleLeague(actions.getHardCodedSquad())}>
+                                <span className="text">Serie A</span>
+                                <img className="league-img" src={`http://localhost:3000/31.png`}/>
+                            </button>
+                        </li>
+                        <li className="list">
+                            <button onClick={() => handleLeague(actions.getHardCodedSquad())}>
+                                <span className="text">LaLiga</span>
+                                <img className="league-img" src={`http://localhost:3000/53.png`}/>
+                            </button>
+                        </li>
+                        <div className="indicator"></div>
+                    </ul>
+                </div> 
+            </div>
+
+{/* AQUI TERMINA EL COMPONENTE LEAGUES NAVIGATION EN VERSION OFFLINE, SIN BACKEND */}
+
+            <div className="d-flex flex-row navigationPositionBody">
+                <button className="btn navigationPosition Attackers" onClick={() => handlePosition('Attackers')}>Attackers</button>
+                <button className="btn navigationPosition Midfielders" onClick={() => handlePosition('Midfielders')}>Midfielders</button>
+                <button className="btn navigationPosition Defenders" onClick={() => handlePosition('Defenders')}>Defenders</button>
+            </div>
+
+            <div> 
                     <h1 className="text-white">{league} {position}</h1>
                     <table className="table table-hover table-dark table-striped table-bordered">
                         <thead>
@@ -211,13 +281,11 @@ const Players = () => {
                         </thead>
                         {players}
                     </table>
-
-                <div className="col-2">
-                    
-                </div>
             </div>
-
-        
+            <div className="col-2">
+                
+            </div>
+        </div>
     )
 }
 

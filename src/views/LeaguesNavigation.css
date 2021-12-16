@@ -17,12 +17,14 @@
     align-items: top;
     min-height: 2em;
     background: var(--clr);
+    z-index: 2;
 }
 
 .navigation {
     position: relative;
     width: 26em;
     height: 5em;
+    margin-bottom: 0.7em !important;
     background: #212936;
     display: flex;
     justify-content: center;
@@ -151,3 +153,4 @@ button {
     width: 58%;
     height: 70%;
 }
+

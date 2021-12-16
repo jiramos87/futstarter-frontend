@@ -14,8 +14,10 @@ const PlayerDetails = () => {
     return(
         
         <div className="row d-flex flex-row mt-5 pt-5">
-            <div className="col-3 ms-2"> 
-                <PlayerCard player={player}/>
+            <div className="col-3"> 
+                <div className="d-flex flex-row justify-content-center mb-5">
+                    <PlayerCard player={player}/>
+                </div>
                 <div className="stats-defined rounded">
                         <table class="table table-sm text-start details-table">
                             <thead>

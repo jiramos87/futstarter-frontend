@@ -221,8 +221,9 @@ const Squads = () => {
                                 </ul>
                             </div> 
                         </div>
-                        <div className='mt-5 pt-3'>
-                            <h1 className='text-white'>Premier League Squad</h1>
+                        <div className='mt-5 pt-3 text-white text-defined'>
+                            <h1 >Premier League Squad</h1>
+                            <p>Current squad price:</p>
                         </div>
                     </div>
                     
