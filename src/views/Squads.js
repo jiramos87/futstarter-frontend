@@ -4,6 +4,7 @@ import PlayerCard from '../components/PlayerCard';
 import { Link, useHistory } from 'react-router-dom';
 import './Squads.css';
 import './LeaguesNavigation.css';
+    
 
 const Squads = () => {
     
