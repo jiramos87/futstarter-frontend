@@ -6,9 +6,9 @@ const PlayerDetails = () => {
     
     const { store, actions } = useContext(Context)
     console.log(store.PlayerDetailsPlayer)
-    const [ player, setPlayer ] = useState(store.PlayerDetailsPlayer)
-    // const [ squad, setSquad ] = useState(actions.getHardCodedSquad())   // this is only for developing whithout backend
-    
+    //const [ player, setPlayer ] = useState(store.PlayerDetailsPlayer)  //this is the real deal
+    const [ squad, setSquad ] = useState(actions.getHardCodedSquad())   // this is only for developing whithout backend
+    const player = squad.data
     console.log("playerdetails", player)
 
     return(

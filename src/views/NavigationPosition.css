@@ -1,0 +1,58 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --clr: #2B3648;
+}
+
+/* #212936 */
+
+.navigationPositionBody {
+    padding-top: 0.2em;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    min-height: 4.5em;
+    background: #2B3648;
+    z-index: 1;
+}
+
+.navigationPosition {
+    position: relative;
+    width: 7.5em;
+    height: 4.5em;
+    color: #c4c4c4;
+    font-weight: 400;
+    font-size: 1.1em !important;
+    background: #212936;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 6px 6px 5px  #C2ED63;
+}
+
+.textPosition {
+    transform: translateY(0.3em);
+}
+
+.navigationPosition:hover {
+    color: #C2ED63;
+    background: #212936;
+}
+
+.Attackers {
+    border-radius: 15px 0px 0px 15px;
+}
+
+.Midfielders {
+    border-radius: 0px 0px 0px 0px;
+}
+
+.Defenders {
+    border-radius: 0px 15px 15px 0px;
+}
+

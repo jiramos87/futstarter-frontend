@@ -145,7 +145,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     setStore({...getStore, currentUser: data.user[0]})
                     //await getActions.getUser(data.token)
                     localStorage.setItem("jwt-token", data.token);
-                 })
+                })
             },
             // getUser: async (token) => {
 
