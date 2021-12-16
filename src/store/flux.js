@@ -228,6 +228,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 console.log('player sent to flux:', player)
                 setStore({...getStore, PlayerDetailsPlayer: player})
                 console.log(getStore.PlayerDetailsPlayer)
+                
             },
             getHardCodedPlayerList: () => {
                 return({

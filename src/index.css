@@ -157,4 +157,24 @@ input {
   width: 3rem;
   height: 3rem;
 }
+.progress-bar{
+  background-color: #C2ED63 !important;
+}
+.card{
+  background-color:#212936 !important;
+  color: #c4c4c4 !important;
+}
+.text-details{
+  color: #C2ED63 !important;
+}
+.stats-defined{
+  background-color:#212936 !important;
+}
+.text-defined{
+  color: #c4c4c4 !important;
+}
 
+.table-dark{
+  --bs-table-hover-bg: #474d56 !important;
+  --bs-table-hover-color: #8dd529 !important;
+}
