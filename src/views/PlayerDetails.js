@@ -18,7 +18,7 @@ const PlayerDetails = () => {
                 <div className="bg-light text-end">
                 <div className="row text-black ">
                 <div className="col-3">Name:</div>
-                <div className="col-9">{player.name}</div>  
+                <div className="col-9">{player.name ? player.name : 'N/A'}</div>  
                 </div>
                 <div className="row text-black">
                 <div className="col-3">Club:</div>
@@ -30,11 +30,11 @@ const PlayerDetails = () => {
                 </div>
                 <div className="row text-black">
                 <div className="col-3">League:</div>
-                <div className="col-9">{player.leage}</div>
+                <div className="col-9">{player.league}</div>
                 </div>
                 <div className="row text-black">
                 <div className="col-3">Skill:</div>
-                <div className="col-9">{player.skills}</div>
+                <div className="col-9">{player.skill ? player.skill : 'N/A'}</div>
                 </div>
                 <div className="row text-black">
                 <div className="col-3">Weak fook:</div>

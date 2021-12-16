@@ -1,8 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Context } from '../store/AppContext'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './Squads.css';
-import { useNavigate } from "react-router-dom"
+import './Players.css'
 
 const Players = () => {
     
@@ -12,7 +12,7 @@ const Players = () => {
     const [ playerList, setPlayerList ] = useState(store.plListAttackers.data)   //this is the real deal
     // const [ list, setList ] = useState(actions.getHardCodedPlayerList().data)   // this is only for developing whithout backend
     console.log('playerlist[0] :', playerList[0])
-    
+    const history = useHistory()
     // const handleDetailsClick = (player) => {
     //     actions.setPlayerDetailsPlayer(player)
     //     useNavigate()
@@ -21,9 +21,10 @@ const Players = () => {
     const players = playerList.map( (player, key) => {
         return(
             <tbody>
-                <tr className="text-center" scope="row">
+                
+                    <tr onClick={ () => actions.setPlayerDetailsPlayer(player, history)} className="text-center cursor-pointer" scope="row">
                         <td>{key + 1} </td>
-                        <td className="d-flex flex-row"><button onClick={ () => actions.setPlayerDetailsPlayer(player)}><Link to="/playerdetails"><img className="list-face" src={`http://localhost:5000/api/v1/static/images/faces/${player.global_id}.png`}/>{player.name}</Link></button></td>
+                        <td className="d-flex flex-row"><img className="list-face" src={`http://localhost:5000/api/v1/static/images/faces/${player.global_id}.png`}/>{player.name}</td>
                         <td>{player.rating}</td>
                         
                         {
