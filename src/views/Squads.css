@@ -9,6 +9,8 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    border-radius: 0.3rem;
+    box-shadow: 0px 3px 8px rgb(24, 24, 24);
     /* align-content: stretch; */
     flex-wrap: nowrap;
     min-height: 95vh;
@@ -16,8 +18,34 @@ body {
     background-repeat: no-repeat;
     background-position: center 4.5em;
     /* background-attachment: fixed; */
-    background-size: 100vh 100vh; 
+    background-size: cover; 
+    overflow: visible !important;
     width: 85vh;
+}
+
+.card-base {
+    text-align: center;
+    font-size: 1rem;
+    color: rgb(152, 247, 242);
+    
+
+}
+
+
+.LM {
+    margin-top: -4rem !important;
+}
+
+.RM {
+    margin-top: -4rem !important;
+}
+
+.LB {
+    margin-top: -2rem !important;
+}
+
+.RB {
+    margin-top: -2rem !important;
 }
 
 /* 
@@ -33,6 +61,18 @@ body {
 }
 */
 
+.mt--1 {
+    margin-top: -3rem !important;
+}
+
+.pt--1 {
+    padding-top: -3rem !important;
+}
+/* 
+.back {
+    z-index: -1 !important;
+} */
+
 .container:nth-child {
     display: inline-block;
 } 
@@ -42,14 +82,12 @@ body {
 }
 
 .playercard {
-    float: left;
+    position: relative;
     overflow: visible;
-    /* background-image: url('http://localhost:3000/playercard.png');
-    background-repeat: no-repeat; */
-    margin: 0;
-    padding: 0;
-    width: 30vw;
-    height: 15vh;
+    min-width: 8rem;
+    width: 100%;
+    min-height: 10rem;
+    height: 100%;
 }
 
 

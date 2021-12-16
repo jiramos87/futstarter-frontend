@@ -126,9 +126,9 @@ const Players = () => {
     }
     
     return (
-        <div className="row" >
+        <div className="row mt-5" >
                     <div className="navigationBody">
-                      <div className="navigation mb-3">
+                      <div className="navigation mb-5">
                         <ul>
                             <li className="list active">
                                 <button onClick={() => handleLeague('Premier League', position)}>

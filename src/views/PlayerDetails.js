@@ -14,55 +14,50 @@ const PlayerDetails = () => {
     return(
         
         <div className="row d-flex flex-row mt-5 pt-5">
-            <div className="col-3    ms-2"> 
+            <div className="col-3 ms-2"> 
                 <PlayerCard player={player}/>
-                <div className="stats-defined text-end rounded px-2">
-                <div className="row text-defined ">
-                <div className="col-3">Name:</div>
-                <div className="col-9">{player.name ? player.name : 'N/A'}</div>  
+                <div className="stats-defined rounded">
+                        <table class="table table-sm text-start details-table">
+                            <thead>
+                                <tr>
+                                    <th colspan="4" className="text-center">INFO</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><b>Name</b></td>
+                                    <td>{player.name ? player.name : 'N/A'}</td>
+                                    <td><b>Club</b></td>
+                                    <td>{player.club_str ? player.club_str : 'N/A'} <img className="club-details" src={`http://localhost:5000/api/v1/static/images/clubs/${player.club}.png`}/></td>
+                                </tr>
+                                <tr>
+                                    <td><b>Nation</b></td>
+                                    <td>{player.nation_str}<img className="nation-details" src={`http://localhost:5000/api/v1/static/images/nations/${player.nation}.png`}/></td>
+                                    <td><b>League</b></td>
+                                    <td>{player.league_str}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Skill Moves</b></td>
+                                    <td>{player.skill_moves ? player.skill_moves : 'N/A'}</td>
+                                    <td><b>Weak Foot</b></td>
+                                    <td>{player.weak_foot ? player.weak_foot : 'N/A'}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Foot</b></td>
+                                    <td>{player.foot ? player.foot : 'N/A'}</td>
+                                    <td><b>Weak Foot</b></td>
+                                    <td>{player.weak_foot ? player.weak_foot : 'N/A'}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Height</b></td>
+                                    <td>{player.height ? player.height : 'N/A'}</td>
+                                    <td><b>Weight</b></td>
+                                    <td>{player.weight ? player.weight : 'N/A'}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div className="row text-defined">
-                <div className="col-3">Club:</div>
-                <div className="col-9">{player.club}</div>
-                </div>
-                <div className="row text-defined">
-                <div className="col-3">Nation:</div>
-                <div className="col-9">{player.nation}</div>
-                </div>
-                <div className="row text-defined">
-                <div className="col-3">League:</div>
-                <div className="col-9">{player.league}</div>
-                </div>
-                <div className="row text-defined">
-                <div className="col-3">Skill:</div>
-                <div className="col-9">{player.skill ? player.skill : 'N/A'}</div>
-                </div>
-                <div className="row text-defined">
-                <div className="col-3">Weak fook:</div>
-                <div className="col-9">{player.weak_foot}</div>
-                </div>
-                <div className="row text-defined">
-                <div className="col-3">Foot:</div>
-                <div className="col-9">{player.foot}</div>
-                </div>
-                <div className="row text-defined">
-                <div className="col-3">Height:</div>
-                <div className="col-9">{player.height}</div>
-                </div>
-                <div className="row text-defined">
-                <div className="col-3">Weight</div>
-                <div className="col-9">{player.weight}</div>
-                </div>
-                <div className="row text-defined">
-                <div className="col-3">Age:</div>
-                <div className="col-9">{player.age}</div>
-                </div>
-                <div className="row text-defined">
-                <div className="col-3">Global:</div>
-                <div className="col-9">{player.global_id}</div>
-                </div>
-                </div>
-            </div>
             <div className="col-8 card-group">
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     <div className="card p-1">

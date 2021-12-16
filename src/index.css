@@ -85,6 +85,7 @@ input {
   height: 100%;
 }
 
+
 .face{
   position: relative;
   width: 85%;
@@ -122,6 +123,8 @@ input {
 }
 
 
+
+
 .face-details{
   background-image: url();
   background-size: 150px 150px;
@@ -151,6 +154,21 @@ input {
 .stat-details{
   margin-right: -8px;
   margin-left: -8px;
+}
+
+.details-table {
+  text-align: start !important;
+  font-weight: 100 !important;
+  font-size: 0.8rem !important;
+  color: #c4c4c4 !important;
+}
+
+.club-details {
+  width: 2rem;
+}
+
+.nation-details {
+  width: 2rem;
 }
 
 .list-face {

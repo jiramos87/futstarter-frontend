@@ -10,7 +10,7 @@ const Home = () => {
         <div className="background">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-6 mt-5 mx-auto">
+                    <div className="mx-auto">
                         {store.currentUser  === null ? 
                             <div className="d-flex flex-column">
                                 

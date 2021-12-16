@@ -34,7 +34,7 @@ const Login = () => {
         <div className="background">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-6 mt-5 mx-auto">
+                    <div className="col-md-6 mx-auto">
                         {store.currentUser  === null ? 
                             <div className="d-flex flex-column">
                                 <form noValidate onSubmit={onSubmit}>

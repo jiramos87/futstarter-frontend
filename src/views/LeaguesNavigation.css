@@ -12,11 +12,10 @@
 /* #212936 */
 
 .navigationBody {
-    padding-top: 3.5em;
     display: flex;
     justify-content: center;
     align-items: top;
-    min-height: 5em;
+    min-height: 2em;
     background: var(--clr);
 }
 
@@ -29,6 +28,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 0px 0px 10px 10px;
+    overflow: visible;
 }
 
 button {

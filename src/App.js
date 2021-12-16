@@ -24,11 +24,11 @@ const App = () => {
   return (
     <Router basename={basename}>
       <Sidebar />
-      <div className="row">
+      <div className="row mt-0 pt-0">
         <div className="col-2">
                     
         </div>
-        <div className="col-8 d-flex flex-column align-items-center justify-content-center px-0 mx-0">
+        <div className="col-9 px-0 mx-0">
         <Switch>
             <Route exact path="/">
               <Home />
@@ -59,7 +59,7 @@ const App = () => {
             </Route>
           </Switch>
         </div>
-        <div className="col-2">
+        <div className="col-1">
                     
         </div>
       </div>

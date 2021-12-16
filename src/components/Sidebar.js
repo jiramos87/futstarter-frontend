@@ -19,12 +19,17 @@ function Sidebar() {
         <>
         <IconContext.Provider value={{color: '#C2ED63'}}>
             <div className="fixed-top sidebar d-flex flex-row justify-content-between">
-                <Link to="#" className='menu-bars'>
-                    <FaIcons.FaBars onClick={showSidebar} />
-                </Link>
-                <Link to="/home">
-                    <div className="h3 me-3 text-white">FUTSTARTER</div>
-                </Link>
+                <div className="col-3">
+                    <Link to="#" className='menu-bars'>
+                        <FaIcons.FaBars onClick={showSidebar} />
+                    </Link>
+                </div>
+                <div className="col-7"></div>
+                <div className="col-2 " >
+                    <Link to="/home">
+                        <div className="h3 me-3 text-white">FUTSTARTER</div>
+                    </Link>
+                </div>
                 
             </div>
             
