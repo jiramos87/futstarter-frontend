@@ -29,9 +29,10 @@ body {
     width: 13.2em;
     height: 100vh;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     position: fixed;
     top: 0em;
+    margin-top: 8.5rem;
     left: -100%;
     transition: 850ms;
     z-index: 1000;
@@ -40,6 +41,12 @@ body {
 .nav-menu.active {
     left: 0;
     transition: 350ms;    
+}
+
+.top-log-icon {
+    color: white;
+    width: 4rem;
+    height: 3rem;
 }
 
 .nav-text {
@@ -73,15 +80,20 @@ body {
 .nav-menu-items {
     width: 100%;
     padding-left: 0;
+    margin-top: -5rem;
 }
 
 .sidebar-toggle {
-    background-color: #C2ED63;
+    /* background-color: #C2ED63; */
+    background-color:#212936;
+    color:white;
     width: 100%;
+    padding: 1rem;
     height: 5.3em;
     display: flex;
     justify-content: start;
     align-items: center;
+    
 }
 
 span {

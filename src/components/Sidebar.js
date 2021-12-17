@@ -6,14 +6,19 @@ import * as AiIcons from "react-icons/ai";
 import { SidebarData } from './SidebarData';
 import './Sidebar.css';
 import { IconContext } from 'react-icons';
+import * as GoIcons from "react-icons/go";
 
 
 
+  
 function Sidebar() {
     const [ sidebar, setSidebar ] = useState(false);
     const { store, actions } = useContext(Context)
     
     const showSidebar = () => setSidebar(!sidebar);
+    const handleLogout = () => {
+        actions.logout()
+    }
 
     return (
         <>
@@ -25,24 +30,51 @@ function Sidebar() {
                     </Link>
                 </div>
                 <div className="col-7"></div>
-                <div className="col-2 " >
+                <div className="col-3 d-flex flex-row justify-content-start align-items-center" >
                     <Link to="/home">
                         <div className="h3 me-3 text-white">FUTSTARTER</div>
                     </Link>
+                    {store.currentUser  === null ? 
+                        
+                        <Link to="/login">
+                            <div className='top-log-icon d-flex align-items-center justify-content-start'>
+                                <GoIcons.GoSignIn />
+                            </div>
+                        </Link>
+                        
+                        :
+                        <Link to="/login">
+                            <button className='top-log-icon' onClick={() => handleLogout()}><GoIcons.GoSignOut /></button>
+                        </Link>
+                        }
+                    
                 </div>
                 
             </div>
             
             
-            <nav className={sidebar ? 'nav-menu active mt-5' : 'nav-menu mt-5' }>
+            <nav className={sidebar ? 'nav-menu active d-flex flex-column' : 'nav-menu d-flex flex-column' }>
             
                 <ul className='nav-menu-items' onClick={showSidebar}>
                     
-                    <li className="sidebar-toggle d-flex flex-row text-white">
-                        <Link to="#" className='menu-bars'>
+                    <li className="sidebar-toggle d-flex flex-row border-top border-bottom border-white mb-3">
+                        {/* <Link to="#" className='menu-bars'>
                             <AiIcons.AiOutlineClose />
-                        </Link>
-                        <h2>Hello, {store.currentUser?.username}</h2>
+                        </Link> */}
+                        
+                        <div>
+                            {store.currentUser  === null ? 
+                                <Link to="/login" className='nav-text'>
+                                    <GoIcons.GoSignIn />
+                                    <button><span>Login</span></button>
+                                </Link>
+                                :
+                                <Link to="/login" className='nav-text'>
+                                    <h3 className='px-1 w-auto'>{store.currentUser?.username}</h3>
+                                    <button className='text-white border border-dark rounded' onClick={() => handleLogout()}><GoIcons.GoSignOut />Logout</button>
+                                </Link>
+                            }
+                        </div>
                     </li>
 
                     {SidebarData.map((item, index) => {
@@ -55,7 +87,10 @@ function Sidebar() {
                             </li>
                         )
                     })}
+                    
+
                 </ul>
+                
             </nav>
             </IconContext.Provider>
         </>

@@ -10,6 +10,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         store: {
             currentUser: null,
             user: {},
+            invalidCredentials: false,
             registerFormData: {
                 username: '',
                 email: '',
@@ -139,16 +140,24 @@ const getState = ({ getStore, getActions, setStore }) => {
                     //history.push('/')
                 })
             },
-            loginUser: async (loginFormData) => {
+            loginUser: async (loginFormData, history) => {
                 const us = await loginUserAPI(loginFormData).then((data) => {
                     console.log('data en login flux', data)
+                    if(data.status == 200) {
                     setStore({...getStore, currentUser: data.user[0]})
                     //await getActions.getUser(data.token)
-                    localStorage.setItem("jwt-token", data.token);
+                     localStorage.setItem("jwt-token", data.token);
+                    } else {
+                        setStore({...getStore, invalidCredentials: true})
+                        history.push("/home")
+                    }
                 })
             },
+            logout: () => {
+                setStore({...getStore, currentUser: null})
+            },
             // getUser: async (token) => {
-
+            
             // },
             getSquads: async () => {
                 const pl = await getSquadByLeagueAPI(13).then((data) => {

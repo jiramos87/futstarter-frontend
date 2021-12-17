@@ -20,8 +20,8 @@ const loginUserAPI = async (loginFormData) => {
           if(call.status === 401){
             throw("Invalid credentials")
           }
-          else if(call.status === 400){
-            throw ("Invalid email or password format")
+          else if(call.status === 401){
+            throw Error("Invalid email or password format")
         }
         return call.json()
     } catch (error){

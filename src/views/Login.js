@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { Context } from '../store/AppContext'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import './Login.css';
 
 
@@ -8,6 +8,8 @@ const Login = () => {
     const { store, actions } = useContext(Context)
 
     console.log('currentUser en <Login/>', store.currentUser)
+    const history = useHistory()
+
     const [ loginFormData, setFormData] = useState({
         username: '',
         password: ''
@@ -25,8 +27,8 @@ const Login = () => {
         console.log(loginFormData)
         //validations on email regex and password length
 
-        //registerUser on submit
-        actions.loginUser(loginFormData)
+        //loginUser on submit
+        actions.loginUser(loginFormData, history)
 
     }
     
@@ -47,12 +49,21 @@ const Login = () => {
                                         <label htmlFor="password">Password</label>
                                         <input type="password" className="form-control" name="password" placeholder="Password" value={loginFormData.password} onChange={onChange}/>
                                     </div>
+                                    { store.invalidCredentials == true ? 
+                                        <div className=' text-center bg-danger rounded mt-2 mb-2'>
+                                            "Username or password incorrect"   
+                                        </div>
+                                        :
+                                        ''
+                                    }
                                     <button type="submit" className="btn btn-lg btn-primary btn-block">Login</button>
                                 </form>
-                                <span>Don't have an account? </span>
-                                <Link to='/register'>
-                                    <a href="#">Register</a>
-                                </Link>
+                                <div>
+                                    <span>Don't have an account? </span>
+                                    <Link to='/register'>
+                                        <a className="bg-dark rounded" href="#">Go to the Register page</a>
+                                    </Link>
+                                </div>
                                 
                             </div>
                             :
