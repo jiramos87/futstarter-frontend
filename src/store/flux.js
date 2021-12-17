@@ -11,6 +11,8 @@ const getState = ({ getStore, getActions, setStore }) => {
             currentUser: null,
             user: {},
             invalidCredentials: false,
+            registerFailed: false,
+            errorMesage: '',
             registerFormData: {
                 username: '',
                 email: '',
@@ -131,22 +133,28 @@ const getState = ({ getStore, getActions, setStore }) => {
                 }
         },
         actions: {
-            registerUser: async (registerFormData) => {
+            registerUser: async (registerFormData, history) => {
                 const us = await registerUserAPI(registerFormData).then((data) => {
                     console.log(data)
-                    setStore({...getStore, currentUser: data.user[0]})   
-                    localStorage.setItem("jwt-token", data.token);
-                    //localStorage.setItem("currentUser", data.user[0]);   
-                    //history.push('/')
+                      
+                    if(data.status == 200) {
+                        setStore({...getStore, currentUser: data.user[0]})
+                        localStorage.setItem("jwt-token", data.token);
+                        //localStorage.setItem("currentUser", data.user[0]);   
+                        //history.push('/')
+                    } else {
+                        setStore({...getStore, errorMesage: data.message}) 
+                        history.push("/register")
+                    }
                 })
             },
             loginUser: async (loginFormData, history) => {
                 const us = await loginUserAPI(loginFormData).then((data) => {
                     console.log('data en login flux', data)
                     if(data.status == 200) {
-                    setStore({...getStore, currentUser: data.user[0]})
-                    //await getActions.getUser(data.token)
-                     localStorage.setItem("jwt-token", data.token);
+                        setStore({...getStore, currentUser: data.user[0]})
+                        //await getActions.getUser(data.token)
+                        localStorage.setItem("jwt-token", data.token);
                     } else {
                         setStore({...getStore, invalidCredentials: true})
                         history.push("/home")
@@ -155,6 +163,28 @@ const getState = ({ getStore, getActions, setStore }) => {
             },
             logout: () => {
                 setStore({...getStore, currentUser: null})
+            },
+
+            getSquadRating: (squad) => {
+                let ratingSum = squad.lst.rating + squad.rst.rating + squad.lm.rating + squad.lcm.rating 
+                     + squad.rcm.rating + squad.rm.rating + squad.lb.rating + squad.lcb.rating
+                     + squad.rcb.rating + squad.rb.rating + squad.gk.rating 
+                let squadRating = parseInt(ratingSum / 11)  
+                return squadRating;
+            },
+            getSquadPrice: (league) => {
+                console.log('league in flux', league)
+                if(league == 'Premier League') {
+                    return 2500000
+                } else if(league == 'Ligue 1') {
+                    return 3200000
+                } else if(league == 'Bundesliga') {
+                    return 1200000
+                } else if(league == 'Serie A TIM') {
+                    return 1000000
+                } else if(league == 'LaLiga Santander') {
+                    return 1400000
+                } else return 0
             },
             // getUser: async (token) => {
             

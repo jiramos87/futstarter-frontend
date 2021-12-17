@@ -35,25 +35,46 @@ body {
 .LM {
     margin-top: -4rem !important;
 }
-
 .RM {
     margin-top: -4rem !important;
 }
-
 .LB {
     margin-top: -2rem !important;
 }
+.RB {margin-top: -2rem !important;}
+.GK {margin-top: -3rem !important;}
 
-.RB {
-    margin-top: -2rem !important;
+.squad-coins-icon {
+    width: 1rem !important;
+    height: 1rem !important;
 }
 
-.GK {
-    margin-top: -3rem !important;
+.info-view {
+    height: 100%;
+    margin-bottom: 25vh;
 }
 
-/* 
-.container {
+.hover-view {
+    width: 130%;
+    margin-left: -2rem;
+    margin-top: 5rem;
+    min-height: 30rem !important;
+    background-color: #465977;
+}
+
+.hover-image {
+    width: 60%;
+    margin-top: -6rem;
+    margin-bottom: 0.2rem;
+    border: rgb(24, 24, 24);
+}
+
+.hover-view-top-half {
+    min-height: 15rem !important;
+}
+
+ 
+.squad-container {
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -62,8 +83,23 @@ body {
     flex-wrap: nowrap;
     min-height: 95vh;
     padding-top: 4em;
+    min-width: 70% !important;
 }
-*/
+
+.info-container {
+    min-width: 30% !important;
+}
+
+.league-hover-div{
+    max-width:30%;
+    max-height:30%;
+}
+.league-hover {
+    max-width:100%;
+    max-height:100%;
+}
+
+
 
 .mt--1 {
     margin-top: -3rem !important;

@@ -183,6 +183,13 @@ input {
   background-color:#212936 !important;
   color: #c4c4c4 !important;
 }
+
+.info-card {
+  background-color:#212936 !important;
+  color: #c4c4c4 !important;
+  width: 90%;
+  
+}
 .text-details{
   color: #C2ED63 !important;
 }

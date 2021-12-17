@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { Context } from '../store/AppContext'
 
 
@@ -10,6 +10,7 @@ const Register = () => {
         email: '',
         password: ''
     })
+    const history = useHistory()
 
     const onChange = (e) => {
         setFormData({
@@ -24,7 +25,7 @@ const Register = () => {
         //validations on email regex and password length
 
         //registerUser on submit
-        actions.registerUser(registerFormData)
+        actions.registerUser(registerFormData, history)
 
     }
     
@@ -49,6 +50,13 @@ const Register = () => {
                                             <label htmlFor="password">Password</label>
                                             <input type="password" className="form-control" name="password" placeholder="Password" value={registerFormData.password} onChange={onChange}/>
                                         </div>
+                                        { store.registerFailed ? 
+                                            <div className=' text-center bg-danger rounded mt-2 mb-2'>
+                                                store.errorMessage   
+                                            </div>
+                                            :
+                                            ''
+                                            }
                                         <button type="submit" className="btn btn-lg btn-primary btn-block"> Register</button>
                                     </form>
                                     <Link to='/'>
@@ -56,7 +64,7 @@ const Register = () => {
                                     </Link>
                                 </div>
                                 : 
-                                <div className="display-2"> Welcome, {store.currentUser?.username}</div>
+                                <div className="display-2"> You are logged in, {store.currentUser?.username}</div>
                         }
                     </div>
                 </div>

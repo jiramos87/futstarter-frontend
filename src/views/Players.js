@@ -243,34 +243,34 @@ const Players = () => {
                     <table className="table table-hover table-dark table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th scope="col"><small>Ranking</small></th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Rating</th>
+                                <th width="3%" scope="col"><small>Ranking</small></th>
+                                <th width="20%" scope="col">Name</th>
+                                <th width="5%" scope="col">Rating</th>
                                 
                             
                             {
                             position === 'Attackers' ? 
                                 <>  
-                                    <th scope="col">ST Meta Rating</th>
-                                    <th scope="col">Finishing</th>
-                                    <th scope="col">Sprint speed</th>
-                                    <th scope="col">Agility</th>
+                                    <th width="13%" scope="col">ST Meta Rating</th>
+                                    <th width="7%" scope="col">Finishing</th>
+                                    <th width="11%" scope="col">Sprint speed</th>
+                                    <th width="11%" scope="col">Agility</th>
                                 </>
                             :
                             position === 'Midfielders' ? 
                                 <>
-                                    <th scope="col">CM Meta Rating</th>
-                                    <th scope="col">Short Passing</th>
-                                    <th scope="col">Acceleration</th>
-                                    <th scope="col">Stamina</th>
+                                    <th width="13%" scope="col">CM Meta Rating</th>
+                                    <th width="11%" scope="col">Short Passing</th>
+                                    <th width="11%" scope="col">Acceleration</th>
+                                    <th width="11%" scope="col">Stamina</th>
                                 </>
                             :
                             position === 'Defenders' ? 
                                 <>
-                                    <th scope="col">CB Meta Rating</th>
-                                    <th scope="col">Sprint speed</th>
-                                    <th scope="col">Interceptions</th>
-                                    <th scope="col">Standing tackle</th>
+                                    <th width="13%" scope="col">CB Meta Rating</th>
+                                    <th width="11%" scope="col">Sprint speed</th>
+                                    <th width="11%" scope="col">Interceptions</th>
+                                    <th width="11%" scope="col">Standing tackle</th>
                                     
                                 </>
                             :

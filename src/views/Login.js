@@ -49,7 +49,7 @@ const Login = () => {
                                         <label htmlFor="password">Password</label>
                                         <input type="password" className="form-control" name="password" placeholder="Password" value={loginFormData.password} onChange={onChange}/>
                                     </div>
-                                    { store.invalidCredentials == true ? 
+                                    { store.invalidCredentials ? 
                                         <div className=' text-center bg-danger rounded mt-2 mb-2'>
                                             "Username or password incorrect"   
                                         </div>

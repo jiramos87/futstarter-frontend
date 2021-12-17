@@ -3,9 +3,6 @@ import { Context } from '../store/AppContext'
 // import './index.css';
 const PlayerCard = (props) => {
 
-    console.log('playercard props: ', props.player)
-        
-    
     return (
         <div className="card-1">
             <div className="card-top">

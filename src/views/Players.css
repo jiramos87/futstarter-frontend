@@ -5,3 +5,7 @@
 .cursor-pointer {
   cursor: pointer !important;
 }
+
+.player-list-rank {
+  max-width: 2rem !important;
+}
