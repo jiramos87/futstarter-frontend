@@ -24,7 +24,7 @@ const SquadCreator = () => {
         gk: store.squadCreatorGK
     }
     const [ formation, setFormation ] = useState('442')
-    const [ positions, setPositions ] = useState(actions.positionInterpreter('442'))
+    const [ positions, setPositions ] = useState(actions.formationInterpreter('442'))
    
     const [ squad, setSquad ] = useState(userSquad)  
     const [ mouseHover, setMouseHover ] = useState(false)
@@ -58,6 +58,7 @@ const SquadCreator = () => {
 
     const handleFormationChange = (user_formation) => {
         setFormation(user_formation)
+        setPositions(actions.formationInterpreter(user_formation))
     }
 
     const handleCardHover = (hoverPlayer, position_string) => {
@@ -522,7 +523,17 @@ const SquadCreator = () => {
                     <div className='info-container position-relative d-flex flex-column ms-5'>
                         <div className="navigationBody">
                             <div className="navigation text-white">
-                               Selectores
+                               Choose a formation
+                               <div className='rounded py-3 px-3 w-75 d-flex flex-row justify-content-between'>
+                                    <button type="button" className='btn btn-dark btn-sm rounded w-25' 
+                                            onClick={() => handleFormationChange('442') }> 
+                                                442 
+                                            </button>
+                                    <button type="button" className='btn btn-dark btn-sm rounded w-25' 
+                                            onClick={() => handleFormationChange('433') }> 
+                                                433
+                                            </button>
+                               </div>
                             </div> 
                         </div>
 

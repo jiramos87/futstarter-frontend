@@ -243,7 +243,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 }
             },
 
-            positionsInterpreter: (positions_string) => {
+            formationInterpreter: (positions_string) => {
                 if(positions_string == '442') {
                     return {
                        lst: null,
