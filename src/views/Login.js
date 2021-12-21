@@ -6,8 +6,6 @@ import './Login.css';
 
 const Login = () => {
     const { store, actions } = useContext(Context)
-
-    console.log('currentUser en <Login/>', store.currentUser)
     const history = useHistory()
 
     const [ loginFormData, setFormData] = useState({

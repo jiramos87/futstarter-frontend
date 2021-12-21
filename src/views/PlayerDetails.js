@@ -19,7 +19,7 @@ const PlayerDetails = () => {
                     <PlayerCard player={player}/>
                 </div>
                 <div className="stats-defined rounded">
-                        <table class="table table-sm text-start details-table">
+                        <table className="table table-sm text-start details-table">
                             <thead>
                                 <tr>
                                     <th colspan="4" className="text-center">INFO</th>

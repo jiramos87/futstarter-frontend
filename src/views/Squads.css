@@ -14,9 +14,9 @@ body {
     /* align-content: stretch; */
     flex-wrap: nowrap;
     min-height: 95vh;
-    background-image: url('http://localhost:3000/fieldgreybackground.jpg');
+    background-image: url('http://localhost:3000/field.jpg');
     background-repeat: no-repeat;
-    background-position: center 4.5em;
+    background-position: center;
     /* background-attachment: fixed; */
     background-size: cover; 
     overflow: visible !important;
@@ -26,14 +26,41 @@ body {
 .card-base {
     text-align: center;
     font-size: 1rem;
-    color: rgb(152, 247, 242);
-    
-
+    color: #C2ED63;
+    background-color: #212936;
+    width: 3em;
+    transform: translateX(3em);
+    border-radius: 15px;
+    margin-right: 0;
 }
 
+.add-button {
+    text-align: center;
+    font-size: 1rem;
+    color: #C2ED63;
+    background-color: #212936;
+    width: 3em;
+    transform: translateX(3em);
+    border-radius: 15px;
+    margin-right: 0;
+    margin-bottom: 1rem;
+}
+
+.LST {
+    margin-top: 0.8rem !important;
+}
+.RST {
+    margin-top: 0.8rem !important;
+}
 
 .LM {
     margin-top: -4rem !important;
+}
+.LCM {
+    margin-top: 0.6rem !important;
+}
+.RCM {
+    margin-top: 0.6rem !important;
 }
 .RM {
     margin-top: -4rem !important;
@@ -42,7 +69,13 @@ body {
     margin-top: -2rem !important;
 }
 .RB {margin-top: -2rem !important;}
-.GK {margin-top: -3rem !important;}
+.LCB {
+    margin-top: -0.2rem !important;
+}
+.RCB {
+    margin-top: -0.2rem !important;
+}
+.GK {margin-top: -5rem !important;}
 
 .squad-coins-icon {
     width: 1rem !important;
@@ -57,7 +90,7 @@ body {
 .hover-view {
     width: 130%;
     margin-left: -2rem;
-    margin-top: 5rem;
+    margin-top: 3rem;
     min-height: 30rem !important;
     background-color: #465977;
 }
@@ -81,9 +114,11 @@ body {
     justify-content: space-around;
     align-items: center; 
     flex-wrap: nowrap;
-    min-height: 95vh;
+    min-height: 80vh;
+    max-height: 95vh;
     padding-top: 4em;
     min-width: 70% !important;
+    max-width: 60% !important;
 }
 
 .info-container {
@@ -126,9 +161,11 @@ body {
     overflow: visible;
     min-width: 8rem;
     width: 100%;
-    min-height: 10rem;
+    min-height: 9rem;
     height: 100%;
 }
+
+
 
 
 /* .row {

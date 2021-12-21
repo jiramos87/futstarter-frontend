@@ -2,7 +2,7 @@ import registerUserAPI from "../services/registerUserAPI";
 import loginUserAPI from "../services/loginUserAPI";
 import getSquadByLeagueAPI from "../services/getSquadByLeagueAPI";
 import getListByLeagueAPI from "../services/getListByLeagueAPI";
-import { history } from "react-router-dom"
+import searchPlayerByNameAPI from "../services/searchPlayerByNameAPI";
 
 const getState = ({ getStore, getActions, setStore }) => {
     const backendUrl = 'http://localhost/5000'
@@ -10,6 +10,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         store: {
             currentUser: null,
             user: {},
+            token: {},
             invalidCredentials: false,
             registerFailed: false,
             errorMesage: '',
@@ -23,6 +24,19 @@ const getState = ({ getStore, getActions, setStore }) => {
                 password: ''
             },
             error: false,
+            userSquad: {},
+            searchPlayerResult: [],
+            squadCreatorLST: null,
+            squadCreatorRST: null,
+            squadCreatorLM: null,
+            squadCreatorLCM: null,
+            squadCreatorRCM: null,
+            squadCreatorRM: null,
+            squadCreatorLB: null,
+            squadCreatorLCB: null,
+            squadCreatorRCB: null,
+            squadCreatorRB: null,
+            squadCreatorGK: null,
             plSquad: {},
             l1Squad: {},
             blSquad: {},
@@ -139,6 +153,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                       
                     if(data.status == 200) {
                         setStore({...getStore, currentUser: data.user[0]})
+                        setStore({...getStore, token: data.token})
                         localStorage.setItem("jwt-token", data.token);
                         //localStorage.setItem("currentUser", data.user[0]);   
                         //history.push('/')
@@ -154,6 +169,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     if(data.status == 200) {
                         setStore({...getStore, currentUser: data.user[0]})
                         //await getActions.getUser(data.token)
+                        setStore({...getStore, token: data.token})
                         localStorage.setItem("jwt-token", data.token);
                     } else {
                         setStore({...getStore, invalidCredentials: true})
@@ -161,8 +177,110 @@ const getState = ({ getStore, getActions, setStore }) => {
                     }
                 })
             },
+            searchPlayerByName: async (searchData) => {
+                const search = await searchPlayerByNameAPI(searchData).then((data) => {
+                    console.log('player search result en login flux: ', data)
+                    if(data.status == 200) {
+                        setStore({...getStore, searchPlayerResult: data.result})
+                        
+                       
+                        //await getActions.getUser(data.token)
+                    } else {
+                        setStore({...getStore, errorMesage: data.message})
+                        setStore({...getStore, searchPlayerResult: []})
+                    }
+                    
+                })
+            },
+            addPlayer: (player, position) => {
+                if(position == 'LST') {
+                    setStore({...getStore, squadCreatorLST: player})
+                } else if (position == 'RST') {
+                    setStore({...getStore, squadCreatorRST: player})
+                } else if (position == 'LM') {
+                    setStore({...getStore, squadCreatorLM: player})
+                } else if (position == 'LCM') {
+                    setStore({...getStore, squadCreatorLCM: player})
+                } else if (position == 'RCM') {
+                    setStore({...getStore, squadCreatorRCM: player})
+                } else if (position == 'RM') {
+                    setStore({...getStore, squadCreatorRM: player})
+                } else if (position == 'LB') {
+                    setStore({...getStore, squadCreatorLB: player})
+                } else if (position == 'LCB') {
+                    setStore({...getStore, squadCreatorLCB: player})
+                } else if (position == 'RCB') {
+                    setStore({...getStore, squadCreatorRCB: player})
+                } else if (position == 'RB') {
+                    setStore({...getStore, squadCreatorRB: player})
+                } else if (position == 'GK') {
+                    setStore({...getStore, squadCreatorGK: player})
+                }
+            },
+            removePlayer: (position) => {
+                if(position == 'LST') {
+                    setStore({...getStore, squadCreatorLST: null})
+                } else if (position == 'RST') {
+                    setStore({...getStore, squadCreatorRST: null})
+                } else if (position == 'LM') {
+                    setStore({...getStore, squadCreatorLM: null})
+                } else if (position == 'LCM') {
+                    setStore({...getStore, squadCreatorLCM: null})
+                } else if (position == 'RCM') {
+                    setStore({...getStore, squadCreatorRCM: null})
+                } else if (position == 'RM') {
+                    setStore({...getStore, squadCreatorRM: null})
+                } else if (position == 'LB') {
+                    setStore({...getStore, squadCreatorLB: null})
+                } else if (position == 'LCB') {
+                    setStore({...getStore, squadCreatorLCB: null})
+                } else if (position == 'RCB') {
+                    setStore({...getStore, squadCreatorRCB: null})
+                } else if (position == 'RB') {
+                    setStore({...getStore, squadCreatorRB: null})
+                } else if (position == 'GK') {
+                    setStore({...getStore, squadCreatorGK: null})
+                }
+            },
+
+            positionsInterpreter: (positions_string) => {
+                if(positions_string == '442') {
+                    return {
+                       lst: null,
+                       rst: null,
+                       lm: null,
+                       lcm: null,
+                       rcm: null,
+                       rm: null,
+                       lb: null,
+                       lcm: null,
+                       rcm: null,
+                       rb: null,
+                       gk: null 
+                    }
+                } else if(positions_string == '433') {
+                    return {
+                       lw: null,
+                       cst: null,
+                       rw: null,
+                       lcm: null,
+                       ccm: null,
+                       rcm: null,
+                       lb: null,
+                       lcm: null,
+                       rcm: null,
+                       rb: null,
+                       gk: null 
+                    }
+                }
+            },
+
+            // getPlayer: (position) => {
+            //     return getStore.selectedPlayer
+            // },
             logout: () => {
                 setStore({...getStore, currentUser: null})
+                setStore({...getStore, token: null})
             },
 
             getSquadRating: (squad) => {
@@ -173,7 +291,6 @@ const getState = ({ getStore, getActions, setStore }) => {
                 return squadRating;
             },
             getSquadPrice: (league) => {
-                console.log('league in flux', league)
                 if(league == 'Premier League') {
                     return 2500000
                 } else if(league == 'Ligue 1') {

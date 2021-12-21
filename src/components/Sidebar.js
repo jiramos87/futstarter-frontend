@@ -24,16 +24,17 @@ function Sidebar() {
         <>
         <IconContext.Provider value={{color: '#C2ED63'}}>
             <div className="fixed-top sidebar d-flex flex-row justify-content-between">
-                <div className="col-3">
+                <div className="col-3 d-flex flex-row align-items-center">
                     <Link to="#" className='menu-bars'>
                         <FaIcons.FaBars onClick={showSidebar} />
                     </Link>
+                    <Link to="/home">
+                        <div className="h3 ms-3 mt-3 text-white">FUTSTARTER</div>
+                    </Link>
                 </div>
                 <div className="col-7"></div>
-                <div className="col-3 d-flex flex-row justify-content-start align-items-center" >
-                    <Link to="/home">
-                        <div className="h3 me-3 text-white">FUTSTARTER</div>
-                    </Link>
+                <div className="col-3 d-flex flex-row justify-content-start align-items-center ms-5 px-5" >
+                    
                     {store.currentUser  === null ? 
                         
                         <Link to="/login">
@@ -105,6 +106,12 @@ function Sidebar() {
                                 <Link to={SidebarData[2].path}>
                                     {SidebarData[2].icon}
                                     <span>{SidebarData[2].title}</span>
+                                </Link>
+                            </li>
+                            <li className={SidebarData[3].cName}>
+                                <Link to={SidebarData[3].path}>
+                                    {SidebarData[3].icon}
+                                    <span>{SidebarData[3].title}</span>
                                 </Link>
                             </li>
                         </div>

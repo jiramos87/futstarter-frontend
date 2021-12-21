@@ -5,7 +5,7 @@ import './Squads.css';
 import './Players.css'
 import './LeaguesNavigation.css';
 import './NavigationPosition.css';
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom" 
 
 const Players = () => {
     

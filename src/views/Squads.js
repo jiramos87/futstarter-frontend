@@ -33,6 +33,7 @@ const Squads = () => {
 
     const handleCardHover = (hoverPlayer, squadPosition) => {
         //actions.setPlayerDetailsPlayer(squad.lst, history)
+        //console.log('hovered player', hoverPlayer)
         setMouseHover(true)
         setPlayer(hoverPlayer)
         setPosition(squadPosition)
@@ -282,7 +283,7 @@ const Squads = () => {
                                         data-bs-target="#info-collapse" 
                                         aria-expanded="false" 
                                         aria-controls="info-collapse"
-                                        onMouseEnter={ () => handleCardHover(squad.rm, 'LCB')}
+                                        onMouseEnter={ () => handleCardHover(squad.lcb, 'LCB')}
                                         onMouseLeave={ () => setMouseHover(false)}
                                         onClick={() => actions.setPlayerDetailsPlayer(squad.lcb, history)}
                                         className="col playercard LCB cursor-pointer">
@@ -313,7 +314,7 @@ const Squads = () => {
                                         data-bs-target="#info-collapse" 
                                         aria-expanded="false" 
                                         aria-controls="info-collapse"
-                                        onMouseEnter={ () => handleCardHover(squad.rm, 'RB')}
+                                        onMouseEnter={ () => handleCardHover(squad.rb, 'RB')}
                                         onMouseLeave={ () => setMouseHover(false)}
                                         onClick={() => actions.setPlayerDetailsPlayer(squad.rb, history)}
                                         className="col playercard RB cursor-pointer">

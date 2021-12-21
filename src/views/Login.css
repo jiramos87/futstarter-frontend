@@ -9,10 +9,10 @@
     /* align-content: stretch; */
     flex-wrap: nowrap;
     min-height: 95vh;
-    padding-top: 4.5em !important;
+    padding-top: 4em !important;
     background-image: url('http://localhost:3000/ronaldino.jpg');
     background-repeat: no-repeat;
-    background-position: center 4.1em;
+    background-position: center 3em;
     background-attachment: fixed;
     
     

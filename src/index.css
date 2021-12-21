@@ -14,7 +14,10 @@ main {
   overflow-y: scroll;
 }
 
-
+.main-row {
+  height: 100vh;
+  width: auto !important;
+}
 #sidebar {
   height: 100vh !important;
   position: static !important;
@@ -98,6 +101,11 @@ input {
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y:center; */
+}
+
+.face-search {
+  width: 20%;
+  height: 90%;
 }
 
 .NAME-PLAYERS{

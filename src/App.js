@@ -17,6 +17,7 @@ import Register from './views/Register'
 import Login from './views/Login'
 import PlayerCard from './components/PlayerCard'
 import PlayerDetails from './views/PlayerDetails'
+import SquadCreator from './views/SquadCreator'
 
 
 const App = () => {
@@ -24,7 +25,7 @@ const App = () => {
   return (
     <Router basename={basename}>
       <Sidebar />
-      <div className="row mt-0 pt-0">
+      <div className="row main-row mt-0 pt-0">
         <div className="col-2">
                     
         </div>
@@ -47,6 +48,9 @@ const App = () => {
             </Route>
             <Route exact path="/players">
               <Players />
+            </Route>
+            <Route exact path="/squadcreator">
+              <SquadCreator />
             </Route>
             <Route exact path="/login">
               <Login />
