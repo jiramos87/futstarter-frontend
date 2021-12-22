@@ -24,19 +24,52 @@ const getState = ({ getStore, getActions, setStore }) => {
                 password: ''
             },
             error: false,
-            userSquad: {},
             searchPlayerResult: [],
-            squadCreatorLST: null,
-            squadCreatorRST: null,
-            squadCreatorLM: null,
-            squadCreatorLCM: null,
-            squadCreatorRCM: null,
-            squadCreatorRM: null,
-            squadCreatorLB: null,
-            squadCreatorLCB: null,
-            squadCreatorRCB: null,
-            squadCreatorRB: null,
-            squadCreatorGK: null,
+            squadCreator0: {
+                position: '',
+                player_data: null
+            },
+            squadCreator1: {
+                position: '',
+                player_data: null
+            },
+            squadCreator2: {
+                position: '',
+                player_data: null
+            },
+            squadCreator3: {
+                position: '',
+                player_data: null
+            },
+            squadCreator4: {
+                position: '',
+                player_data: null
+            },
+            squadCreator5: {
+                position: '',
+                player_data: null
+            },
+            squadCreator6: {
+                position: '',
+                player_data: null
+            },
+            squadCreator7: {
+                position: '',
+                player_data: null
+            },
+            squadCreator8: {
+                position: '',
+                player_data: null
+            },
+            squadCreator9: {
+                position: '',
+                player_data: null
+            },
+            squadCreator10: {
+                position: '',
+                player_data: null
+            },
+
             plSquad: {},
             l1Squad: {},
             blSquad: {},
@@ -192,29 +225,30 @@ const getState = ({ getStore, getActions, setStore }) => {
                     
                 })
             },
-            addPlayer: (player, position) => {
-                if(position == 'LST') {
-                    setStore({...getStore, squadCreatorLST: player})
-                } else if (position == 'RST') {
-                    setStore({...getStore, squadCreatorRST: player})
-                } else if (position == 'LM') {
-                    setStore({...getStore, squadCreatorLM: player})
-                } else if (position == 'LCM') {
-                    setStore({...getStore, squadCreatorLCM: player})
-                } else if (position == 'RCM') {
-                    setStore({...getStore, squadCreatorRCM: player})
-                } else if (position == 'RM') {
-                    setStore({...getStore, squadCreatorRM: player})
-                } else if (position == 'LB') {
-                    setStore({...getStore, squadCreatorLB: player})
-                } else if (position == 'LCB') {
-                    setStore({...getStore, squadCreatorLCB: player})
-                } else if (position == 'RCB') {
-                    setStore({...getStore, squadCreatorRCB: player})
-                } else if (position == 'RB') {
-                    setStore({...getStore, squadCreatorRB: player})
-                } else if (position == 'GK') {
-                    setStore({...getStore, squadCreatorGK: player})
+            addPlayer: (player, position, index) => {
+                
+                if (index == 0) {
+                    setStore({...getStore, squadCreator0: {'position': position, 'player_data': player}})
+                } else if (index == 1) {
+                    setStore({...getStore, squadCreator1: {'position': position, 'player_data': player}})
+                } else if (index == 2) {
+                    setStore({...getStore, squadCreator2: {'position': position, 'player_data': player}})
+                } else if (index == 3) {
+                    setStore({...getStore, squadCreator3: {'position': position, 'player_data': player}})
+                } else if (index == 4) {
+                    setStore({...getStore, squadCreator4: {'position': position, 'player_data': player}})
+                } else if (index == 5) {
+                    setStore({...getStore, squadCreator5: {'position': position, 'player_data': player}})
+                } else if (index == 6) {
+                    setStore({...getStore, squadCreator6: {'position': position, 'player_data': player}})
+                } else if (index == 7) {
+                    setStore({...getStore, squadCreator7: {'position': position, 'player_data': player}})
+                } else if (index == 8) {
+                    setStore({...getStore, squadCreator8: {'position': position, 'player_data': player}})
+                } else if (index == 9) {
+                    setStore({...getStore, squadCreator9: {'position': position, 'player_data': player}})
+                } else if (index == 10) {
+                    setStore({...getStore, squadCreator10: {'position': position, 'player_data': player}})
                 }
             },
             removePlayer: (position) => {
@@ -245,33 +279,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 
             formationInterpreter: (positions_string) => {
                 if(positions_string == '442') {
-                    return {
-                       lst: null,
-                       rst: null,
-                       lm: null,
-                       lcm: null,
-                       rcm: null,
-                       rm: null,
-                       lb: null,
-                       lcm: null,
-                       rcm: null,
-                       rb: null,
-                       gk: null 
-                    }
+                    return ["LST", "RST", "LM", "LCM", "RCM", "RM", "LB", "LCB", "RCB", "RB", "GK"]
                 } else if(positions_string == '433') {
-                    return {
-                       lw: null,
-                       cst: null,
-                       rw: null,
-                       lcm: null,
-                       ccm: null,
-                       rcm: null,
-                       lb: null,
-                       lcm: null,
-                       rcm: null,
-                       rb: null,
-                       gk: null 
-                    }
+                    return ["LW", "CST", "RW", "LCM", "CCM", "RCM", "LB", "LCB", "RCB", "RB", "GK"]
                 }
             },
 
