@@ -32,6 +32,7 @@ const SquadCreator = () => {
     const [ playerIndex, setPlayerIndex ] = useState(0)
    
     const [ squad, setSquad ] = useState(userSquad)  
+    const [ squadName, setSquadName ] = useState('')
     const [ mouseHover, setMouseHover ] = useState(false)
     const [ displaySearch, setDisplaySearch ] = useState(false)
     const [ displayActions, setDisplayActions ] = useState(false)
@@ -139,7 +140,7 @@ const SquadCreator = () => {
         console.log('selected player: ', selectedplayer, 'position: ', position, 'player index: ', playerIndex)
         setSelectedPlayer(selectedplayer)
         actions.addPlayer(selectedplayer, player_position, playerIndex)
-            
+           
         
         // if(position == 'LST') {
         //     setSquad({...squad, lst: store.squadCreatorLST})
@@ -169,6 +170,16 @@ const SquadCreator = () => {
         setSearchString('')
         setSearchResults([])
     
+    }
+
+    const handleSquadNameChange = (e) => {
+        let squad_name = e.target.value
+        setSquadName(squad_name)
+    }
+
+    const handleSquadNameSubmit = (e) => {
+        e.preventDefault()
+        
     }
 
     return (
@@ -225,7 +236,7 @@ const SquadCreator = () => {
                     <div className='info-container position-relative d-flex flex-column ms-5'>
                         <div className="navigationBody">
                             <div>
-                                <button className='btn rounded' onClick={() => actions.saveSquad(userSquad)}>Save</button>
+                                <button className='btn rounded' onClick={() => actions.saveSquad(userSquad, formation, squadName)}>Save</button>
                             </div>
                             <div className="navigation text-white">
                                Choose a formation

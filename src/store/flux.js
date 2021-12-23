@@ -286,11 +286,12 @@ const getState = ({ getStore, getActions, setStore }) => {
                 setStore({...getStore, user_formation: user_formation})
             },
 
-            saveSquad: async (user_squad, squad_formation) => {
+            saveSquad: async (user_squad, squad_formation, squad_name) => {
 
                 let squad_obj = {
                     "formation": squad_formation,
-                    "squad_data": user_squad
+                    "squad_data": user_squad,
+                    "squad_name": squad_name
                 } 
 
                 let user_token = getStore.token
