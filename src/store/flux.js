@@ -25,6 +25,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             },
             error: false,
             searchPlayerResult: [],
+            user_formation: '433',
             squadCreator0: {
                 position: '',
                 player_data: null
@@ -215,18 +216,13 @@ const getState = ({ getStore, getActions, setStore }) => {
                     console.log('player search result en login flux: ', data)
                     if(data.status == 200) {
                         setStore({...getStore, searchPlayerResult: data.result})
-                        
-                       
-                        //await getActions.getUser(data.token)
                     } else {
                         setStore({...getStore, errorMesage: data.message})
                         setStore({...getStore, searchPlayerResult: []})
                     }
-                    
                 })
             },
             addPlayer: (player, position, index) => {
-                
                 if (index == 0) {
                     setStore({...getStore, squadCreator0: {'position': position, 'player_data': player}})
                 } else if (index == 1) {
@@ -248,32 +244,32 @@ const getState = ({ getStore, getActions, setStore }) => {
                 } else if (index == 9) {
                     setStore({...getStore, squadCreator9: {'position': position, 'player_data': player}})
                 } else if (index == 10) {
-                    setStore({...getStore, squadCreator10: {'position': position, 'player_data': player}})
+                    setStore({...getStore, squadCreator1: {'position': position, 'player_data': player}})
                 }
             },
-            removePlayer: (position) => {
-                if(position == 'LST') {
-                    setStore({...getStore, squadCreatorLST: null})
-                } else if (position == 'RST') {
-                    setStore({...getStore, squadCreatorRST: null})
-                } else if (position == 'LM') {
-                    setStore({...getStore, squadCreatorLM: null})
-                } else if (position == 'LCM') {
-                    setStore({...getStore, squadCreatorLCM: null})
-                } else if (position == 'RCM') {
-                    setStore({...getStore, squadCreatorRCM: null})
-                } else if (position == 'RM') {
-                    setStore({...getStore, squadCreatorRM: null})
-                } else if (position == 'LB') {
-                    setStore({...getStore, squadCreatorLB: null})
-                } else if (position == 'LCB') {
-                    setStore({...getStore, squadCreatorLCB: null})
-                } else if (position == 'RCB') {
-                    setStore({...getStore, squadCreatorRCB: null})
-                } else if (position == 'RB') {
-                    setStore({...getStore, squadCreatorRB: null})
-                } else if (position == 'GK') {
-                    setStore({...getStore, squadCreatorGK: null})
+            removePlayer: (position, index) => {
+                if (index == 0) {
+                    setStore({...getStore, squadCreator0: {'position': position, 'player_data': null}})
+                } else if (index == 1) {
+                    setStore({...getStore, squadCreator1: {'position': position, 'player_data': null}})
+                } else if (index == 2) {
+                    setStore({...getStore, squadCreator2: {'position': position, 'player_data': null}})
+                } else if (index == 3) {
+                    setStore({...getStore, squadCreator3: {'position': position, 'player_data': null}})
+                } else if (index == 4) {
+                    setStore({...getStore, squadCreator4: {'position': position, 'player_data': null}})
+                } else if (index == 5) {
+                    setStore({...getStore, squadCreator5: {'position': position, 'player_data': null}})
+                } else if (index == 6) {
+                    setStore({...getStore, squadCreator6: {'position': position, 'player_data': null}})
+                } else if (index == 7) {
+                    setStore({...getStore, squadCreator7: {'position': position, 'player_data': null}})
+                } else if (index == 8) {
+                    setStore({...getStore, squadCreator8: {'position': position, 'player_data': null}})
+                } else if (index == 9) {
+                    setStore({...getStore, squadCreator9: {'position': position, 'player_data': null}})
+                } else if (index == 10) {
+                    setStore({...getStore, squadCreator1: {'position': position, 'player_data': null}})
                 }
             },
 
@@ -285,6 +281,9 @@ const getState = ({ getStore, getActions, setStore }) => {
                 }
             },
 
+            setUserFormation: (user_formation) => {
+                setStore({...getStore, user_formation: user_formation})
+            },
             // getPlayer: (position) => {
             //     return getStore.selectedPlayer
             // },
@@ -294,9 +293,10 @@ const getState = ({ getStore, getActions, setStore }) => {
             },
 
             getSquadRating: (squad) => {
-                let ratingSum = squad.lst.rating + squad.rst.rating + squad.lm.rating + squad.lcm.rating 
-                     + squad.rcm.rating + squad.rm.rating + squad.lb.rating + squad.lcb.rating
-                     + squad.rcb.rating + squad.rb.rating + squad.gk.rating 
+                let ratingSum = 0
+                for(let i = 0; i < squad.length; i++) {
+                    ratingSum += squad[i].player_data.rating
+                }
                 let squadRating = parseInt(ratingSum / 11)  
                 return squadRating;
             },

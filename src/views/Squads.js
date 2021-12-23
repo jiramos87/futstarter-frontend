@@ -3,6 +3,7 @@ import { Context } from '../store/AppContext'
 import PlayerCard from '../components/PlayerCard';
 import { Link, useHistory } from 'react-router-dom';
 import './Squads.css';
+import './SquadCreator.css'
 import './LeaguesNavigation.css';
     
 
@@ -19,7 +20,8 @@ const Squads = () => {
     // const [ squad, setSquad ] = useState(actions.getHardCodedSquad())   // this is only for developing whithout backend
     const history = useHistory()
 
-    console.log(squad.lst.league_str)
+    // console.log(squad[0].player_data.league_str)
+    // console.log(squad[0].position)
     
     
     const list = document.querySelectorAll('.list');
@@ -30,6 +32,22 @@ const Squads = () => {
     }
     list.forEach((item) =>
     item.addEventListener('click', activeLink));
+
+    let players = squad.map((player, index) => {
+        //console.log(user_player.player_data)
+        return (
+            <div type="button"
+                onMouseEnter={ () => handleCardHover(player.player_data, player.position)}
+                onMouseLeave={ () => setMouseHover(false) }
+                onClick={() => actions.setPlayerDetailsPlayer(player.player_data, history)}
+                className={`player-container playercard ${player.position} cursor-pointer`}>
+                    <PlayerCard player={player.player_data}/>
+                    <div className='card-base'>
+                        {player.position}
+                    </div>
+            </div> 
+    )})
+
 
     const handleCardHover = (hoverPlayer, squadPosition) => {
         //actions.setPlayerDetailsPlayer(squad.lst, history)
@@ -94,261 +112,8 @@ const Squads = () => {
 {/* AQUI TERMINA EL COMPONENTE LEAGUES NAVIGATION EN VERSION OFFLINE, SIN BACKEND */}
 
 
-                    <div className="squad-container position-relative field mt-3">
-                            <div className="row mt--1 h-auto">
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#info-collapse" 
-                                    aria-expanded="false" 
-                                    aria-controls="info-collapse"
-                                    onMouseEnter={ () => handleCardHover(squad.lst, 'LST')}
-                                    onMouseLeave={ () => setMouseHover(false)}
-                                    onClick={() => actions.setPlayerDetailsPlayer(squad.lst, history)}
-                                    className="col playercard LST cursor-pointer">
-                                        <PlayerCard player={squad.lst}/>
-                                        <div className='card-base'>
-                                            LST
-                                        </div>
-                                </div> 
-                                <div className="col CST"></div>
-                                <div type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#info-collapse" 
-                                    aria-expanded="false" 
-                                    aria-controls="info-collapse"
-                                    onMouseEnter={ () => handleCardHover(squad.rst, 'RST')}
-                                    onMouseLeave={ () => setMouseHover(false)}
-                                    onClick={() => actions.setPlayerDetailsPlayer(squad.rst, history)}
-                                    className="col playercard RST cursor-pointer">
-                                        <PlayerCard player={squad.rst}/>
-                                        <div className='card-base'>
-                                            RST
-                                        </div>
-                                </div> 
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                            </div>
-                            {/* <div className="row">
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                            </div>
-                            <div className="row">
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                            </div> */}
-                            <div className="row">
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                            </div>
-                            <div className="row">
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                            </div>
-                            <div className="row">
-                                <div type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#info-collapse" 
-                                        aria-expanded="false" 
-                                        aria-controls="info-collapse"
-                                        onMouseEnter={ () => handleCardHover(squad.lm, 'LM')}
-                                        onMouseLeave={ () => setMouseHover(false)}
-                                        onClick={() => actions.setPlayerDetailsPlayer(squad.lm, history)}
-                                        className="col playercard LM cursor-pointer">
-                                            <PlayerCard player={squad.lm}/>
-                                            <div className='card-base'>
-                                                LM
-                                            </div>
-                                </div> 
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#info-collapse" 
-                                        aria-expanded="false" 
-                                        aria-controls="info-collapse"
-                                        onMouseEnter={ () => handleCardHover(squad.lcm, 'LCM')}
-                                        onMouseLeave={ () => setMouseHover(false)}
-                                        onClick={() => actions.setPlayerDetailsPlayer(squad.lcm, history)}
-                                        className="col playercard LCM cursor-pointer">
-                                            <PlayerCard player={squad.lcm}/>
-                                            <div className='card-base'>
-                                                LCM
-                                            </div>
-                                </div> 
-                                <div className="col"></div>
-                                <div type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#info-collapse" 
-                                        aria-expanded="false" 
-                                        aria-controls="info-collapse"
-                                        onMouseEnter={ () => handleCardHover(squad.rcm, 'RCM')}
-                                        onMouseLeave={ () => setMouseHover(false)}
-                                        onClick={() => actions.setPlayerDetailsPlayer(squad.rcm, history)}
-                                        className="col playercard RCM cursor-pointer">
-                                            <PlayerCard player={squad.rcm}/>
-                                            <div className='card-base'>
-                                                RCM
-                                            </div>
-                                </div> 
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#info-collapse" 
-                                        aria-expanded="false" 
-                                        aria-controls="info-collapse"
-                                        onMouseEnter={ () => handleCardHover(squad.rm, 'RM')}
-                                        onMouseLeave={ () => setMouseHover(false)}
-                                        onClick={() => actions.setPlayerDetailsPlayer(squad.rm, history)}
-                                        className="col playercard RM cursor-pointer">
-                                            <PlayerCard player={squad.rm}/>
-                                            <div className='card-base'>
-                                                RM
-                                            </div>
-                                </div> 
-                                </div>
-                            <div className="row">
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                            </div>
-                            <div className="row">
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                            </div>
-                            <div className="row">
-                            <div type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#info-collapse" 
-                                        aria-expanded="false" 
-                                        aria-controls="info-collapse"
-                                        onMouseEnter={ () => handleCardHover(squad.lb, 'LB')}
-                                        onMouseLeave={ () => setMouseHover(false)}
-                                        onClick={() => actions.setPlayerDetailsPlayer(squad.lb, history)}
-                                        className="col playercard LB cursor-pointer">
-                                            <PlayerCard player={squad.lb}/>
-                                            <div className='card-base'>
-                                                LB
-                                            </div>
-                                </div> 
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#info-collapse" 
-                                        aria-expanded="false" 
-                                        aria-controls="info-collapse"
-                                        onMouseEnter={ () => handleCardHover(squad.lcb, 'LCB')}
-                                        onMouseLeave={ () => setMouseHover(false)}
-                                        onClick={() => actions.setPlayerDetailsPlayer(squad.lcb, history)}
-                                        className="col playercard LCB cursor-pointer">
-                                            <PlayerCard player={squad.lcb}/>
-                                            <div className='card-base'>
-                                                LCB
-                                            </div>
-                                </div> 
-                                <div className="col"></div>
-                                <div type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#info-collapse" 
-                                        aria-expanded="false" 
-                                        aria-controls="info-collapse"
-                                        onMouseEnter={ () => handleCardHover(squad.rcb, 'RCB')}
-                                        onMouseLeave={ () => setMouseHover(false)}
-                                        onClick={() => actions.setPlayerDetailsPlayer(squad.rcb, history)}
-                                        className="col playercard RCB cursor-pointer">
-                                            <PlayerCard player={squad.rcb}/>
-                                            <div className='card-base'>
-                                                RCB
-                                            </div>
-                                </div> 
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#info-collapse" 
-                                        aria-expanded="false" 
-                                        aria-controls="info-collapse"
-                                        onMouseEnter={ () => handleCardHover(squad.rb, 'RB')}
-                                        onMouseLeave={ () => setMouseHover(false)}
-                                        onClick={() => actions.setPlayerDetailsPlayer(squad.rb, history)}
-                                        className="col playercard RB cursor-pointer">
-                                            <PlayerCard player={squad.rb}/>
-                                            <div className='card-base'>
-                                                RB
-                                            </div>
-                                </div> 
-                            </div>
-                            <div className="row">
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#info-collapse" 
-                                        aria-expanded="false" 
-                                        aria-controls="info-collapse"
-                                        onMouseEnter={ () => handleCardHover(squad.gk, 'GK')}
-                                        onMouseLeave={ () => setMouseHover(false)}
-                                        onClick={() => actions.setPlayerDetailsPlayer(squad.gk, history)}
-                                        className="col playercard GK cursor-pointer">
-                                            <PlayerCard player={squad.gk}/>
-                                            <div className='card-base'>
-                                                GK
-                                            </div>
-                                </div> 
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                                <div className="col"></div>
-                            </div>
-                        
+                    <div className="squad-container-squads field mt-3">
+                        { players }
                     </div>
                     {/* AQUI EMPIEZA EL COMPONENTE LEAGUES NAVIGATION EN VERSION CON BACKEND */}
                     <div className='info-container position-relative d-flex flex-column ms-5'>
@@ -452,7 +217,7 @@ const Squads = () => {
                                 <div className='hover-view pt-3 rounded text-center d-flex flex-column justify-content-between'>
                                     <div className='hover-view-top-half mb-5 d-flex flex-column align-items-center'>
                                         <div className='league-hover-div'>
-                                            <img className="league-hover" src={`http://localhost:5000/api/v1/static/images/leagues/${squad.lst.league}.png`}/>
+                                            <img className="league-hover" src={`http://localhost:5000/api/v1/static/images/leagues/${squad[0].player_data.league}.png`}/>
                                         </div>
                                         <div className='w-100 mt-4'><h2>{league} Squad</h2></div>  
                                     <div>
@@ -460,7 +225,7 @@ const Squads = () => {
                                             Squad rating: {actions.getSquadRating(squad)}
                                         </div>
                                         <div className="d-flex flex-row align-items-center">
-                                            Squad price: {actions.getSquadPrice(squad.lst.league_str)}
+                                            Squad price: {actions.getSquadPrice(squad[0].player_data.league_str)}
                                             <img className="squad-coins-icon" src={`http://localhost:5000/api/v1/static/images/icons/futcoins.png`}/> 
                                             
                                         </div>

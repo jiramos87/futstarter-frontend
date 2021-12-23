@@ -10,22 +10,23 @@ import './LeaguesNavigation.css';
 const SquadCreator = () => {
     
     const { store, actions } = useContext(Context)
+    console.log(store.user_formation)
     // let currentSquad = localStorage.getItem('current-squad') != null ? JSON.parse(localStorage.getItem('current-squad')) : store.plSquade
-    const [ formation, setFormation ] = useState('442')
-    const [ positions, setPositions ] = useState(actions.formationInterpreter('442'))
+    const [ formation, setFormation ] = useState(store.user_formation)
+    const [ positions, setPositions ] = useState(actions.formationInterpreter(formation))
 
     let userSquad = [
         {position: positions[0], player_data: store.squadCreator0.player_data},
-        {position: positions[1], player_data: store.squadCreatorRST},
-        {position: positions[2], player_data: store.squadCreatorLM},
-        {position: positions[3], player_data: store.squadCreatorLCM},
-        {position: positions[4], player_data: store.squadCreatorRCM},
-        {position: positions[5], player_data: store.squadCreatorRM},
-        {position: positions[6], player_data: store.squadCreatorLB},
-        {position: positions[7], player_data: store.squadCreatorLCB},
-        {position: positions[8], player_data: store.squadCreatorRCB},
-        {position: positions[9], player_data: store.squadCreatorRB},
-        {position: positions[10], player_data: store.squadCreatorGK}
+        {position: positions[1], player_data: store.squadCreator1.player_data},
+        {position: positions[2], player_data: store.squadCreator2.player_data},
+        {position: positions[3], player_data: store.squadCreator3.player_data},
+        {position: positions[4], player_data: store.squadCreator4.player_data},
+        {position: positions[5], player_data: store.squadCreator5.player_data},
+        {position: positions[6], player_data: store.squadCreator6.player_data},
+        {position: positions[7], player_data: store.squadCreator7.player_data},
+        {position: positions[8], player_data: store.squadCreator8.player_data},
+        {position: positions[9], player_data: store.squadCreator9.player_data},
+        {position: positions[10], player_data: store.squadCreator10.player_data}
     ]
     
     const [ playerIndex, setPlayerIndex ] = useState(0)
@@ -35,6 +36,7 @@ const SquadCreator = () => {
     const [ displaySearch, setDisplaySearch ] = useState(false)
     const [ displayActions, setDisplayActions ] = useState(false)
     const [ player, setPlayer ] = useState(store.PlayerDetailsPlayer) 
+    const [ hoverPlayerIndex, setHoverPlayerIndex ] = useState(null)
     const [ selectedPlayer, setSelectedPlayer ] = useState(null)
     const [ position, setPosition ] = useState('')
     const [ searchString, setSearchString ] = useState('')
@@ -46,9 +48,6 @@ const SquadCreator = () => {
     // console.log('search results: ', searchResults)
 
     let results = []
-
-    
-
     results = searchResults.map((result) => {
         return (
             <div onClick={() => handleSearchClick(result, position)} className="d-flex flex-row align-items-center border">
@@ -62,24 +61,23 @@ const SquadCreator = () => {
     })
 
     let players = userSquad.map((user_player, index) => {
-        console.log(user_player)
+        //console.log(user_player.player_data)
         return (
-            <div>
+            <div className={`${user_player.position} `}>
                 { user_player.player_data != null ? 
-                    <div>
+                    <div onMouseLeave={ () => setDisplayActions(false)}>
                         <div type="button"
-                            onMouseEnter={ () => handleCardHover(user_player.player_data, user_player.position)}
-                            onMouseLeave={ () => setMouseHover(false)}
+                            onMouseEnter={ () => handleCardHover(index, user_player.position)}
                             onClick={() => actions.setPlayerDetailsPlayer(user_player.player_data, history)}
-                            className={`col playercard ${user_player.position} cursor-pointer`}>
+                            className="player-container playercard cursor-pointer">
                                 <PlayerCard player={user_player.player_data}/>
                                 <div className='card-base'>
                                   {user_player.position}
                                 </div>
                         </div>
                         {
-                            displayActions ? 
-                            <div onClick={() => handleRemovePlayerClick(user_player.position)} className='btn btn-danger'>
+                            displayActions && hoverPlayerIndex == index? 
+                            <div onClick={() => handleRemovePlayerClick(user_player.position, index)} className={`btn btn-danger close-btn ${user_player.position}`}>
                                     x
                             </div> 
                             : ''
@@ -88,7 +86,7 @@ const SquadCreator = () => {
                     :
                     <div type="button"
                         onClick={() => handleAddPlayerClick(user_player.position, index)}
-                        className={`col playercard ${user_player.position} cursor-pointer`}>
+                        className="cursor-pointer">
                             <div className="btn btn-dark border rounded text-white text-center add-button">
                                 +
                             </div>
@@ -97,24 +95,21 @@ const SquadCreator = () => {
                             </div>
                     </div>
                 }
-                </div>
-        
+            </div>
     )})
 
-   
-
-
     const handleFormationChange = (user_formation) => {
+        actions.setUserFormation(user_formation)
         setFormation(user_formation)
         setPositions(actions.formationInterpreter(user_formation))
     }
 
-    const handleCardHover = (hoverPlayer, position_string) => {
+    const handleCardHover = (hover_player_index, position_string) => {
         //actions.setPlayerDetailsPlayer(squad.lst, history)
         //console.log('hovered player', hoverPlayer)
         setMouseHover(true)
         setDisplayActions(true)
-        setPlayer(hoverPlayer)
+        setHoverPlayerIndex(hover_player_index)
         setPosition(position_string)
         //setPosition(squadPosition)
         // console.log('hovered on ', hoverPlayer.name, 'in position ', position_string, 'click to remove from squad')
@@ -128,32 +123,10 @@ const SquadCreator = () => {
         setPlayerIndex(player_index)
     }
 
-    const handleRemovePlayerClick = (position_string) => {
-        console.log('remove ', position_string)
-        actions.removePlayer(position_string)
-        if(position_string == 'LST') {
-            setSquad({...squad, lst: null})
-        } else if (position_string == 'RST') {
-            setSquad({...squad, rst: null})
-        } else if (position_string == 'LM') {
-            setSquad({...squad, lm: null})
-        } else if (position_string == 'LCM') {
-            setSquad({...squad, lcm: null})
-        } else if (position_string == 'RCM') {
-            setSquad({...squad, rcm: null})
-        } else if (position_string == 'RM') {
-            setSquad({...squad, rm: null})
-        } else if (position_string == 'LB') {
-            setSquad({...squad, lb: null})
-        } else if (position_string == 'LCB') {
-            setSquad({...squad, lcb: null})
-        } else if (position_string == 'RCB') {
-            setSquad({...squad, rcb: null})
-        } else if (position_string == 'RB') {
-            setSquad({...squad, rb: null})
-        } else if (position_string == 'GK') {
-            setSquad({...squad, gk: null})
-        }
+    const handleRemovePlayerClick = (position_string, player_index) => {
+        console.log('remove ', position_string, player_index)
+        actions.removePlayer(position_string, player_index)
+       
     }
 
     const handleSearchChange = (event) => {
@@ -244,12 +217,9 @@ const SquadCreator = () => {
 {/* AQUI TERMINA EL COMPONENTE LEAGUES NAVIGATION EN VERSION OFFLINE, SIN BACKEND */}
 
 
-                    <div className="squad-container position-relative field mt-3">
-                            <div className="row mt--1 h-auto">
-                                { players }
-                            </div>
-                    
-                        </div>
+                    <div className="squad-container-squad-creator field mt-3">
+                        { players }
+                    </div>
                     
 
                     <div className='info-container position-relative d-flex flex-column ms-5'>
@@ -260,11 +230,11 @@ const SquadCreator = () => {
                                     <button type="button" className='btn btn-dark btn-sm rounded w-25' 
                                             onClick={() => handleFormationChange('442') }> 
                                                 442 
-                                            </button>
+                                    </button>
                                     <button type="button" className='btn btn-dark btn-sm rounded w-25' 
                                             onClick={() => handleFormationChange('433') }> 
                                                 433
-                                            </button>
+                                    </button>
                                </div>
                             </div> 
                         </div>

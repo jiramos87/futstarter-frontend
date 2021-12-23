@@ -1,65 +1,25 @@
-.LW {
-    position: absolute;
-    top: 6rem;
-    left: 4rem;
+.player-container {
+    width: 4rem;
+    height: 11rem;
 }
 
-.CST {
-    position: absolute;
-    top: 5rem;
-    left: 19rem;
+.close-btn{
+    position: relative;
+    top: -50%;
+    left: 1rem;
+    
 }
 
-.RW {
-    position: absolute;
-    top: 6rem;
-    left: 34rem;
-}
-
-.LCM {
-    position: absolute;
-    top: 18rem;
-    left: 6rem;
-}
-
-.CCM {
-    position: absolute;
-    top: 18rem;
-    left: 19rem;
-}
-
-.RCM {
-    position: absolute;
-    top: 18rem;
-    left: 32rem;
-}
-
-.LB {
-    position: absolute;
-    top: 32rem;
-    left: 3rem;
-}
-
-.LCB {
-    position: absolute;
-    top: 32rem;
-    left: 13rem;
-}
-
-.RCB {
-    position: absolute;
-    top: 32rem;
-    left: 26rem;
-}
-
-.RB {
-    position: absolute;
-    top: 32rem;
-    left: 34rem;
-}
-
-.GK {
-    position: absolute;
-    top: 40rem;
-    left: 19rem;
+.squad-container-squad-creator {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; 
+    flex-wrap: nowrap;
+    min-height: 80vh;
+    max-height: 95vh;
+    padding-top: 4em;
+    min-width: 70% !important;
+    max-width: 60% !important;
 }
