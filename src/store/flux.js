@@ -3,6 +3,7 @@ import loginUserAPI from "../services/loginUserAPI";
 import getSquadByLeagueAPI from "../services/getSquadByLeagueAPI";
 import getListByLeagueAPI from "../services/getListByLeagueAPI";
 import searchPlayerByNameAPI from "../services/searchPlayerByNameAPI";
+import saveSquadAPI from "../services/saveSquadAPI"
 
 const getState = ({ getStore, getActions, setStore }) => {
     const backendUrl = 'http://localhost/5000'
@@ -244,7 +245,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 } else if (index == 9) {
                     setStore({...getStore, squadCreator9: {'position': position, 'player_data': player}})
                 } else if (index == 10) {
-                    setStore({...getStore, squadCreator1: {'position': position, 'player_data': player}})
+                    setStore({...getStore, squadCreator10: {'position': position, 'player_data': player}})
                 }
             },
             removePlayer: (position, index) => {
@@ -284,9 +285,25 @@ const getState = ({ getStore, getActions, setStore }) => {
             setUserFormation: (user_formation) => {
                 setStore({...getStore, user_formation: user_formation})
             },
-            // getPlayer: (position) => {
-            //     return getStore.selectedPlayer
-            // },
+
+            saveSquad: async (user_squad, squad_formation) => {
+
+                let squad_obj = {
+                    "formation": squad_formation,
+                    "squad_data": user_squad
+                } 
+
+                let user_token = getStore.token
+                const save = await saveSquadAPI(squad_obj, user_token).then((data) => {
+                    console.log('save squad response', data)
+                    if(data.status == 200) {
+                        console.log('squad saved')
+                    } else {
+                        console.log('squad not saved')
+                    }
+                })
+            },
+
             logout: () => {
                 setStore({...getStore, currentUser: null})
                 setStore({...getStore, token: null})

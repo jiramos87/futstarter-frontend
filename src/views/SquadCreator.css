@@ -11,13 +11,7 @@
 }
 
 .squad-container-squad-creator {
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center; 
-    flex-wrap: nowrap;
-    min-height: 80vh;
+    min-height: 90vh;
     max-height: 95vh;
     padding-top: 4em;
     min-width: 70% !important;

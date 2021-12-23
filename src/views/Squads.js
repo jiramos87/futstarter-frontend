@@ -36,16 +36,18 @@ const Squads = () => {
     let players = squad.map((player, index) => {
         //console.log(user_player.player_data)
         return (
-            <div type="button"
-                onMouseEnter={ () => handleCardHover(player.player_data, player.position)}
-                onMouseLeave={ () => setMouseHover(false) }
-                onClick={() => actions.setPlayerDetailsPlayer(player.player_data, history)}
-                className={`player-container playercard ${player.position} cursor-pointer`}>
-                    <PlayerCard player={player.player_data}/>
-                    <div className='card-base'>
-                        {player.position}
-                    </div>
-            </div> 
+            <div className={`${player.position}`}>
+                <div type="button"
+                    onMouseEnter={ () => handleCardHover(player.player_data, player.position)}
+                    onMouseLeave={ () => setMouseHover(false) }
+                    onClick={() => actions.setPlayerDetailsPlayer(player.player_data, history)}
+                    className={`player-container playercard cursor-pointer`}>
+                        <PlayerCard player={player.player_data}/>
+                        <div className='card-base'>
+                            {player.position}
+                        </div>
+                </div> 
+            </div>
     )})
 
 
@@ -67,7 +69,7 @@ const Squads = () => {
     }
 
     return (
-        <div className="position-absolute w-75 d-flex flex-row mt-5" > 
+        <div className="position-absolute w-75 h-100 d-flex flex-row mt-5" > 
 
 {/* AQUI EMPIEZA EL COMPONENTE LEAGUES NAVIGATION EN VERSION OFFLINE, SIN BACKEND */}
 

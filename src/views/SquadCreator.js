@@ -224,6 +224,9 @@ const SquadCreator = () => {
 
                     <div className='info-container position-relative d-flex flex-column ms-5'>
                         <div className="navigationBody">
+                            <div>
+                                <button className='btn rounded' onClick={() => actions.saveSquad(userSquad)}>Save</button>
+                            </div>
                             <div className="navigation text-white">
                                Choose a formation
                                <div className='rounded py-3 px-3 w-75 d-flex flex-row justify-content-between'>
