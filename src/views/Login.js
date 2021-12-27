@@ -34,7 +34,7 @@ const Login = () => {
         <div className="background">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-6 mx-auto">
+                    <div className="col-md-9 mx-auto">
                         {store.currentUser  === null ? 
                             <div className="d-flex flex-column">
                                 <form noValidate onSubmit={onSubmit}>
@@ -54,7 +54,7 @@ const Login = () => {
                                         :
                                         ''
                                     }
-                                    <button type="submit" className="btn btn-lg btn-primary btn-block">Login</button>
+                                    <button type="submit" className="btn btnLogin btn-lg btn-primary btn-block">Login</button>
                                 </form>
                                 <div>
                                     <span>Don't have an account? </span>

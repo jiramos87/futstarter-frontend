@@ -5,13 +5,15 @@ body {
 
 .sidebar {
     background-color: #212936;
-    height: 3.5em;
+    height: 3.6em;
+    width: 100vw;
     display: flex;
     justify-content: start;
     align-items: center;
-    overflow: auto;
     position: fixed;
-    width: 100vw;
+    overflow: hidden;
+    box-shadow: 2px 3px 8px  #c4c4c4;
+    
 }
 
 .homeTitle {
@@ -26,7 +28,7 @@ body {
 
 .nav-menu {
     background-color: #212936;
-    width: 13.2em;
+    width: 14.5em;
     height: 100vh;
     display: flex;
     /* justify-content: center; */
@@ -45,15 +47,16 @@ body {
 
 .top-log-icon {
     color: white;
-    width: 4rem;
+    width: 3rem;
     height: 3rem;
+    font-size: 1.8em;
 }
 
 .nav-text {
     display: flex;
     justify-content: start;
     align-items: center;
-    padding: 0.5em 0.5em 0.5em 1em;
+    padding: 0.5em 0.5em 0.5em 0.5em;
     list-style: none;
     height: 3.7em;
 }

@@ -95,6 +95,7 @@ input {
 
 .home-card {
   height: 24rem !important;
+  margin: 0.5rem 0.7rem 0.5rem 0.7rem !important;
 }
 
 .face{

@@ -38,7 +38,7 @@ function Sidebar() {
                     {store.currentUser  === null ? 
                         
                         <Link to="/login">
-                            <div className='top-log-icon d-flex align-items-center justify-content-start'>
+                            <div className='top-log-icon d-flex align-items-center justify-content-center'>
                                 <GoIcons.GoSignIn />
                             </div>
                         </Link>

@@ -5,6 +5,7 @@ import { Link, useHistory } from 'react-router-dom';
 import './Squads.css';
 import './SquadCreator.css';
 import './LeaguesNavigation.css';
+import './NavigationPosition.css'
     
 
 const SquadCreator = () => {
@@ -262,38 +263,53 @@ const SquadCreator = () => {
                     
 
                     <div className='info-container position-relative d-flex flex-column ms-5'>
-                        <div className="navigationBody">
-                            <div className='mt-3'>
-                                <input type="text" placeholder="Insert squad name..." value={squadName} onChange={handleSquadNameChange} />
-                                <button className='btn rounded' onClick={handleSquadNameSubmit}>Save</button>
-                                {
-                                    message ? 
-                                    <div>
-                                        <p className='text-white'>Squad saved</p>
+                        <div className="navigationFormationMacro">
+                            <div className="row mb-5">
+                                <div className="navigationSaveSquad">
+                                    <div className="col-4 navigationFormationText">Squad name</div>
+                                    <div className="col-8 d-flex flex-row">
+                                        <input type="text" id="squadname-input" className="rounded ps-3" placeholder="Insert squad name..." value={squadName} onChange={handleSquadNameChange} />
+                                        <button className='btn rounded navigationSaveSquadText' onClick={handleSquadNameSubmit}>Save</button>
                                     </div>
-                                    :
-                                    ''
-                                }
-                            </div> 
-                            <div className="navigation text-white">
-                               Choose a formation
-                               <div className='rounded py-3 px-3 w-75 d-flex flex-row justify-content-between'>
-                                    <button type="button" className='btn btn-dark btn-sm rounded w-25' 
-                                            onClick={() => handleFormationChange('442') }> 
-                                                442 
-                                    </button>
-                                    <button type="button" className='btn btn-dark btn-sm rounded w-25' 
-                                            onClick={() => handleFormationChange('433') }> 
-                                                433
-                                    </button>
-                               </div>
+                                    {
+                                        message ? 
+                                        <div>
+                                            <p className='text-white'>Squad saved</p>
+                                        </div>
+                                        :
+                                        ''
+                                    }
+                                </div> 
+                            </div>
+                            
+                            <div className="row mt-5">
+                                <div className="col-4 navigationFormationText d-flex flex-column justify-content-center align-items-center">
+                                    <div className="">
+                                        Formation
+                                    </div>
+                                </div>
+                                <div className="col-8">
+                                    <div className="navigationFormationBody">
+                                        <div className='d-flex flex-row navigationFormation'>
+                                            <button type="button" className='btn navigationFormationButtons Formation442' 
+                                                    onClick={() => handleFormationChange('442') }> 
+                                                        442 
+                                            </button>
+                                            <button type="button" className='btn navigationFormationButtons Formation433' 
+                                                    onClick={() => handleFormationChange('433') }> 
+                                                        433
+                                            </button>
+                                        </div>
+                                    </div> 
+                                </div>
+                        
                             </div> 
                         </div>
 
                         <div className='info-view d-flex flex-column mt-5 pt-3 ms-4 text-white text-defined'>
                             <div>
                                 { displaySearch ? 
-                                <div className="search-view rounded d-flex flex-column justify-content-center align-items-center" id="info-collapse">
+                                <div className="search-view searchButton rounded d-flex flex-column justify-content-center align-items-center" id="info-collapse">
                                     <div>
                                         <input type="text" value={searchString} placeholder="Search player..." onChange={handleSearchChange}></input>
                                         <div className="results-card d-flex flex-column">

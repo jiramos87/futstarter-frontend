@@ -8,9 +8,10 @@
     align-items: center;
     /* align-content: stretch; */
     flex-wrap: nowrap;
-    min-height: 95vh;
+    min-height: 100vh;
     padding-top: 4em !important;
     background-image: url('http://localhost:3000/ronaldino.jpg');
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center 3em;
     background-attachment: fixed;
@@ -21,8 +22,19 @@
 }
 
 .btn {
-    color: #fff;
+    color: #2B3648;;
     background-color: #C2ED63;
+}
+
+.btnLogin {
+    color: #2B3648;
+    box-shadow: 8px 8px 4px  #212936;
+}
+
+.btnLogin:hover {
+    color: #c4c4c4;
+    background: #212936;
+    box-shadow: 5px 5px 5px  #C2ED63;
 }
 
 span {

@@ -12,8 +12,12 @@
 
 .squad-container-squad-creator {
     min-height: 90vh;
-    max-height: 95vh;
+    max-height: 90vh;
     padding-top: 4em;
     min-width: 70% !important;
     max-width: 60% !important;
+}
+
+.searchButton {
+    transform: translateY(1.7em);
 }

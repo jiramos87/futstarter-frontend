@@ -41,7 +41,7 @@
 
 .navigationPosition:hover {
     color: #C2ED63;
-    background: #212936;
+    background: #2B3648;
 }
 
 .Attackers {
@@ -56,3 +56,75 @@
     border-radius: 0px 15px 15px 0px;
 }
 
+.navigationFormationMacro {
+    padding-top: 1.3em;
+}
+
+.navigationFormationText {
+    display: flex;
+    justify-content: center;
+    font-size: 1.3em !important;
+    color: #c4c4c4;
+}
+
+.navigationFormationBody {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    padding-top: 0.5em;
+}
+
+.navigationFormation {
+    padding-top: 0em;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    min-height: 4.5em;
+    background: #2B3648;
+}
+
+.navigationFormationButtons {
+    position: relative;
+    width: 4em;
+    height: 2.5em;
+    color: #c4c4c4;
+    font-weight: 400;
+    font-size: 1.5em !important;
+    background: #212936;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 6px 6px 5px  #C2ED63;
+}
+
+.navigationFormationButtons:hover {
+    color: #2B3648;
+    background: #C2ED63;
+    box-shadow: 10px 10px 3px  #212936;
+}
+
+.Formation442 {
+    border-radius: 15px 5px 5px 15px;
+}
+
+.Formation433 {
+    border-radius: 5px 15px 15px 5px;
+}
+
+.navigationSaveSquad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(3.1em);
+}
+
+.navigationSaveSquadText {
+    color: #2B3648;
+    box-shadow: 8px 8px 4px  #212936;
+}
+
+.navigationSaveSquadText:hover {
+    color: #c4c4c4;
+    background: #212936;
+    box-shadow: 5px 5px 5px  #C2ED63;
+}
