@@ -3,7 +3,10 @@ import loginUserAPI from "../services/loginUserAPI";
 import getSquadByLeagueAPI from "../services/getSquadByLeagueAPI";
 import getListByLeagueAPI from "../services/getListByLeagueAPI";
 import searchPlayerByNameAPI from "../services/searchPlayerByNameAPI";
+import getPlayerPriceAPI from "../services/getPlayerPriceAPI"
 import saveSquadAPI from "../services/saveSquadAPI"
+import getUserSquadsAPI from "../services/getUserSquadsAPI"
+import getPlayerByIDAPI from "../services/getPlayerByIDAPI"
 
 const getState = ({ getStore, getActions, setStore }) => {
     const backendUrl = 'http://localhost/5000'
@@ -11,10 +14,11 @@ const getState = ({ getStore, getActions, setStore }) => {
         store: {
             currentUser: null,
             user: {},
-            token: {},
+            token: '',
             invalidCredentials: false,
             registerFailed: false,
             errorMesage: '',
+            message: '',
             registerFormData: {
                 username: '',
                 email: '',
@@ -26,6 +30,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             },
             error: false,
             searchPlayerResult: [],
+            squads_data: [],
             user_formation: '433',
             squadCreator0: {
                 position: '',
@@ -93,6 +98,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             llListMidfielders: [],
             llListDefenders: [],
             face: '',
+            squadCreatorSquad: null,
             PlayerDetailsPlayer: {
                 id: 99,
                 global_id: 268,
@@ -208,10 +214,17 @@ const getState = ({ getStore, getActions, setStore }) => {
                         localStorage.setItem("jwt-token", data.token);
                     } else {
                         setStore({...getStore, invalidCredentials: true})
+                        setStore({...getStore, errorMesage: data.message})
                         history.push("/home")
                     }
                 })
             },
+
+            logout: () => {
+                setStore({...getStore, currentUser: null})
+                setStore({...getStore, token: null})
+            },
+
             searchPlayerByName: async (searchData) => {
                 const search = await searchPlayerByNameAPI(searchData).then((data) => {
                     console.log('player search result en login flux: ', data)
@@ -220,6 +233,72 @@ const getState = ({ getStore, getActions, setStore }) => {
                     } else {
                         setStore({...getStore, errorMesage: data.message})
                         setStore({...getStore, searchPlayerResult: []})
+                    }
+                })
+            },
+            getPlayerByID: async (id, position, index) => {
+                const get = await getPlayerByIDAPI(id).then((data) => {
+                    console.log('get player by id result en login flux: ', data.result)
+                    if(data.status == 200) {
+                        if (index == 0) {
+                            setStore({...getStore, squadCreator0: {'position': position, 'player_data': data.result}})
+                        } else if (index == 1) {
+                            console.log(position, data.result)
+                            setStore({...getStore, squadCreator1: {'position': position, 'player_data': data.result}})
+                        } else if (index == 2) {
+                            setStore({...getStore, squadCreator2: {'position': position, 'player_data': data.result}})
+                        } else if (index == 3) {
+                            setStore({...getStore, squadCreator3: {'position': position, 'player_data': data.result}})
+                        } else if (index == 4) {
+                            setStore({...getStore, squadCreator4: {'position': position, 'player_data': data.result}})
+                        } else if (index == 5) {
+                            setStore({...getStore, squadCreator5: {'position': position, 'player_data': data.result}})
+                        } else if (index == 6) {
+                            setStore({...getStore, squadCreator6: {'position': position, 'player_data': data.result}})
+                        } else if (index == 7) {
+                            setStore({...getStore, squadCreator7: {'position': position, 'player_data': data.result}})
+                        } else if (index == 8) {
+                            setStore({...getStore, squadCreator8: {'position': position, 'player_data': data.result}})
+                        } else if (index == 9) {
+                            setStore({...getStore, squadCreator9: {'position': position, 'player_data': data.result}})
+                        } else if (index == 10) {
+                            setStore({...getStore, squadCreator10: {'position': position, 'player_data': data.result}})
+                        }
+                    } else {
+                        if (index == 0) {
+                            setStore({...getStore, squadCreator0: {'position': position, 'player_data': null}})
+                        } else if (index == 1) {
+                            setStore({...getStore, squadCreator1: {'position': position, 'player_data': null}})
+                        } else if (index == 2) {
+                            setStore({...getStore, squadCreator2: {'position': position, 'player_data': null}})
+                        } else if (index == 3) {
+                            setStore({...getStore, squadCreator3: {'position': position, 'player_data': null}})
+                        } else if (index == 4) {
+                            setStore({...getStore, squadCreator4: {'position': position, 'player_data': null}})
+                        } else if (index == 5) {
+                            setStore({...getStore, squadCreator5: {'position': position, 'player_data': null}})
+                        } else if (index == 6) {
+                            setStore({...getStore, squadCreator6: {'position': position, 'player_data': null}})
+                        } else if (index == 7) {
+                            setStore({...getStore, squadCreator7: {'position': position, 'player_data': null}})
+                        } else if (index == 8) {
+                            setStore({...getStore, squadCreator8: {'position': position, 'player_data': null}})
+                        } else if (index == 9) {
+                            setStore({...getStore, squadCreator9: {'position': position, 'player_data': null}})
+                        } else if (index == 10) {
+                            setStore({...getStore, squadCreator10: {'position': position, 'player_data': null}})
+                        }
+                    }
+                })
+            },
+            getPlayerPrice: async (global_id) => {
+                const price = getPlayerPriceAPI(global_id).then((data) => {
+                    console.log('player price in login flux: ', data)
+                    if(data.status == 200) {
+                        return data.price
+                    } else {
+                        setStore({...getStore, errorMesage: data.message})
+                        return 0
                     }
                 })
             },
@@ -286,7 +365,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 setStore({...getStore, user_formation: user_formation})
             },
 
-            saveSquad: async (user_squad, squad_formation, squad_name) => {
+            saveSquad: async (user_squad, squad_formation, squad_name, user_token) => {
 
                 let squad_obj = {
                     "formation": squad_formation,
@@ -294,20 +373,52 @@ const getState = ({ getStore, getActions, setStore }) => {
                     "squad_name": squad_name
                 } 
 
-                let user_token = getStore.token
+                //console.log(user_token)
                 const save = await saveSquadAPI(squad_obj, user_token).then((data) => {
                     console.log('save squad response', data)
                     if(data.status == 200) {
                         console.log('squad saved')
+                        setStore({...getStore, message: data.message})
                     } else {
                         console.log('squad not saved')
+                        setStore({...getStore, errorMesage: data.message})
                     }
                 })
             },
-
-            logout: () => {
-                setStore({...getStore, currentUser: null})
-                setStore({...getStore, token: null})
+            getUserSquads: async (user_token) => {
+                const get = await getUserSquadsAPI(user_token).then((data) => {
+                    console.log('user squads response', data)
+                    if(data.status == 200) {
+                        console.log('squads loaded')
+                        setStore({...getStore, squads_data: data.squads_data})
+                        //setStore({...getStore, message: data.message})
+                    } else {
+                        console.log('squads not loaded')
+                        setStore({...getStore, errorMesage: data.message})
+                    }
+                })
+            },
+            getSquadByLeague: async (league) => {
+                const squad = await getSquadByLeagueAPI(league).then((data) => {
+                    setStore({...getStore, plSquad: data})
+                })   
+            },
+            setPlayerDetailsPlayer: (player, history) => { 
+                console.log('player sent to flux:', player)
+                setStore({...getStore, PlayerDetailsPlayer: player})
+                history.push("/playerdetails")
+                
+            },
+            setSquadCreatorSquad: (squad, history) => {
+                
+                let squad_obj = {
+                    "squad_name": squad.squad_name,
+                    "formation": squad.formation,
+                    "squad_data": JSON.parse(squad.squad_dict)
+                }
+                console.log('squad sent to flux:', squad_obj)
+                setStore({...getStore, squadCreatorSquad: squad_obj})
+                history.push("/squadcreator")
             },
 
             getSquadRating: (squad) => {
@@ -403,17 +514,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                     setStore({...getStore, llListDefenders: data})
                 })
             },
-            getSquadByLeague: async (league) => {
-                const squad = await getSquadByLeagueAPI(league).then((data) => {
-                    setStore({...getStore, plSquad: data})
-                })   
-            },
-            setPlayerDetailsPlayer: (player, history) => { 
-                console.log('player sent to flux:', player)
-                setStore({...getStore, PlayerDetailsPlayer: player})
-                history.push("/playerdetails")
-                
-            },
+
             getHardCodedPlayerList: () => {
                 return({
                     data: [

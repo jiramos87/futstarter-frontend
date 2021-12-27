@@ -33,6 +33,12 @@ export const SidebarData = [
         icon: <IoIcons.IoMdPeople />,
         cName: 'nav-text'
     },
+    {
+        title: 'User Squads',
+        path: '/usersquads',
+        icon: <IoIcons.IoMdPeople />,
+        cName: 'nav-text'
+    },
     // {
     //     title: 'Starting Guide',
     //     path: '/guide',

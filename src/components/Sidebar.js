@@ -80,44 +80,27 @@ function Sidebar() {
 
                     { store.currentUser === null ? 
                         SidebarData.map((item, index) => {
-                            return (
+                            return ( 
+                                item.path == '/usersquads' ? '' :
+                                    <li key={index} className={item.cName}>
+                                        <Link to={item.path}>
+                                            {item.icon}
+                                            <span>{item.title}</span>
+                                        </Link>
+                                    </li>
+                                )
+                    })
+                    :   SidebarData.map((item, index) => {
+                        return ( 
+                            item.path == '/register' || item.path == '/login' ? '' :
                                 <li key={index} className={item.cName}>
                                     <Link to={item.path}>
                                         {item.icon}
                                         <span>{item.title}</span>
                                     </Link>
                                 </li>
-                        )
-                    })
-                    :   <div>
-                            <li className={SidebarData[0].cName}>
-                                <Link to={SidebarData[0].path}>
-                                    {SidebarData[0].icon}
-                                    <span>{SidebarData[0].title}</span>
-                                </Link>
-                            </li> 
-                            <li className={SidebarData[1].cName}>
-                                <Link to={SidebarData[1].path}>
-                                    {SidebarData[1].icon}
-                                    <span>{SidebarData[1].title}</span>
-                                </Link>
-                            </li>
-                            <li className={SidebarData[2].cName}>
-                                <Link to={SidebarData[2].path}>
-                                    {SidebarData[2].icon}
-                                    <span>{SidebarData[2].title}</span>
-                                </Link>
-                            </li>
-                            <li className={SidebarData[3].cName}>
-                                <Link to={SidebarData[3].path}>
-                                    {SidebarData[3].icon}
-                                    <span>{SidebarData[3].title}</span>
-                                </Link>
-                            </li>
-                        </div>
-                }
-                    
-
+                            )
+                    })}
                 </ul>
                 
             </nav>

@@ -65,7 +65,7 @@ const Login = () => {
                                 
                             </div>
                             :
-                            <div className="display-2"> Welcome, {store.currentUser?.username}</div>
+                            history.push('/home')
                         }
                     </div>
                 </div>

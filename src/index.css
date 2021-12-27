@@ -89,6 +89,13 @@ input {
   height: 100%;
 }
 
+.card-img-top {
+  height: 14rem !important;
+}
+
+.home-card {
+  height: 24rem !important;
+}
 
 .face{
   position: relative;

@@ -18,6 +18,7 @@ import Login from './views/Login'
 import PlayerCard from './components/PlayerCard'
 import PlayerDetails from './views/PlayerDetails'
 import SquadCreator from './views/SquadCreator'
+import UserSquads from './views/UserSquads'
 
 
 const App = () => {
@@ -51,6 +52,9 @@ const App = () => {
             </Route>
             <Route exact path="/squadcreator">
               <SquadCreator />
+            </Route>
+            <Route exact path="/usersquads">
+              <UserSquads />
             </Route>
             <Route exact path="/login">
               <Login />

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { Context } from '../store/AppContext'
 import PlayerCard from '../components/PlayerCard';
 import { Link, useHistory } from 'react-router-dom';
@@ -10,10 +10,26 @@ import './LeaguesNavigation.css';
 const SquadCreator = () => {
     
     const { store, actions } = useContext(Context)
-    console.log(store.user_formation)
+    console.log('user squad formation:', store.user_formation)
+    console.log('store squad creator squad:', store.squadCreatorSquad)
     // let currentSquad = localStorage.getItem('current-squad') != null ? JSON.parse(localStorage.getItem('current-squad')) : store.plSquade
-    const [ formation, setFormation ] = useState(store.user_formation)
+    let squad_formation = ''
+    if(store.squadCreatorSquad === null) {
+        squad_formation = '442'
+    } else{
+        squad_formation = store.squadCreatorSquad.formation
+    }
+    console.log('squad_formation:', squad_formation )
+    const [ formation, setFormation ] = useState(squad_formation)
     const [ positions, setPositions ] = useState(actions.formationInterpreter(formation))
+
+    useEffect(() => {
+        if(store.squadCreatorSquad != null) {
+            for(let i = 0; i <= 10; i++) {
+                actions.getPlayerByID(store.squadCreatorSquad.squad_data[i], positions[i], i)
+            }
+        } 
+    }, [])
 
     let userSquad = [
         {position: positions[0], player_data: store.squadCreator0.player_data},
@@ -28,11 +44,12 @@ const SquadCreator = () => {
         {position: positions[9], player_data: store.squadCreator9.player_data},
         {position: positions[10], player_data: store.squadCreator10.player_data}
     ]
-    
+
+    let squad_name = store.squadCreatorSquad == null ? '' : store.squadCreatorSquad.squad_name
     const [ playerIndex, setPlayerIndex ] = useState(0)
    
     const [ squad, setSquad ] = useState(userSquad)  
-    const [ squadName, setSquadName ] = useState('')
+    const [ squadName, setSquadName ] = useState(squad_name)
     const [ mouseHover, setMouseHover ] = useState(false)
     const [ displaySearch, setDisplaySearch ] = useState(false)
     const [ displayActions, setDisplayActions ] = useState(false)
@@ -42,11 +59,16 @@ const SquadCreator = () => {
     const [ position, setPosition ] = useState('')
     const [ searchString, setSearchString ] = useState('')
     const [ searchResults, setSearchResults ] = useState([])
+    const [ errorMessage, setErrorMessage] = useState(false)
+    const [ message, setMessage ] = useState(false)
+    
 
     const history = useHistory()    
     // console.log('display search: ', displaySearch)
     // console.log('selected player: ', selectedPlayer)
     // console.log('search results: ', searchResults)
+
+    console.log('squad:', userSquad)
 
     let results = []
     results = searchResults.map((result) => {
@@ -179,6 +201,12 @@ const SquadCreator = () => {
 
     const handleSquadNameSubmit = (e) => {
         e.preventDefault()
+        //console.log(userSquad, formation, squadName, store.token)
+        actions.saveSquad(userSquad, formation, squadName, store.token)
+        setMessage(true)
+        setTimeout(() => {
+            setMessage(false)
+          }, 3000);
         
     }
 
@@ -235,9 +263,18 @@ const SquadCreator = () => {
 
                     <div className='info-container position-relative d-flex flex-column ms-5'>
                         <div className="navigationBody">
-                            <div>
-                                <button className='btn rounded' onClick={() => actions.saveSquad(userSquad, formation, squadName)}>Save</button>
-                            </div>
+                            <div className='mt-3'>
+                                <input type="text" placeholder="Insert squad name..." value={squadName} onChange={handleSquadNameChange} />
+                                <button className='btn rounded' onClick={handleSquadNameSubmit}>Save</button>
+                                {
+                                    message ? 
+                                    <div>
+                                        <p className='text-white'>Squad saved</p>
+                                    </div>
+                                    :
+                                    ''
+                                }
+                            </div> 
                             <div className="navigation text-white">
                                Choose a formation
                                <div className='rounded py-3 px-3 w-75 d-flex flex-row justify-content-between'>

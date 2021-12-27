@@ -10,15 +10,58 @@ const Home = () => {
         <div className="background">
             <div className="container">
                 <div className="row">
-                    <div className="mx-auto">
+                    <div>
                         {store.currentUser  === null ? 
-                            <div className="d-flex flex-column">
+                            <div className="d-flex flex-column mx-auto">
                                 
                                 <Login />
                                 
                             </div>
                             :
-                            <div className="display-2"> Welcome, {store.currentUser?.username}</div>
+                            <div className="d-flex flex-column align-items-center">
+                                <div className="h2 mb-5 text-center "> Welcome to Fustarter, {store.currentUser?.username}. Check out our fifa 22 squad building solutions.</div>
+                                <div className="row w-75 
+                                row-cols-1 row-cols-md-2 g-4">
+                                    <div className="col">
+                                        <div className="card home-card">
+                                            <div className="d-flex flex-column align-items-center">
+                                                <img src={"http://localhost:5000/api/v1/static/images/system/squadselector.png"} className="card-img-top " alt="..."/>
+                                                <div className="card-body">
+                                                    <h3 className="card-title text-center">Meta Squad Selector</h3>
+                                                    <p className="card-text">Know the best meta-squad for each of the five most important leagues in the game with our original interactive tool. </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col">
+                                        <div className="card home-card">
+                                            <img src={"http://localhost:5000/api/v1/static/images/system/playerrankings.png"} className="card-img-top" alt="..."/>
+                                            <div className="card-body">
+                                                <h3 className="card-title">Meta Players Rankings</h3>
+                                                <p className="card-text">See our player rankings for every position, based on our original meta-calculation algorithm. </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col">
+                                        <div className="card home-card">
+                                        <img src={"http://localhost:5000/api/v1/static/images/system/squadcreator.png"} className="card-img-top" alt="..."/>
+                                        <div className="card-body">
+                                            <h3 className="card-title">Squad creator</h3>
+                                            <p className="card-text">Create and build squads by searching players in our database</p>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div className="col">
+                                        <div className="card home-card">
+                                        <img src={"http://localhost:5000/api/v1/static/images/system/usersquads.png"} className="card-img-top" alt="..."/>
+                                        <div className="card-body">
+                                            <h3 className="card-title">User squads</h3>
+                                            <p className="card-text">Organize and load your saved squads</p>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                            </div>
                         }
                     </div>
                 </div>
