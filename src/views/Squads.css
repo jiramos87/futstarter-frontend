@@ -27,6 +27,15 @@ body {
     margin-right: 0;
 }
 
+.card-base-active {
+    background-color:#C2ED63;
+    border-color: white;
+    border-radius: 30%;
+    border: 1rem;
+    width: 9em;
+    height: 7em;
+}
+
 .add-button {
     text-align: center;
     font-size: 1rem;
@@ -52,12 +61,12 @@ body {
 
 .LM {
     position: absolute;
-    top: 36%;
+    top: 34%;
     left: 0%;
 }
 .RM {
     position: absolute;
-    top: 36%;
+    top: 34%;
     left: 58%;
 }
 
@@ -81,49 +90,49 @@ body {
 
 .LCM {
     position: absolute;
-    top: 42%;
+    top: 40%;
     left: 16%;
 }
 
 .CCM {
     position: absolute;
-    top: 42%;
+    top: 40%;
     left: 28%;
 }
 
 .RCM {
     position: absolute;
-    top: 42%;
+    top: 40%;
     left: 41%;
 }
 
 .LB {
     position: absolute;
-    top: 70%;
+    top: 66%;
     left: 0%;
 }
 
 .LCB {
     position: absolute;
-    top: 72%;
+    top: 68%;
     left: 17%;
 }
 
 .RCB {
     position: absolute;
-    top: 72%;
+    top: 68%;
     left: 41%;
 }
 
 .RB {
     position: absolute;
-    top: 70%;
+    top: 66%;
     left: 58%;
 }
 
 .GK {
     position: absolute;
-    top: 80%;
+    top: 74%;
     left: 29%;
 }
 
@@ -167,6 +176,8 @@ body {
     min-width: 70% !important;
     max-width: 60% !important;
 }
+
+
 
 .info-container {
     min-width: 30% !important;

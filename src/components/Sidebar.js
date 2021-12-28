@@ -12,7 +12,7 @@ import * as GoIcons from "react-icons/go";
 
   
 function Sidebar() {
-    const [ sidebar, setSidebar ] = useState(false);
+    const [ sidebar, setSidebar ] = useState(true);
     const { store, actions } = useContext(Context)
     
     const showSidebar = () => setSidebar(!sidebar);

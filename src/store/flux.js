@@ -349,7 +349,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 } else if (index == 9) {
                     setStore({...getStore, squadCreator9: {'position': position, 'player_data': null}})
                 } else if (index == 10) {
-                    setStore({...getStore, squadCreator1: {'position': position, 'player_data': null}})
+                    setStore({...getStore, squadCreator10: {'position': position, 'player_data': null}})
                 }
             },
 
