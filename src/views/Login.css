@@ -1,4 +1,3 @@
-
 .background{
     color: #fff;
     display: flex;
@@ -6,19 +5,50 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    /* align-content: stretch; */
     flex-wrap: nowrap;
     min-height: 100vh;
-    padding-top: 4em !important;
-    background-image: url('http://localhost:3000/ronaldino.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center 3em;
+    background: linear-gradient(to left, rgb(33, 41, 54, 0.9), rgb(33, 41, 54, 0.1)), url(http://localhost:3000/ronaldino.jpg) top;
+    background-size: contain;
     background-attachment: fixed;
-    
-    
-    /* background-size: 80vh 80vh; 
-    width: 85vh */
+    background-repeat: no-repeat;
+    background-position: center 4em;
+    padding-left: 2.3em;
+    margin-left: -2.3em;
+}
+
+.carousel-text {
+    position: relative;
+    top: 2.1rem;
+    font-size: 1.5rem;
+    color: #C2ED63; 
+    overflow:visible;
+}
+
+.carousel-caption {
+    width: 50%;
+}
+
+.carousel-inner {
+    height: 16rem;
+}
+
+.carousel-item {
+    height: 15.2rem; 
+}
+
+.carousel-image {
+    height: 15.2rem;
+}
+
+.welcome-text {
+    position: relative;
+    left: -9rem;
+}
+
+.home-carousel {
+    position: relative;
+    left: 9rem;
+    height: 15.4rem !important;
 }
 
 .btn {
@@ -46,7 +76,7 @@ a {
     color: #C2ED63;
 }
 
-.nav-text a {
+/* .nav-text a {
     text-decoration: none;
     color: #56657F;
     font-size: 1em;
@@ -56,4 +86,4 @@ a {
     align-items: center;
     padding: 0 1em;
     border-radius: 5px;
-}
+} */

@@ -149,8 +149,8 @@ const Players = () => {
 
 {/* AQUI EMPIEZA EL COMPONENTE LEAGUES NAVIGATION EN VERSION CON BACKEND */}
 
-            <div className="navigationBody">
-                    <div className="navigation mb-3">
+            <div className="navigationBody mt-3">
+                    <div className="navigation border border-3 border-dark shadow mb-3">
                         <ul>
                             <li className="list active">
                                 <button onClick={() => handleLeague('Premier League', position)}>

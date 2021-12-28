@@ -23,7 +23,7 @@ const Squads = () => {
     // console.log(squad[0].player_data.league_str)
     // console.log(squad[0].position)
     
-    
+    // league selector
     const list = document.querySelectorAll('.list');
     function activeLink() {
         list.forEach((item) =>
@@ -33,28 +33,48 @@ const Squads = () => {
     list.forEach((item) =>
     item.addEventListener('click', activeLink));
 
+    
+
     let players = squad.map((player, index) => {
         //console.log(user_player.player_data)
         return (
-            <div className={`${player.position}`}>
+            <div className={`playerlist ${player.position}`}>
                 <div type="button"
                     onMouseEnter={ () => handleCardHover(player.player_data, player.position)}
                     onMouseLeave={ () => setMouseHover(false) }
                     onClick={() => actions.setPlayerDetailsPlayer(player.player_data, history)}
                     className={`player-container playercard cursor-pointer`}>
                         <PlayerCard player={player.player_data}/>
-                        <div className='card-base'>
+                        <div className="card-base">
                             {player.position}
                         </div>
                 </div> 
             </div>
     )})
 
+    // player selector
+    const playerlist = document.querySelectorAll('.playerlist')
+    function activePlayer() {
+        playerlist.forEach((item) => {
+        item.classList.remove('card-base-active')
+        });
+        this.classList.add('card-base-active');
+    }
+    function inactivePlayer() {
+        playerlist.forEach((item) => {
+        item.classList.remove('card-base-active')
+        });
+    }
+    playerlist.forEach((item) =>
+    item.addEventListener('mouseover', activePlayer))
+    playerlist.forEach((item) =>
+    item.addEventListener('mouseout', inactivePlayer))
 
     const handleCardHover = (hoverPlayer, squadPosition) => {
         //actions.setPlayerDetailsPlayer(squad.lst, history)
         //console.log('hovered player', hoverPlayer)
         setMouseHover(true)
+        console.log(mouseHover)
         setPlayer(hoverPlayer)
         setPosition(squadPosition)
 
@@ -118,7 +138,7 @@ const Squads = () => {
                         { players }
                     </div>
                     {/* AQUI EMPIEZA EL COMPONENTE LEAGUES NAVIGATION EN VERSION CON BACKEND */}
-                    <div className='info-container position-relative d-flex flex-column ms-5'>
+                    <div className='info-container position-relative d-flex flex-column ms-5 mt-3'>
                         <div className="navigationBody">
                             <div className="navigation">
                                 <ul>

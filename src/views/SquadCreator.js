@@ -211,6 +211,15 @@ const SquadCreator = () => {
         
     }
 
+    const handleNewSquad = () => {
+        setFormation('442')
+        setSquadName('')
+        for(let i = 0; i < 11; i++) {
+            actions.removePlayer(positions[i], i)
+        }
+    }
+
+
     return (
         <div className="position-absolute w-75 d-flex flex-row mt-5" > 
 
@@ -264,6 +273,7 @@ const SquadCreator = () => {
 
                     <div className='info-container position-relative d-flex flex-column ms-5'>
                         <div className="navigationFormationMacro">
+                            <div onClick={handleNewSquad} className='btn w-25 rounded borded-white'> New squad </div>
                             <div className="row mb-5">
                                 <div className="navigationSaveSquad">
                                     <div className="col-4 navigationFormationText">Squad name</div>
