@@ -1,0 +1,23 @@
+.player-container {
+    width: 4rem;
+    height: 11rem;
+}
+
+.close-btn{
+    position: relative;
+    top: -50%;
+    left: 1rem;
+    
+}
+
+.squad-container-squad-creator {
+    min-height: 90vh;
+    max-height: 90vh;
+    padding-top: 4em;
+    min-width: 70% !important;
+    max-width: 60% !important;
+}
+
+.searchButton {
+    transform: translateY(1.7em);
+}

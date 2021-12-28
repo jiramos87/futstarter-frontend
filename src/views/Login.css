@@ -2,24 +2,39 @@
 .background{
     color: #fff;
     display: flex;
+    width: 100%;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     /* align-content: stretch; */
     flex-wrap: nowrap;
-    min-height: 95vh;
-    padding-top: 4.5em !important;
+    min-height: 100vh;
+    padding-top: 4em !important;
     background-image: url('http://localhost:3000/ronaldino.jpg');
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center 4.1em;
+    background-position: center 3em;
     background-attachment: fixed;
+    
+    
     /* background-size: 80vh 80vh; 
     width: 85vh */
 }
 
 .btn {
-    color: #fff;
+    color: #2B3648;;
     background-color: #C2ED63;
+}
+
+.btnLogin {
+    color: #2B3648;
+    box-shadow: 8px 8px 4px  #212936;
+}
+
+.btnLogin:hover {
+    color: #c4c4c4;
+    background: #212936;
+    box-shadow: 5px 5px 5px  #C2ED63;
 }
 
 span {

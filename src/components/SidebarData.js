@@ -27,6 +27,18 @@ export const SidebarData = [
         icon: <IoIcons.IoMdPeople />,
         cName: 'nav-text'
     },
+    {
+        title: 'Squad Creator',
+        path: '/squadcreator',
+        icon: <IoIcons.IoMdPeople />,
+        cName: 'nav-text'
+    },
+    {
+        title: 'User Squads',
+        path: '/usersquads',
+        icon: <IoIcons.IoMdPeople />,
+        cName: 'nav-text'
+    },
     // {
     //     title: 'Starting Guide',
     //     path: '/guide',
@@ -51,12 +63,12 @@ export const SidebarData = [
     //     icon: <FaIcons.FaEnvelopeOpenText />,
     //     cName: 'nav-text'
     // },
-    {
-        title: 'Login',
-        path: '/login',
-        icon: <GoIcons.GoSignIn />,
-        cName: 'nav-text'
-    },
+    // {
+    //     title: 'Login',
+    //     path: '/login',
+    //     icon: <GoIcons.GoSignIn />,
+    //     cName: 'nav-text'
+    // },
     {
         title: 'Register',
         path: '/register',

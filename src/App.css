@@ -2,8 +2,6 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
   font-family: "Roboto", sans-serif;
 }
 
@@ -40,7 +38,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #c4c4c4;
 }
 
 .App-link {

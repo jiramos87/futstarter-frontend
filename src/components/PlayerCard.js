@@ -3,9 +3,6 @@ import { Context } from '../store/AppContext'
 // import './index.css';
 const PlayerCard = (props) => {
 
-    console.log('playercard props: ', props.player)
-        
-    
     return (
         <div className="card-1">
             <div className="card-top">
@@ -18,7 +15,7 @@ const PlayerCard = (props) => {
                 
             </div>
             <div className="card-bottom">
-                <h3 className="NAME-PLAYERS text-center">{props.player.common_name}</h3>
+                <h3 className="NAME-PLAYERS text-center text-uppercase">{props.player.common_name}</h3>
                 <div className="basic-ratings">
                     <div className="row">
                         <div className="col">{props.player.pace} PAC </div>

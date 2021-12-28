@@ -1,13 +1,13 @@
 import React, { useState, useContext } from 'react'
 import { Context } from '../store/AppContext'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import './Login.css';
 
 
 const Login = () => {
     const { store, actions } = useContext(Context)
+    const history = useHistory()
 
-    console.log('currentUser en <Login/>', store.currentUser)
     const [ loginFormData, setFormData] = useState({
         username: '',
         password: ''
@@ -25,8 +25,8 @@ const Login = () => {
         console.log(loginFormData)
         //validations on email regex and password length
 
-        //registerUser on submit
-        actions.loginUser(loginFormData)
+        //loginUser on submit
+        actions.loginUser(loginFormData, history)
 
     }
     
@@ -34,6 +34,7 @@ const Login = () => {
         <div className="background">
             <div className="container">
                 <div className="row">
+                    <div className="col-md-9 mx-auto">
                         {store.currentUser  === null ? 
                             <div className="d-flex flex-column">
                                 <form noValidate onSubmit={onSubmit}>
@@ -46,19 +47,28 @@ const Login = () => {
                                         <label htmlFor="password">Password</label>
                                         <input type="password" className="form-control" name="password" placeholder="Password" value={loginFormData.password} onChange={onChange}/>
                                     </div>
-                                    <button type="submit" className="btn btn-lg btn-primary btn-block">Login</button>
+                                    { store.invalidCredentials ? 
+                                        <div className=' text-center bg-danger rounded mt-2 mb-2'>
+                                            "Username or password incorrect"   
+                                        </div>
+                                        :
+                                        ''
+                                    }
+                                    <button type="submit" className="btn btnLogin btn-lg btn-primary btn-block">Login</button>
                                 </form>
-                                <span>Don't have an account? </span>
-                                <Link to='/register'>
-                                    <a href="#">Register</a>
-                                </Link>
+                                <div>
+                                    <span>Don't have an account? </span>
+                                    <Link to='/register'>
+                                        <a className="bg-dark rounded" href="#">Go to the Register page</a>
+                                    </Link>
+                                </div>
                                 
                             </div>
                             :
-                            <div className="display-2"> Welcome, {store.currentUser?.username}</div>
+                            history.push('/home')
                         }
                     </div>
-                
+                </div>
             </div>
         </div>
     )

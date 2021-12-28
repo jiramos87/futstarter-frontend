@@ -12,23 +12,25 @@
 /* #212936 */
 
 .navigationBody {
-    padding-top: 3.5em;
     display: flex;
     justify-content: center;
     align-items: top;
-    min-height: 5em;
+    min-height: 2em;
     background: var(--clr);
+    z-index: 2;
 }
 
 .navigation {
     position: relative;
     width: 26em;
     height: 5em;
+    margin-bottom: 0.7em !important;
     background: #212936;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 0px 0px 10px 10px;
+    overflow: visible;
 }
 
 button {
@@ -151,3 +153,4 @@ button {
     width: 58%;
     height: 70%;
 }
+
