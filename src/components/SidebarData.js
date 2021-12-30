@@ -16,6 +16,12 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {
+        title: 'Getting Started',
+        path: '/guide',
+        icon: <IoIcons.IoMdPeople />,
+        cName: 'nav-text'
+    },
+    {
         title: 'Meta Squads',
         path: '/squads',
         icon: <RiIcons.RiTeamFill />,
@@ -39,6 +45,7 @@ export const SidebarData = [
         icon: <IoIcons.IoMdPeople />,
         cName: 'nav-text'
     },
+    
     // {
     //     title: 'Starting Guide',
     //     path: '/guide',
