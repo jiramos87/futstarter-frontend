@@ -277,18 +277,20 @@ const SquadCreator = () => {
                             <div className="row mb-5">
                                 <div className="navigationSaveSquad">
                                     <div className="col-4 navigationFormationText">Squad name</div>
-                                    <div className="col-8 d-flex flex-row">
-                                        <input type="text" id="squadname-input" className="rounded ps-3" placeholder="Insert squad name..." value={squadName} onChange={handleSquadNameChange} />
-                                        <button className='btn rounded navigationSaveSquadText' onClick={handleSquadNameSubmit}>Save</button>
-                                    </div>
-                                    {
-                                        message ? 
-                                        <div>
-                                            <p className='text-white'>Squad saved</p>
+                                    <div className='d-flex flex-column'>
+                                        <div className="col-8 d-flex flex-row">
+                                            <input type="text" id="squadname-input" className="rounded ps-3" placeholder="Insert squad name..." value={squadName} onChange={handleSquadNameChange} />
+                                            <button className='btn rounded navigationSaveSquadText' onClick={handleSquadNameSubmit}>Save</button>
                                         </div>
-                                        :
-                                        ''
-                                    }
+                                        {
+                                            message ? 
+                                            <div>
+                                                <p className='text-white'>Squad saved</p>
+                                            </div>
+                                            :
+                                            ''
+                                        }
+                                    </div>
                                 </div> 
                             </div>
                             

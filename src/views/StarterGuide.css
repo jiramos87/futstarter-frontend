@@ -1,0 +1,41 @@
+
+.starterGuide {
+    margin-top: 5rem;
+}
+
+.textYellow {
+    color: #C2ED63;
+}
+
+.textGrey {
+    color: #c4c4c4;
+    margin-bottom: 0rem !important;
+}
+
+.textDark {
+    color: #2B3648;
+    margin-bottom: 0rem !important;
+}
+
+.introBox {
+    width: 50em;
+    padding: 1.5rem;
+}
+
+.textBox {
+    background-color: #212936;
+    width: 40em;
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 9px; 
+    box-shadow: 5px 5px 5px  #C2ED63;
+}
+
+.imgBox {
+    /* padding: 1rem; */
+    padding-right: 1rem !important;
+    border-radius: 9px; 
+    width: 20rem;
+
+
+}
